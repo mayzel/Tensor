@@ -1,0 +1,4 @@
+class Decomposition:
+	def Decompose():
+		pass
+

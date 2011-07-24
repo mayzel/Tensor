@@ -1,0 +1,423 @@
+#coding: utf-8
+import numpy
+from numpy import *
+from numpy.linalg import *
+
+import scipy.io as sio
+import scipy.linalg
+import Toolbox
+import const
+import algorithm
+import pickle
+#from logger import *
+def SaveArrays():
+    pathlist = ["../benchmarkData/E-nose_data.mat",
+                "../../benchmarkData/bonnie.mat",
+                "../benchmarkData/Flow_Injection/fia.mat",
+                "../benchmarkData/Sensory_Bread/brod.mat",
+                "../benchmarkData/Wine_v6/Wine_v6.mat"]
+    #pathlist = ["../benchmarkData/Wine_v6/Wine_v6.mat"]
+
+    for path in pathlist:
+        mat = sio.loadmat(path)
+        name = path + ".arr"
+        f = open(name,"wb")
+
+        print name
+        pickle.dump(mat,f)
+
+        f.close()
+
+def ThreeDNoseData():
+
+    path = "../benchmarkData/E-nose_data.mat"
+    f = file(path,"rb")
+    #mat = pickle.load(f)
+    mat = sio.loadmat(path)
+    f.close()
+
+    def getTensor(mat):
+        X = mat["NoseData"]["data"][0][0]
+        return X / norm(X)
+
+    def getLaplacian(mat):
+        Ltime = createChainLaplacian(mat["NoseData"]["data"][0][0].shape[1])
+
+        lsmb = createCompleteLaplacian(6)
+        Lsample = scipy.linalg.block_diag(lsmb,lsmb,lsmb)
+
+        return [Lsample,Ltime,None]
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+def Bonnie():
+    path = "../benchmarkData/bonnie.mat"
+    f = file(path,"rb")
+    #mat = pickle.load(f)
+    mat = sio.loadmat(path)
+    f.close()
+    def getTensor(mat):
+        data = mat["X"]["data"][0][0]
+        return data / norm(data)
+    def getLaplacian(mat):
+        size = [4,3,4,3,4,4,3,4,4,3,4,4,3,4,4,4,3,4,4,3,4,4,4,4]
+        blocks = map(lambda s:createCompleteLaplacian(s),size)
+        L0 = scipy.linalg.block_diag(*blocks)
+        L1 = createChainLaplacian(97)
+        L2 = createChainLaplacian(549)
+        return [L0,L1,L2]
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+def Wine_v6():
+    path = "../benchmarkData/Wine_v6/Wine_v6.mat"
+    f = file(path,"rb")
+    #mat = pickle.load(f)
+    mat = sio.loadmat(path)
+    f.close()
+    def getTensor(mat):
+        print "load array"
+        path = "../benchmarkData/Wine_v6/Wine_v6.m"
+        f = open(path,"rb")
+        mat = numpy.load(f)
+        f.close()
+        data = mat
+        sampling = arange(270)*10
+        data = data[:,sampling,:]
+        data = data.copy() / norm(data)
+        print data.shape
+
+        return data
+    def getLaplacian(mat):
+        size = [6,12,15,11]
+        blocks = map(lambda s:createCompleteLaplacian(s),size)
+        L0 = scipy.linalg.block_diag(*blocks)
+        L1 = createChainLaplacian(270)
+        L2 = createChainLaplacian(200)*0.9
+        
+        return [L0,L1,L2]
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+def Sugar():
+    path = "../benchmarkData/sugar_Process/data.mat"
+    f = file(path,"rb")
+    #mat = pickle.load(f)
+    mat = sio.loadmat(path)
+    f.close()
+
+    def getTensor(mat):
+        data = mat["X"]
+        data = data.copy()
+        data = data.reshape(268,571,7)
+        return data / norm(data)
+    def getLaplacian(mat):
+        L0 = createChainLaplacian(268)
+        L1 = createChainLaplacian(571)
+        L2 = createChainLaplacian(7) 
+        
+        return [L0,L1,L2]
+    return dataLoader(mat,getTensor,getLaplacian)
+
+def Enron():
+    path = "../benchmarkData/enron/Xs_asymm_month.csv"
+    mat = loadtxt(path,delimiter=",")
+    def getTensor(mat):
+        data = mat
+        data = data.copy()
+        data = data.reshape(38,151,151)
+        return data
+    def getLaplacian(mat):
+        path = "../benchmarkData/Enron/job_description.csv"
+        import csv
+        csvfile = open(path)
+        jobs = [row[1] for row in csv.reader(csvfile)]
+        csvfile.close()
+        jobs.pop(0)
+
+        members = 151
+        A = zeros((members,members))
+        import itertools
+        
+        ind=[]
+        for i in xrange(members-1):
+            job = jobs[i]
+            if job == "N/A" or job == "":
+                continue
+            for j in xrange(i+1,members):
+                if jobs[j] == job:
+                    A[i,j] = 1
+
+        A = A + A.T
+        D = diag(map(lambda v:sum(v),A))
+        Lman = (D - A) / 40
+
+
+        L0 = createChainLaplacian(38)
+        return [L0,Lman,Lman]
+    return dataLoader(mat,getTensor,getLaplacian)
+
+
+def Flow_Injection():
+    path = "../benchmarkData/Flow_Injection/fia.mat"
+    f = file(path,"rb")
+    #mat = pickle.load(f)
+    mat = sio.loadmat(path)
+    f.close()
+    def getTensor(mat):
+        data = mat["X"]
+        data = data.reshape(12,89,100)
+        data = data / norm(data)
+        data = data.copy()
+        return data / norm(data)
+    def getLaplacian(mat):
+        y = mat["y"]
+        A = zeros((12,12))
+        tuples = [(i,j) for i in xrange(12) for j in xrange(12)]
+        for (i,j) in tuples:
+            if i == j:
+                A[i,j] = 0
+            else:
+                dist = norm(y[i,:] - y[j,:])
+                A[i,j] = 1.0 / (dist + 0.1)
+        L0 = createNormalizedLaplacian(A)
+        L2 = createChainLaplacian(100)
+        L1 = createChainLaplacian(89)
+        
+        return [L0,L1,L2]
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+def decompTest():
+    size=100
+    A=createChainLaplacian(size)
+
+def Artificial3():
+    size = [30,30,30]
+    dim = len(size)
+    rank = 3
+    def getTensor(mat):
+        def mkfactor(size,rank):
+            th = random.randn()
+            off = random.randn()
+            d2 = arange(size) * arange(size)
+            d1 = arange(size)
+            print th,off
+            A = array([d1*th + off for i in xrange(rank)]).T
+            return A
+
+        As = [mkfactor(size[i],rank) for i in xrange(dim)]
+        As[0] = (random.rand(size[0],rank)-0.5)*0.5
+        As[1] = (random.rand(size[1],rank)-0.5)*0.5
+        import algorithm as alg
+        I = alg.createUnitTensor(dim,rank)
+        I = random.randn(rank,rank,rank)
+        X = alg.expand(I,As)
+
+        X = X / norm(X)
+        return X
+
+    def getLaplacian(mat):
+        Ls = [createChainLaplacian(size[i]) for i in xrange(dim)]
+        #Ls[0] = None
+        #Ls[1] = None
+        return Ls
+
+    return dataLoader(mat,getTensor,getLaplacian)
+def Artificial():
+    size = [30,130,50]
+    dim = len(size)
+    rank = 2
+    def getTensor(mat):
+        def mkfactor(size,rank,L,alpha):
+            #D = cholesky(eye(size)+alpha*L)
+            [u,s,w] = svd(L)
+            D = dot(u,diag(s))
+            A = random.randn(size,rank)
+            return alpha * dot(D,A)
+
+        alpha = 1e-3
+        As = [mkfactor(size[i],rank,createChainLaplacian(size[i]),alpha) for i in xrange(dim)]
+        import algorithm as alg
+        I = alg.createUnitTensor(dim,rank)
+        X = alg.expand(I,As)
+
+        X = X / norm(X)
+        return X
+
+    def getLaplacian(mat):
+        Ls = [createChainLaplacian(size[i]) for i in xrange(dim)]
+        return Ls
+
+    return dataLoader(mat,getTensor,getLaplacian)
+def ArtificialTucker():
+    size = [30,30,30]
+    dim = len(size)
+    rank = [2,2,2]
+    def getTensor(mat):
+        def mkfactor(size,rank):
+            th = random.randn()
+            off = random.randn()
+            d2 = arange(size) * arange(size)
+            d1 = arange(size)
+            print th,off
+            A = array([d1*th + off for i in xrange(rank)]).T
+            return A
+
+        As = [mkfactor(size[i],rank[i]) for i in xrange(dim)]
+        import algorithm as alg
+        def p(obj):
+            print obj
+
+        G = random.randn(*rank)
+        X = alg.expand(G,As)
+
+        X = X / norm(X)
+        return X
+
+    def getLaplacian(mat):
+        Ls = [createChainLaplacian(size[i]) for i in xrange(dim)]
+        return Ls
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+def Artificial2():
+    size = [30,30,30]
+    dim = len(size)
+    rank = 10
+    center = array(size) / 2.0
+    def getTensor(mat):
+        X = zeros(size)
+        for i in xrange(size[0]):
+            for j in xrange(size[1]):
+                for k in xrange(size[2]):
+                    diff = center - array([i,j,k])
+                    X[i,j,k] = math.exp(-norm(diff)/20)
+        return X
+
+    def getLaplacian(mat):
+        Ls = [createChainLaplacian(size[i]) for i in xrange(dim)]
+        return Ls
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+
+def RandomSmallTensor():
+    def getTensor(mat):
+        size = 30
+        rank = 20
+        sl = [100,100,500]
+        rl = [rank,rank,rank]
+        return algorithm.randomTensorOfNorm(sl,rl,0.01)
+
+    def getLaplacian(mat):
+        return [None,None,None]
+
+    return dataLoader(mat,getTensor,getLaplacian)
+
+
+
+def dataLoader(mat,tensorGetter,laplacianGetter):
+    X = tensorGetter(mat)
+    L = laplacianGetter(mat)
+
+    return {"X":X,"L":L}
+
+#チェーン
+def createChainLaplacian(size):
+    A = repeat(0,size*size).reshape(size,size)
+    for i in xrange(size - 1):
+        A[i,i+1] = 1
+    A = A + A.T
+    A = A + eye(size)
+    return createNormalizedLaplacian(A)
+
+#完全グラフ
+def createCompleteLaplacian(size):
+    A = repeat(1,size*size).reshape(size,size)
+    for i in xrange(size):
+        A[i,i] = 0
+    return createNormalizedLaplacian(A)
+
+
+def createNormalizedLaplacian(A):
+    dims = map(lambda v:sum(v),A)
+    D = diag(dims)
+    sqrtD = diag(1.0 / sqrt(dims))
+    L = D - A
+
+    L = dot(sqrtD,L)
+    L = dot(L,sqrtD) #normalize
+    return L
+    
+def getBonnie(mat):
+    pass
+
+
+def SaveImage(X,filename,axis):
+ 
+    import scipy.misc as sim
+    N = len(X.shape)
+    if N==3:
+        X = X.transpose(axis)
+        print X.shape
+        w = X.shape[0]
+        h = X.shape[1]
+        imgnum = X.shape[2]
+        print (imgnum,w,h)
+        for i in xrange(imgnum):
+            name = filename + "%(#)03d" % {"#":i} + ".png"
+            #sim.toimage(X[:,:,i], cmin=0, cmax=255).save(name)
+            sim.imsave(name,X[:,:,i])
+    else:
+        name = filename + ".png"
+        sim.imsave(name,X)
+
+
+
+if __name__ == '__main__':
+    #dat = Flow_Injection()
+    #X = dat["X"]
+#12 #89 100
+    #Y=zeros((89*3,400))
+    #for i in range(4):
+    #    for j in range(3):
+    #        Y[j*89:(j+1)*89,i*100:(i+1)*100] = X[i*3+j,:,:]
+    #SaveImage(Y,"Flow_Injection",None)
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    from numpy.random import randn
+
+# Make plot with vertical (default) colorbar
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    X = Bonnie()["X"]
+    data = X[:,:,120]
+
+    im = plt.imshow(data)
+    plt.savefig("test.png")
+
+    plt.show()
+
+    #SaveImage(X.reshape(1000,1000),"Artificial",(0,1,2))
+
+    #18 241 12
+    #241*18
+    #dat = ThreeDNoseData()
+    #X = dat["X"]
+    #X = X.transpose(2,0,1)
+
+    print X.shape
+    #Y = zeros((241,18*12))
+    #
+    #for i in range(12):
+    #    Y[:,i*18:(i+1)*18] = X[:,:,i].T
+    #    SaveImage(Y,"ThreeDNose",None)
+    
+
+
+    
+
+

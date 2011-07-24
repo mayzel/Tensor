@@ -1,0 +1,156 @@
+#from __future__ import division
+cimport cython
+cimport numpy as np
+import numpy as np
+
+np.import_array()
+
+import scipy.sparse as sparse
+
+
+#DTYPE = np.int
+#ctypedef np.int_t DTYPE_T
+
+print "hello world"
+@cython.boundscheck(False)
+def HadamardProdOfSparseTensor(tuple As not None,np.ndarray[np.int_t,ndim=1] Obs not None):
+    cdef int size
+    cdef int n,m,l
+    #cdef Coords *Obs
+    cdef int i,j,k
+    cdef np.ndarray[np.float_t,ndim=2] U,V,W
+    #cdef np.ndarray[np.float_t,ndim=1] data
+
+    size = Obs.size / 3
+
+    U,V,W = As[0],As[1],As[2]
+    n=U.shape[0]
+    m=V.shape[0]
+    l=W.shape[0]
+    #Obs must be given as list of coordinate tuples
+    data = np.zeros(size,dtype=np.float)
+
+    for n in range(size):
+        i = Obs[n*3]
+        j = Obs[n*3+1]
+        k = Obs[n*3+2]
+        data[n] = sum(U[i,:]*V[j,:]*W[k,:])
+    
+    return data
+
+
+@cython.boundscheck(False)
+def unfold(np.ndarray[np.float_t,ndim=1] X not None, int mode, tuple shape not None,np.ndarray[np.int_t,ndim=1] ObsList not None):
+    #X is dense vector with only observed elements
+
+    cdef int n,m,l,size
+    #cdef float val
+    #cdef sparse.lil_matrix
+    
+    N,M,L = shape[0],shape[1],shape[2]
+    size = ObsList.size / 3
+    print n,m,l
+    print size
+
+    if mode==0:
+        Xn = sparse.lil_matrix((N,M*L))
+        for n in range(size):
+            i,j,k = ObsList[n*3],ObsList[n*3+1],ObsList[n*3+2]
+            Xn[i,j+k*M] = X[n]
+    elif mode==1:
+        Xn = sparse.lil_matrix((M,N*L))
+        for n in range(size):
+            i,j,k = ObsList[n*3],ObsList[n*3+1],ObsList[n*3+2]
+            Xn[j,i+k*N] = X[n]
+    else:
+        Xn = sparse.lil_matrix((L,N*M))
+        for n in range(size):
+            i,j,k = ObsList[n*3],ObsList[n*3+1],ObsList[n*3+2]
+            Xn[k,i+j*N] = X[n]
+
+    return Xn.tocsr()
+
+#Khatri-Rao product
+cdef np.ndarray[np.float_t,ndim=2] KRproduct(np.ndarray[np.float_t,ndim=2] A ,np.ndarray[np.float_t,ndim=2] B):
+    """
+    Khatri-Rao積
+    """
+    cdef int x,y
+    (x,y) = A.shape
+    return np.array([np.kron(A[:,i],B[:,i]) for i in xrange(y)]).T
+
+
+cdef tuple unpackAs(np.ndarray[np.float_t,ndim=1] Asv,int su,int sv,int sw):
+    cdef np.ndarray[np.float_t,ndim=1] dU,dV,dW
+    dU = Asv[0:su]
+    dV = Asv[su:su+sv]
+    dW = Asv[su+sv:]
+    return (dU,dV,dW)
+
+def Gradient(np.naarray[np.float_t,ndim=1] X not None,np.ndarray[np.int_t,ndim=1] Obs not None,As,np.ndarray[np.float_t,ndim=2] L not None,tuple shape,int R,int mode):
+    #Ls must be given as CSR_matrix
+    #Obs must be given as list of coordinate tuples
+    #X is given as dense vector with only observed elements
+    #print "Gradient"
+
+    cdef int n,m,l,ind,i,j,k
+    cdef float val
+    cdef np.ndarray[np.float_t,ndim=2] U,V,W,dU,dV,dW
+    cdef np.ndarray[np.float_t,ndim=1] vU,vV,vW
+    
+    (n,m,l) = shape
+    vU,vV,vW = unpackAs(As,n*R,m*R,l*R)
+
+    U = vU.reshape(n,R)
+    V = vV.reshape(m,R)
+    W = vW.reshape(l,R)
+    
+    XO = HadamardProdOfSparseTensor((U,V,W),Obs)
+
+    Left = XO - X
+
+    if mode==0:
+        LeftU = sparse.lil_matrix((n,m*l))
+        for ind in range(len(X)):
+           i,j,k = Obs[3*n],Obs[3*n+1],Obs[3*n+2]
+           val = Left[ind]
+           LeftU[i,j+k*m] = val
+        LeftU = LeftU.tocsr()
+        dU = 2*LeftU.dot(KRproduct(W,V)) + L.dot(U)
+        return dU.squeeze()
+    elif mode==1:
+        LeftV = sparse.lil_matrix((m,n*l))
+        for ind in range(len(X)):
+           i,j,k = Obs[3*n],Obs[3*n+1],Obs[3*n+2]
+           val = Left[ind]
+           LeftV[j,i+k*n] = val
+        LeftV = LeftV.tocsr()
+        dV = 2*LeftV.dot(KRproduct(W,U)) + L.dot(V)
+        return dV.squeeze()
+    else:
+        LeftW = sparse.lil_matrix((l,n*m))
+        for ind in range(len(X)):
+           i,j,k = Obs[3*n],Obs[3*n+1],Obs[3*n+2]
+           val = Left[ind]
+           LeftW[k,i+j*n] = val
+        LeftW = LeftW.tocsr()
+        dW = 2*LeftW.dot(KRproduct(V,U)) + L.dot(W)
+        return dW.squeeze()
+
+    #return squeezeAs((dU,dV,dW))
+@cython.boundscheck(False)
+def CompressSparseTensorToVector(np.ndarray[np.float_t,ndim=3] X not None, np.ndarray[np.int_t,ndim=1] ObservedList not None):
+    cdef int size
+    cdef np.ndarray[np.float_t,ndim=1] Xdense
+    size = ObservedList.size / 3
+
+    Xdense = np.zeros(size)
+    size = len(ObservedList) / 3
+    for n in range(size):
+        i = ObservedList[3*n]
+        j = ObservedList[3*n+1]
+        k = ObservedList[3*n+2]
+        Xdense[n] = X[i,j,k]
+    return Xdense
+
+

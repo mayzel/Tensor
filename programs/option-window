@@ -1,0 +1,33 @@
+" Each "set" line shows the current value of an option (on the left).
+" Hit <CR> on a "set" line to execute it.
+"            A boolean option will be toggled.
+"            For other options you can edit the value.
+" Hit <CR> on a help line to open a help window on this option.
+" Hit <CR> on an index line to jump there.
+" Hit <Space> on a "set" line to refresh it.
+
+ 1 important
+ 2 moving around, searching and patterns
+
+
+ 1 important
+
+compatible	behave very Vi compatible (not advisable)
+ 	set nocp	cp
+cpoptions	list of flags to specify Vi compatibility
+ 	set cpo=aABceFs
+insertmode	use Insert mode as the default mode
+ 	set noim	im
+paste	paste mode, insert typed text literally
+ 	set nopaste	paste
+pastetoggle	key sequence to toggle paste mode
+ 	set pt=
+runtimepath	list of directories used for runtime files and plugins
+ 	set rtp=C:\\Users\\alatani/vimfiles,C:\\Users\\alatani\\Documents\\My\ Dropbox\\vim/vimfiles,C:\\Users\\alatani\\Documents\\My\ Dropbox\\vim\\runtime,C:\\Users\\alatani\\Documents\\My\ Dropbox\\vim/vimfiles/after,C:\\Users\\alatani/vimfiles/after
+helpfile	name of the main help file
+ 	set hf=C:\\Users\\alatani\\Documents\\My\ Dropbox\\vim\\runtime\\doc\\help.txt
+
+ 2 moving around, searching and patterns
+
+whichwrap	list of flags specifying which commands wrap to another line
+	(local to window)

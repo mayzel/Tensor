@@ -1,0 +1,414 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_JP_AUTHOR	HIGASHI Hirohito	/Twitter: @h_east/
+!_TAG_PROGRAM_JP_URL	http://hp.vector.co.jp/authors/VA025040/	//
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6b1J2	//
+A	SVD.py	/^A = zeros((s,s))$/;"	v
+add	ThreadFunc.py	/^    def add(x,y):$/;"	f	function:test_treduce
+aggregate	ThreadFunc.py	/^    def aggregate(a,b):$/;"	f	function:mapreducetest
+alpha	ExecuterArtificial.py	/^alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L$/;"	v
+alpha	ExecuterBonnie.py	/^alpha =[pow(10,x) for x in [-3,-2,-1]] #for L$/;"	v
+alpha	ExecuterFlow.py	/^alpha =[pow(10,x) for x in [-4,-3,-2,-1]] #for L$/;"	v
+alpha	ExecuterThreeD.py	/^alpha =[pow(10,x) for x in [-3,-2,-1,0]] #for L$/;"	v
+approximate	Completion.py	/^    def approximate(Xin):$/;"	f	function:CompletionCP
+approximate	Completion.py	/^    def approximate(Xin):$/;"	f	function:CompletionTucker
+approximate	tensor.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_CP
+approximate	tensor.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_Tucker
+approximate	tensortest.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_CP
+approximate	tensortest.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_Tucker
+approximateCP	tensortest.py	/^    def approximateCP(Xin):$/;"	f	function:testCompletion
+approximateTucker	tensortest.py	/^    def approximateTucker(Xin):$/;"	f	function:testCompletion
+Artificial	benchmark.py	/^def Artificial():$/;"	f
+Artificial2	benchmark.py	/^def Artificial2():$/;"	f
+Artificial3	benchmark.py	/^def Artificial3():$/;"	f
+ArtificialTucker	benchmark.py	/^def ArtificialTucker():$/;"	f
+ax	benchmark.py	/^    ax = fig.add_subplot(111)$/;"	v
+Bonnie	benchmark.py	/^def Bonnie():$/;"	f
+busybeaver	forkmap.py	/^    def busybeaver(x):$/;"	f
+busybeaver	paralellmap.py	/^    def busybeaver(x):$/;"	f
+can	mlabwrap.py	/^    __all__ = [] #XXX a hack, so that this class can fake a module; don't mutate$/;"	c	class:MlabWrap
+CheckingFrequence	const.py	/^CheckingFrequence = 10$/;"	v
+cleanup	ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:tmap
+cleanup	ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:_parallel
+cleanup	ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:_treduce
+Close	matlab.py	/^    def Close():$/;"	m	class:Matlab
+CompletionCP	Completion.py	/^def CompletionCP(Y,observed,rank_estimate,Ls,alpha,beta):$/;"	f
+CompletionCPProd_EveryStep	Completion.py	/^def CompletionCPProd_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):$/;"	f
+CompletionCP_EveryStep	Completion.py	/^def CompletionCP_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):$/;"	f
+CompletionDistance_CP_Everystep	Completion.py	/^def CompletionDistance_CP_Everystep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionDistance_Tucker_EveryStep	Completion.py	/^def CompletionDistance_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKP_CP_EveryStep	Completion.py	/^def CompletionKP_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKP_Tucker_EveryStep	Completion.py	/^def CompletionKP_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKS_CP_EveryStep	Completion.py	/^def CompletionKS_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKS_Tucker_EveryStep	Completion.py	/^def CompletionKS_Tucker_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionStep	newalg.py	/^def CompletionStep(TrueX,Observed,X,updater):$/;"	f
+CompletionTucker	Completion.py	/^def CompletionTucker(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionTuckerProd_EveryStep	Completion.py	/^def CompletionTuckerProd_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionTucker_EveryStep	Completion.py	/^def CompletionTucker_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+ConvergenceThreshold_Completion	const.py	/^ConvergenceThreshold_Completion = 1e-4 $/;"	v
+ConvergenceThreshold_Decomposition	const.py	/^ConvergenceThreshold_Decomposition = 1e-4$/;"	v
+ConvergenceThreshold_NewCompletion	const.py	/^ConvergenceThreshold_NewCompletion = 1e-5 *0.7$/;"	v
+CPDistanceStep	algorithm.py	/^def CPDistanceStep(As,X,R,Ls,alpha=0.0,Xns=None):$/;"	f
+CPKprodStep	algorithm.py	/^def CPKprodStep(As,X,R,Ds,Ws,PWs,DWs,alpha=0,Xns = None):$/;"	f
+CPKsumStep	algorithm.py	/^def CPKsumStep(As,X,R,Ls,Ps,Ds,alpha=0,Xns = None):$/;"	f
+CP_ALS	algorithm_old.py	/^def CP_ALS(X,R):$/;"	f
+createChainLaplacian	benchmark.py	/^def createChainLaplacian(size):$/;"	f
+createCompleteLaplacian	benchmark.py	/^def createCompleteLaplacian(size):$/;"	f
+createG	algorithm.py	/^    def createG(X,As):$/;"	f	function:TuckerKprodStep
+createG	algorithm.py	/^    def createG(X,As):$/;"	f	function:TuckerKsumStep
+createLaplacian	algorithm.py	/^def createLaplacian(A):$/;"	f
+createMask	DataStream.py	/^    def createMask(shape,unobservedRate):$/;"	f	function:RandomObservedTensorStream
+createMask	mattest.py	/^def createMask(sizelist,rate):$/;"	f
+createMask	tensor.py	/^def createMask(sizelist,zerorate):$/;"	f
+createMask	tensortest.py	/^def createMask(sizelist,zerorate):$/;"	f
+createNormalizedLaplacian	benchmark.py	/^def createNormalizedLaplacian(A):$/;"	f
+createObservedTensor	Evaluation.py	/^        def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createObservedTensor	EvaluationFiber.py	/^    def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createTestLaplacian	tensor.py	/^def createTestLaplacian(size):$/;"	f
+createTestLaplacian	tensortest.py	/^def createTestLaplacian(size):$/;"	f
+createUnitTensor	algorithm.py	/^def createUnitTensor(dim,D):$/;"	f
+CrossValidation	Evaluation.py	/^def CrossValidation($/;"	f
+CrossValidation	EvaluationFiber.py	/^def CrossValidation($/;"	f
+CurlyIndexer	mlabwrap.py	/^class CurlyIndexer(object):$/;"	c
+data	benchmark.py	/^    data = X[:,:,120]$/;"	v
+data	Executer.py	/^data = benchmark.Enron()$/;"	v
+data	ExecuterArtificial.py	/^data = benchmark.Artificial3()$/;"	v
+data	ExecuterBonnie.py	/^data = benchmark.Bonnie()$/;"	v
+data	ExecuterEnron.py	/^data = benchmark.Enron()$/;"	v
+data	ExecuterFlow.py	/^data = benchmark.Flow_Injection()$/;"	v
+data	ExecuterRandomtest.py	/^data = benchmark.RandomSmallTensor()$/;"	v
+data	ExecuterSugar.py	/^data = benchmark.Sugar()$/;"	v
+data	ExecuterThreeD.py	/^data = benchmark.ThreeDNoseData()$/;"	v
+data	ExecuterWine.py	/^data = benchmark.Wine_v6()$/;"	v
+dataGenerator	Evaluation.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataGenerator	EvaluationFiber.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataLoader	benchmark.py	/^def dataLoader(mat,tensorGetter,laplacianGetter):$/;"	f
+dataname	Executer.py	/^dataname = "Enron"$/;"	v
+dataname	ExecuterArtificial.py	/^dataname = "Artificial0302"$/;"	v
+dataname	ExecuterBonnie.py	/^dataname = "Bonnie0128"$/;"	v
+dataname	ExecuterEnron.py	/^dataname = "Enron0121"$/;"	v
+dataname	ExecuterFlow.py	/^dataname = "Flow0302"$/;"	v
+dataname	ExecuterRandomtest.py	/^dataname = "Random"$/;"	v
+dataname	ExecuterSugar.py	/^dataname = "Sugar0120"$/;"	v
+dataname	ExecuterThreeD.py	/^dataname = "ThreeD0128"$/;"	v
+dataname	ExecuterWine.py	/^dataname = "Wine"$/;"	v
+DecomposeLaplacians	Completion.py	/^def DecomposeLaplacians(Ls):$/;"	f
+decompTest	benchmark.py	/^def decompTest():$/;"	f
+decorate	forkmap.py	/^    def decorate(f):$/;"	f	function:parallelizable
+decorate	paralellmap.py	/^    def decorate(f):$/;"	f	function:parallelizable
+dots	algorithm.py	/^        def dots(L,R):$/;"	f	function:solveGeneralizedSylvester/dotsylv
+dots	lsqrsylv.py	/^        def dots(L,R):$/;"	f	function:lsqrsylv/dotsylv
+dotsylv	algorithm.py	/^    def dotsylv(V):$/;"	f	function:solveGeneralizedSylvester
+dotsylv	lsqrsylv.py	/^    def dotsylv(V):$/;"	f	function:lsqrsylv
+double	ThreadFunc.py	/^    def double(x):$/;"	f	function:test_tmap
+Ds	newalg.py	/^Ds=[]$/;"	v
+E	SVD.py	/^E = E * sign(E[0,0])$/;"	v
+E	SVD.py	/^E = E \/ 101$/;"	v
+E	SVD.py	/^E=getLeadingSingularVects(A,3).T$/;"	v
+Enron	benchmark.py	/^def Enron():$/;"	f
+estimator	Evaluation.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	Evaluation.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	EvaluationFiber.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	EvaluationFiber.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+Eval	matlab.py	/^    def Eval(exp):$/;"	m	class:Matlab
+evaluate	ExecuterArtificial.py	/^def evaluate(Mask,unobserved):$/;"	f
+evaluate	ExecuterBonnie.py	/^def evaluate(Mask,unobserved):$/;"	f
+evaluate	ExecuterFlow.py	/^def evaluate(Mask,unobserved):$/;"	f
+EvaluateCompletion	Evaluation.py	/^def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletion	EvaluationFiber.py	/^def EvaluateCompletion(data,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	Evaluation.py	/^def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	EvaluationFiber.py	/^def EvaluateCompletionMain(data,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+evaluateData	Evaluation.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
+evaluateData	EvaluationFiber.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
+Evaluation_CP	tensor.py	/^def Evaluation_CP():$/;"	f
+Evaluation_CP	tensortest.py	/^def Evaluation_CP():$/;"	f
+Evaluation_Tucker	tensor.py	/^def Evaluation_Tucker():$/;"	f
+Evaluation_Tucker	tensortest.py	/^def Evaluation_Tucker():$/;"	f
+exectimes	Executer.py	/^exectimes = 6$/;"	v
+exectimes	ExecuterArtificial.py	/^exectimes = 2$/;"	v
+exectimes	ExecuterBonnie.py	/^exectimes = 1$/;"	v
+exectimes	ExecuterEnron.py	/^exectimes = 4$/;"	v
+exectimes	ExecuterFlow.py	/^exectimes = 2$/;"	v
+exectimes	ExecuterRandomtest.py	/^exectimes = 6$/;"	v
+exectimes	ExecuterSugar.py	/^exectimes = 4$/;"	v
+exectimes	ExecuterThreeD.py	/^exectimes = 1$/;"	v
+exectimes	ExecuterWine.py	/^exectimes = 1$/;"	v
+expand	algorithm.py	/^def expand(G,As):$/;"	f
+F	SVD.py	/^F = F * sign(F[0,0])$/;"	v
+F	SVD.py	/^F=getLeadingSingularVects_obs(A,3).T$/;"	v
+fig	benchmark.py	/^    fig = plt.figure()$/;"	v
+Flow_Injection	benchmark.py	/^def Flow_Injection():$/;"	f
+forkeval	Evaluation.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
+forkeval	EvaluationFiber.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
+fuga	ThreadFunc.py	/^    def fuga(a): #something time-consuming procedure #2$/;"	f	function:test_parallel
+GenerateRandomSeparation	Toolbox.py	/^def GenerateRandomSeparation(targetIndeces,size):$/;"	f
+Get	matlab.py	/^    def Get(name):$/;"	m	class:Matlab
+getAxis	algorithm.py	/^def getAxis(dim,n):$/;"	f
+getAxis	TensorComputation.py	/^    def getAxis(self, dim,n):$/;"	m	class:TensorCoputation
+getBonnie	benchmark.py	/^def getBonnie(mat):$/;"	f
+getG	algorithm.py	/^def getG(X,As):$/;"	f
+getG	TensorComputation.py	/^    def getG(self,X,As):$/;"	m	class:TensorCoputation
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial2
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial3
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:ArtificialTucker
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Bonnie
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Enron
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Flow_Injection
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:RandomSmallTensor
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Sugar
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:ThreeDNoseData
+getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Wine_v6
+getLaplacian	RRMF.py	/^def getLaplacian(A):$/;"	f
+getLeadingEigenVects	algorithm.py	/^def getLeadingEigenVects(X,R):$/;"	f
+getLeadingEigenVects_obs	SVD.py	/^def getLeadingEigenVects_obs(X,R):$/;"	f
+getLeadingSingularVects	algorithm.py	/^def getLeadingSingularVects(X,R):$/;"	f
+getLeadingSingularVects	SVD.py	/^def getLeadingSingularVects(X,R):$/;"	f
+getLeadingSingularVects_obs	SVD.py	/^def getLeadingSingularVects_obs(X,R):$/;"	f
+getM	algorithm.py	/^            def getM(i):$/;"	f	function:CPDistanceStep
+getSeparatingArraySize	Evaluation.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+getSeparatingArraySize	EvaluationFiber.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial2
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial3
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:ArtificialTucker
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Bonnie
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Enron
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Flow_Injection
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:RandomSmallTensor
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Sugar
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:ThreeDNoseData
+getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Wine_v6
+get_input	ThreadFunc.py	/^    def get_input(self):$/;"	m	class:tmap
+get_transposing_permutation	algorithm.py	/^    def get_transposing_permutation(n,dim):$/;"	f	function:unfold
+get_transposing_permutation	TensorComputation.py	/^        def get_transposing_permutation(n,dim):$/;"	f	function:TensorCoputation.unfold
+get_unfolding_matrix_size	algorithm.py	/^def get_unfolding_matrix_size(A, n):$/;"	f
+get_unfolding_matrix_size	TensorComputation.py	/^    def get_unfolding_matrix_size(self, A, n):$/;"	m	class:TensorCoputation
+handle_input	ThreadFunc.py	/^    def handle_input(self, input):$/;"	m	class:tmap
+hoge	ThreadFunc.py	/^    def hoge(a): $/;"	f	function:test_parallel
+HOOI	algorithm.py	/^def HOOI(X,Rs,alpha = 0.0,Ls = None):$/;"	f
+HOOIProdstep	algorithm.py	/^def HOOIProdstep(G,As,X,Rs,alpha = 0.0,Ls=None):$/;"	f
+HOOIstep	algorithm.py	/^def HOOIstep(G,As,X,Rs,alpha = 0.0,Ls=None):$/;"	f
+HOOI_obsolete	algorithm.py	/^def HOOI_obsolete(X,Rs,alpha = 0.0,Ls = None):$/;"	f
+HOSVD	algorithm_old.py	/^def HOSVD(X,Rs):$/;"	f
+Hproduct	algorithm.py	/^def Hproduct(A,B):$/;"	f
+Hproduct	TensorComputation.py	/^    def Hproduct(self, A,B):$/;"	m	class:TensorCoputation
+im	benchmark.py	/^    im = plt.imshow(data)$/;"	v
+indecesOfEvaluationBlocks	Evaluation.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
+indecesOfEvaluationBlocks	EvaluationFiber.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
+initializeAs	algorithm.py	/^def initializeAs(X,Rs):$/;"	f
+InitializeDiagAndSimilarity	Completion.py	/^def InitializeDiagAndSimilarity(Y,Ls):$/;"	f
+KRproduct	algorithm.py	/^def KRproduct(A,B):$/;"	f
+KRproduct	TensorComputation.py	/^    def KRproduct(self, A,B):$/;"	m	class:TensorCoputation
+Learn3	RRMF.py	/^def Learn3(X,A,D):$/;"	f
+Logger	debug.py	/^class Logger:$/;"	c
+logger	Executer.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	Executer.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	ExecuterEnron.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	ExecuterEnron.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	ExecuterEnron.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	ExecuterEnron.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+logger	ExecuterSugar.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	ExecuterSugar.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	ExecuterSugar.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	ExecuterSugar.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+logger	ExecuterThreeD.py	/^    logger = Logger(dataname+"_Distance")$/;"	v
+logger	ExecuterWine.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	ExecuterWine.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	ExecuterWine.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	ExecuterWine.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+Logger	logger.py	/^class Logger:$/;"	c
+lossFunction	Evaluation.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lossFunction	EvaluationFiber.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lsqrsylv	lsqrsylv.py	/^def lsqrsylv(Left,Right, C, damp=0.0, atol=1e-8, btol=1e-8, conlim=1e8,$/;"	f
+lyap	algorithm.py	/^def lyap(A,B,C):$/;"	f
+lyap	matlab.py	/^    def lyap(A,B,C):$/;"	m	class:Matlab
+map	forkmap.py	/^def map(function, *sequence):$/;"	f
+map	paralellmap.py	/^def map(function, *sequence):$/;"	f
+mapreducetest	ThreadFunc.py	/^def mapreducetest():$/;"	f
+Matlab	matlab.py	/^class Matlab:$/;"	c
+MaximizeTraceAX	algorithm.py	/^def MaximizeTraceAX(A):$/;"	f
+Methods	methods.py	/^class Methods:$/;"	c
+mgs	algorithm.py	/^def mgs(a):$/;"	f
+mgs	SVD.py	/^def mgs(a):$/;"	f
+mkfactor	benchmark.py	/^        def mkfactor(size,rank):$/;"	f	function:Artificial3/getTensor
+mkfactor	benchmark.py	/^        def mkfactor(size,rank):$/;"	f	function:ArtificialTucker/getTensor
+mkfactor	benchmark.py	/^        def mkfactor(size,rank,L,alpha):$/;"	f	function:Artificial/getTensor
+mlab	mlabwrap.py	/^mlab = MlabWrap()$/;"	v
+MlabConversionError	mlabwrap.py	/^class MlabConversionError(Exception):$/;"	c
+MlabError	mlabwrap.py	/^MlabError = mlabraw.error$/;"	v
+MlabObjectProxy	mlabwrap.py	/^class MlabObjectProxy(object):$/;"	c
+MlabWrap	mlabwrap.py	/^class MlabWrap(object):$/;"	c
+mlab_command	mlabwrap.py	/^        def mlab_command(*args, **kwargs):$/;"	f	function:MlabWrap._make_mlab_command
+mmm	ptest.py	/^def mmm(n):$/;"	f
+ndarray	mlabwrap.py	/^    ndarray = Numeric.ArrayType$/;"	v
+ndarray	mlabwrap.py	/^    ndarray = numpy.ndarray$/;"	v
+next	ThreadFunc.py	/^    def next(self):$/;"	m	class:tfilter
+next	ThreadFunc.py	/^    def next(self):$/;"	m	class:tmap
+Nproduct	algorithm.py	/^def Nproduct(X,U,n):$/;"	f
+Nproduct	TensorComputation.py	/^    def Nproduct(self, X,U,n):$/;"	m	class:TensorCoputation
+Open	matlab.py	/^    def Open():$/;"	m	class:Matlab
+p	benchmark.py	/^        def p(obj):$/;"	f	function:ArtificialTucker/getTensor
+parallel	ThreadFunc.py	/^def parallel(*settings):$/;"	f
+parallelizable	forkmap.py	/^def parallelizable(maxchildren=2, perproc=None):$/;"	f
+parallelizable	paralellmap.py	/^def parallelizable(maxchildren=2, perproc=None):$/;"	f
+prime	ThreadFunc.py	/^    def prime(n):$/;"	f	function:test_tfilter
+printline	logger.py	/^    def printline(self,message):$/;"	m	class:Logger
+Ps	newalg.py	/^Ps=[]$/;"	v
+Put	matlab.py	/^    def Put(name,val):$/;"	m	class:Matlab
+RandomObservedTensorStream	DataStream.py	/^def RandomObservedTensorStream(shape,unobservedRate):$/;"	f
+RandomSmallTensor	benchmark.py	/^def RandomSmallTensor():$/;"	f
+randomTensorOfNorm	algorithm.py	/^def randomTensorOfNorm(sizelist,ranks,std):$/;"	f
+randomTensorOfNorm	mattest.py	/^def randomTensorOfNorm(sizelist,ranks):$/;"	f
+randomTensorOfNorm	TensorComputation.py	/^    def randomTensorOfNorm(self, sizelist,ranks,std):$/;"	m	class:TensorCoputation
+ranks	ExecuterArtificial.py	/^ranks=[2]$/;"	v
+ranks	ExecuterFlow.py	/^ranks = [4]$/;"	v
+ranks	ExecuterThreeD.py	/^ranks = [3]$/;"	v
+recvmessage	forkmap.py	/^    def recvmessage(myend):$/;"	f	function:map
+recvmessage	paralellmap.py	/^    def recvmessage(myend):$/;"	f	function:map
+RedSVD	SVD.py	/^def RedSVD(A,R):$/;"	f
+Release	debug.py	/^    def Release(self):$/;"	m	class:Logger
+Release	logger.py	/^    def Release(self):$/;"	m	class:Logger
+resetRRMFCP	newalg.py	/^def resetRRMFCP():$/;"	f
+RRMFCP	algorithm.py	/^def RRMFCP(X,R,beta,Ls=None,alpha=0,Ps=None,Ds=None):$/;"	f
+RRMFCPProdstep	algorithm.py	/^def RRMFCPProdstep(As,X,R,beta,Ls,alpha=0,Xns = None):$/;"	f
+RRMFCPstep	algorithm.py	/^def RRMFCPstep(As,X,R,beta,Ls,Ps,Ds,alpha=0,Xns = None):$/;"	f
+RRMFCP_obsolete	newalg.py	/^def RRMFCP_obsolete(TrueX,Observed,X,R,beta,Ls=None,alpha=0,Ps=None,Ds=None):$/;"	f
+run	ThreadFunc.py	/^    def run(self):$/;"	m	class:tmap
+run	ThreadFunc.py	/^    def run(self):$/;"	m	class:_parallel
+run	ThreadFunc.py	/^    def run(self):$/;"	m	class:_treduce
+s	SVD.py	/^s=500$/;"	v
+SaveArrays	benchmark.py	/^def SaveArrays():$/;"	f
+SaveImage	benchmark.py	/^def SaveImage(X,filename,axis):$/;"	f
+saveVarsInMat	mlabwrap.py	/^def saveVarsInMat(filename, varNamesStr, outOf=None, **opts):$/;"	f
+search	ThreadFunc.py	/^    def search(args):$/;"	f	function:mapreducetest
+sendmessage	forkmap.py	/^    def sendmessage(myend, message):$/;"	f	function:map
+sendmessage	paralellmap.py	/^    def sendmessage(myend, message):$/;"	f	function:map
+separateArrayRandomly	Evaluation.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+separateArrayRandomly	EvaluationFiber.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+separateLaplacian	algorithm.py	/^def separateLaplacian(L,size):$/;"	f
+setter	Evaluation.py	/^            def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+setter	EvaluationFiber.py	/^        def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+ShuffleArray	Toolbox.py	/^def ShuffleArray(seq):$/;"	f
+solveGeneralizedSylvester	algorithm.py	/^def solveGeneralizedSylvester(Ls,Rs,C):$/;"	f
+StreamMemorizer	DataStream.py	/^class StreamMemorizer:$/;"	c
+Sugar	benchmark.py	/^def Sugar():$/;"	f
+SumCP	algorithm.py	/^def SumCP(L,A,B,C):$/;"	f
+swap	Toolbox.py	/^    def swap(arr,a,b):$/;"	f	function:ShuffleArray
+swapIndex	algorithm.py	/^def swapIndex(n):$/;"	f
+swapIndex	TensorComputation.py	/^    def swapIndex(self, n):$/;"	m	class:TensorCoputation
+sylvesterColumnwiseUpdating	algorithm.py	/^def sylvesterColumnwiseUpdating(P,D,B,C,X):$/;"	f
+Take	Toolbox.py	/^def Take(gen,n):$/;"	f
+TensorCoputation	TensorComputation.py	/^class TensorCoputation:$/;"	c
+test	ThreadFunc.py	/^def test():$/;"	f
+testCompletion	mattest.py	/^def testCompletion():$/;"	f
+testCompletion	tensor.py	/^def testCompletion():$/;"	f
+testCompletion	tensortest.py	/^def testCompletion():$/;"	f
+testCP	tensor.py	/^def testCP():$/;"	f
+testCP	tensortest.py	/^def testCP():$/;"	f
+testL	tensor.py	/^def testL():$/;"	f
+testlogger	debug.py	/^def testlogger():$/;"	f
+testlogger	logger.py	/^def testlogger():$/;"	f
+testTucker	mattest.py	/^def testTucker():$/;"	f
+testTucker	tensor.py	/^def testTucker():$/;"	f
+testTucker	tensortest.py	/^def testTucker():$/;"	f
+test_parallel	ThreadFunc.py	/^def test_parallel():$/;"	f
+test_tfilter	ThreadFunc.py	/^def test_tfilter(numThreads):$/;"	f
+test_tmap	ThreadFunc.py	/^def test_tmap(numThreads):$/;"	f
+test_treduce	ThreadFunc.py	/^def test_treduce(numThreads):$/;"	f
+tfilter	ThreadFunc.py	/^class tfilter(tmap):$/;"	c
+ThreeDNoseData	benchmark.py	/^def ThreeDNoseData():$/;"	f
+timeouthandler	forkmap.py	/^            def timeouthandler(signum, frame):$/;"	f	function:map/recvmessage
+timeouthandler	paralellmap.py	/^            def timeouthandler(signum, frame):$/;"	f	function:map/recvmessage
+timestwo	forkmap.py	/^    def timestwo(x, y):$/;"	f
+timestwo	paralellmap.py	/^    def timestwo(x, y):$/;"	f
+tmap	ThreadFunc.py	/^class tmap:$/;"	c
+ToArray	Toolbox.py	/^def ToArray(gen):$/;"	f
+treduce	ThreadFunc.py	/^def treduce(func, biglist, numthreads=5):$/;"	f
+TuckerDistanceStep	algorithm.py	/^def TuckerDistanceStep(G,As,X,Rs,Ls,alpha=0.0):$/;"	f
+TuckerKprodStep	algorithm.py	/^def TuckerKprodStep(G,As,X,Rs,Ds,Ws,PWs,DWs,alpha = 0.0):$/;"	f
+TuckerKsumStep	algorithm.py	/^def TuckerKsumStep(G,As,X,Rs,Ls,Ps,Ds,alpha = 0.0):$/;"	f
+unfold	algorithm.py	/^def unfold(A, n):$/;"	f
+unfold	TensorComputation.py	/^    def unfold(self, A, n):$/;"	m	class:TensorCoputation
+unobservedRates	ExecuterThreeD.py	/^unobservedRates = array([0.75,0.9,0.95,0.99])$/;"	v
+Wine_v6	benchmark.py	/^def Wine_v6():$/;"	f
+Write	debug.py	/^    def Write(self,message):$/;"	m	class:Logger
+Write	logger.py	/^    def Write(self,message="",disp=True):$/;"	m	class:Logger
+WriteLine	debug.py	/^    def WriteLine(self,message):$/;"	m	class:Logger
+WriteLine	logger.py	/^    def WriteLine(self,message="",disp=True):$/;"	m	class:Logger
+Wtest	mattest.py	/^Wtest = array($/;"	v
+Wtest	tensor.py	/^Wtest = array($/;"	v
+Wtest	tensortest.py	/^Wtest = array($/;"	v
+X	benchmark.py	/^    X = Bonnie()["X"]$/;"	v
+Ytest	mattest.py	/^Ytest = array($/;"	v
+Ytest	tensor.py	/^Ytest = array($/;"	v
+Ytest	tensortest.py	/^Ytest = array($/;"	v
+_convert_index	mlabwrap.py	/^    def _convert_index(self, index):$/;"	m	class:MlabObjectProxy
+_do	mlabwrap.py	/^    def _do(self, cmd, *args, **kwargs):$/;"	m	class:MlabWrap
+_flush_write_stdout	mlabwrap.py	/^def _flush_write_stdout(s):$/;"	f
+_format_struct	mlabwrap.py	/^    def _format_struct(self, varname):$/;"	m	class:MlabWrap
+_get	mlabwrap.py	/^    def _get(self, name, remove=False):$/;"	m	class:MlabWrap
+_get_cell	mlabwrap.py	/^    def _get_cell(self, varname):$/;"	m	class:MlabWrap
+_get_part	mlabwrap.py	/^    def _get_part(self, to_get):$/;"	m	class:MlabObjectProxy
+_get_values	mlabwrap.py	/^    def _get_values(self, varnames):$/;"	m	class:MlabWrap
+_handle_input	ThreadFunc.py	/^    def _handle_input(self):$/;"	m	class:tmap
+_handle_input	ThreadFunc.py	/^    def _handle_input(self):$/;"	m	class:_treduce
+_make_mlab_command	mlabwrap.py	/^    def _make_mlab_command(self, name, nout, doc=None):$/;"	m	class:MlabWrap
+_make_proxy	mlabwrap.py	/^    def _make_proxy(self, varname, parent=None, constructor=MlabObjectProxy):$/;"	m	class:MlabWrap
+_manually_convert	mlabwrap.py	/^    def _manually_convert(self, varname, vartype):$/;"	m	class:MlabWrap
+_matlab_str_repr	mlabwrap.py	/^    def _matlab_str_repr(s):$/;"	m	class:MlabObjectProxy
+_matlab_str_repr	mlabwrap.py	/^    _matlab_str_repr = staticmethod(_matlab_str_repr)$/;"	v	class:MlabObjectProxy
+_parallel	ThreadFunc.py	/^class _parallel:$/;"	c
+_process_func	ThreadFunc.py	/^    def _process_func(self,*args,**kwargs):$/;"	m	class:_parallel
+_set	mlabwrap.py	/^    def _set(self, name, value):$/;"	m	class:MlabWrap
+_set_part	mlabwrap.py	/^    def _set_part(self, to_set, value):$/;"	m	class:MlabObjectProxy
+_sym_ortho	lsqrsylv.py	/^def _sym_ortho(a,b):$/;"	f
+_treduce	ThreadFunc.py	/^class _treduce(tmap):$/;"	c
+_var_type	mlabwrap.py	/^    def _var_type(self, varname):$/;"	m	class:MlabWrap
+__all__	lsqrsylv.py	/^__all__ = ['lsqr']$/;"	v
+__all__	mlabwrap.py	/^    __all__ = [] #XXX a hack, so that this class can fake a module; don't mutate$/;"	v	class:MlabWrap
+__all__	mlabwrap.py	/^__all__ = ['mlab', 'saveVarsInMat', 'MlabWrap', 'MlabError']$/;"	v
+__all__	ThreadFunc.py	/^__all__ = ['tmap','treduce','tfilter', 'parallel','parallel']$/;"	v
+__author__	forkmap.py	/^__author__  = "Kirk Strauser <kirk@strauser.com>"$/;"	v
+__author__	mlabwrap.py	/^__author__   = "Alexander Schmolck <a.schmolck@gmx.net>"$/;"	v
+__author__	paralellmap.py	/^__author__  = "Kirk Strauser <kirk@strauser.com>"$/;"	v
+__date__	forkmap.py	/^__date__    = "$Date: 2007-05-24 10:56:44 -0500 (Thu, 24 May 2007) $"$/;"	v
+__date__	paralellmap.py	/^__date__    = "$Date: 2007-05-24 10:56:44 -0500 (Thu, 24 May 2007) $"$/;"	v
+__del__	debug.py	/^    def __del__(self):$/;"	m	class:Logger	file:
+__del__	logger.py	/^    def __del__(self):$/;"	m	class:Logger	file:
+__del__	matlab.py	/^    def __del__():$/;"	m	class:Matlab	file:
+__del__	mlabwrap.py	/^    def __del__(self):$/;"	m	class:MlabObjectProxy	file:
+__del__	mlabwrap.py	/^    def __del__(self):$/;"	m	class:MlabWrap	file:
+__docformat__	mlabwrap.py	/^__docformat__ = "restructuredtext en"$/;"	v
+__getattr__	mlabwrap.py	/^    def __getattr__(self, attr):$/;"	m	class:MlabObjectProxy	file:
+__getattr__	mlabwrap.py	/^    def __getattr__(self, attr):$/;"	m	class:MlabWrap	file:
+__getitem__	mlabwrap.py	/^    def __getitem__(self, index):$/;"	m	class:CurlyIndexer	file:
+__getitem__	mlabwrap.py	/^    def __getitem__(self, index, parens='()'):$/;"	m	class:MlabObjectProxy	file:
+__getstate__	mlabwrap.py	/^    def __getstate__(self):$/;"	m	class:MlabObjectProxy	file:
+__init__	debug.py	/^    def __init__(self,name):$/;"	m	class:Logger
+__init__	logger.py	/^    def __init__(self,name):$/;"	m	class:Logger
+__init__	mlabwrap.py	/^    def __init__(self):$/;"	m	class:MlabWrap
+__init__	mlabwrap.py	/^    def __init__(self, mlabwrap, name, parent=None):$/;"	m	class:MlabObjectProxy
+__init__	mlabwrap.py	/^    def __init__(self, proxy):$/;"	m	class:CurlyIndexer
+__init__	ThreadFunc.py	/^    def __init__(self, *settings):$/;"	m	class:_parallel
+__init__	ThreadFunc.py	/^    def __init__(self, func=None, data=None, numthreads=2):$/;"	m	class:tmap
+__init__	ThreadFunc.py	/^    def __init__(self, func=None, data=None, numthreads=2):$/;"	m	class:_treduce
+__iter__	mlabwrap.py	/^    def __iter__(self):$/;"	m	class:MlabObjectProxy	file:
+__iter__	ThreadFunc.py	/^    def __iter__(self):$/;"	m	class:tmap	file:
+__len__	mlabwrap.py	/^    def __len__(self):$/;"	m	class:MlabObjectProxy	file:
+__nonzero__	mlabwrap.py	/^    def __nonzero__(self):$/;"	m	class:MlabObjectProxy	file:
+__repr__	mlabwrap.py	/^    def __repr__(self):$/;"	m	class:MlabObjectProxy	file:
+__setattr__	mlabwrap.py	/^    def __setattr__(self, attr, value):$/;"	m	class:MlabObjectProxy	file:
+__setitem__	mlabwrap.py	/^    def __setitem__(self, index, value):$/;"	m	class:CurlyIndexer	file:
+__setitem__	mlabwrap.py	/^    def __setitem__(self, index, value, parens='()'):$/;"	m	class:MlabObjectProxy	file:
+__setstate__	mlabwrap.py	/^    def __setstate__(self, state):$/;"	m	class:MlabObjectProxy	file:
+__version__	forkmap.py	/^__version__ = "$Rev: 1139 $"$/;"	v
+__version__	mlabwrap.py	/^__version__ = '1.1'$/;"	v
+__version__	paralellmap.py	/^__version__ = "$Rev: 1139 $"$/;"	v

@@ -1,0 +1,6 @@
+
+éQçlURL
+Tensor unfolding with numpy | Notes
+http://pramook.wordpress.com/2009/07/14/tensor-unfolding-with-numpy/
+
+
