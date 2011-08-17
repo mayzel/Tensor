@@ -225,7 +225,8 @@ def Artificial3():
 
     return dataLoader(mat,getTensor,getLaplacian)
 def Artificial():
-    size = [130,130,150]
+    #size = [50,50,50]
+    size = [130,131,150]
     dim = len(size)
     rank = 2
     def getTensor(mat):
@@ -242,7 +243,14 @@ def Artificial():
         I = alg.createUnitTensor(dim,rank)
         X = alg.expand(I,As)
 
+        abg = sum(abs(X.flatten())) / prod(size)
+        print abg
+        noiseLevel = 0.1 
+        X += abg * noiseLevel * random.randn(*X.shape)
+
         X = X / norm(X)
+
+        #X = arange(1000).reshape(10,10,10)
         return X
 
     def getLaplacian(mat):
@@ -301,6 +309,93 @@ def Artificial2():
 
     return dataLoader(mat,getTensor,getLaplacian)
 
+def Renkanhyo():
+
+    directory = "../../benchmarkData/KashimaSensei/"
+    years = ["H16","H17","H18","H19","H20"]
+    suffix = ["-head.csv","-tail.csv"]
+
+    import csv
+
+    indexes = {}
+    wholeindexes=set([])
+    columns = 0
+
+    global wholerowIndex
+    global wholecolumnIndex
+    wholerowIndex=set([])
+    wholecolumnIndex=set([])
+
+    def readinMatrix(path):
+        global wholerowIndex
+        global wholecolumnIndex
+
+        headreader = csv.reader(file(path+suffix[0],"rU"))
+        tailreader = csv.reader(file(path+suffix[1],"rU"))
+        renkanhyo={}
+        headrows,tailrows=[],[]
+        for row in headreader:
+            headrows.append(row)
+        for row in tailreader:
+            tailrows.append(row)
+
+        colinds=[]
+        elements = {}
+        def readmatrix(rows):
+            global wholerowIndex
+            global wholecolumnIndex
+            offset=-1
+            for r,row in enumerate(rows):
+                if row[0]=="":
+                    continue
+                try:
+                    index = int(row[0])
+                except:
+                    continue
+                if offset < 0:
+                    offset = r
+                    colinds = [int(s.replace(",","")) for s in rows[offset-2][2:] if s!=""]
+                    wholecolumnIndex= wholecolumnIndex.union(colinds)
+                wholerowIndex.add(index)
+
+                for c,elem in enumerate(row[2:]):
+                    if elem != "" and elem != "0":
+                        coln = colinds[c]
+                        rown = r
+                        elements[(rown,coln)]=float(elem.replace(",",""))
+        readmatrix(headrows)
+        readmatrix(tailrows)
+
+        return elements
+
+    print "start loading"
+
+    indexes = set([])
+    elementsByYear =[]
+    for year in years:
+        path = directory+year
+        a = readinMatrix(path)
+        elementsByYear.append(a)
+
+    rows = len(wholerowIndex)
+    columns = len(wholecolumnIndex)
+    #print wholerowIndex
+    X = zeros((rows,columns,len(years)))
+    for year,elements in enumerate(elementsByYear):
+        for r,row in enumerate(wholerowIndex):
+            for c,col in enumerate(wholecolumnIndex):
+                if (row,col) in elements:
+                    X[r,c,year]=elements[(row,col)]
+
+    mat = X
+
+    def getTensor(mat):
+        pass
+
+    def getLaplacian(mat):
+        return [None,None,None]
+
+    return dataLoader(mat,getTensor,getLaplacian)
 
 def RandomSmallTensor():
     def getTensor(mat):
@@ -374,8 +469,10 @@ def SaveImage(X,filename,axis):
         sim.imsave(name,X)
 
 
-
 if __name__ == '__main__':
+    dat = Renkanhyo()
+    X = dat["X"]
+#if __name__ == '__main__':
     #dat = Flow_Injection()
     #X = dat["X"]
 #12 #89 100

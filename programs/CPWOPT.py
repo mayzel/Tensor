@@ -1,4 +1,3 @@
-
 #coding: utf-8
 
 from numpy import *
@@ -33,6 +32,96 @@ import CPWOPTcritical as critical
 #    return append(dU,append(dV,dW))
 
 
+#matrix valued l-BFGS method
+def LBFGS_matrix(f,xinit,fprime,maxiter):
+    from Queue import Queue
+
+    m = 8
+    #ベクトルはぜんぶ行列
+    #a,b / rho,s,y
+    a,b,rho,s,y = [],[],[],[],[]
+
+    x = xinit
+    q = fprime(x)
+
+    for iter in xrange(maxiter):
+        #print f(x)
+        #print "-------------------------"
+        #raw_input()
+        M = len(a)
+
+        for k in range(M)[::-1]:
+            a[k] = rho[k]*sum((s[k]*q).flatten())
+            q -= a[k]*y[k]
+
+        for k in range(M):
+            b[k] = rho[k]*sum((y[k]*q).flatten())
+            q += (a[k]-b[k])*s[k]
+
+        q = q.reshape(x.shape)
+        d = -q
+
+        #golden separation method
+        near=0.0;far=5.0
+        goldenration = 0.618033988
+        for sepaiter in range(4):
+            tn = near + (far - near)*(1-goldenration)
+            tf = near + (far - near)*goldenration
+
+            vtn,vtf = f(x + d*tn),f(x + d*tf) #どれか一つが一番小さい
+            if vtf < vtn:
+                near = tn
+            else:
+                far = tf
+        d = d * (far + near) * 0.5
+        #print (near,far)
+
+
+        xnew = x + d
+        qnew = fprime(xnew).reshape(x.shape)
+
+        snew = xnew - x
+        ynew = qnew - q
+        denom = sum((ynew*snew).flatten())
+        if denom <= 0:
+            x=xnew
+            break
+        rhonew = 1.0 / denom
+
+
+        s.append(snew)
+        y.append(ynew)
+        rho.append(rhonew)
+        a.append(0)
+        b.append(0)
+        if len(a) > m:
+            a.pop(0)
+            b.pop(0)
+            s.pop(0)
+            y.pop(0)
+            rho.pop(0)
+        x = xnew
+        q = qnew
+        #print "-------------------------"
+
+
+    return x
+
+
+#size = (10,10)
+#c=random.rand(*size)
+#def los(x):
+#    y=x-c
+#    return sum((y*y).flatten())+0.5
+#def fprime(x):
+#    return 2*(x-c)
+#
+#xinit = random.rand(*size)
+#LBFGS_matrix(los,xinit,fprime,100)
+
+
+
+
 
 """
 CP-WOPTによってテンソルを補完する
@@ -54,39 +143,84 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
 
     n,m,l=shape
     def lossfunc(U,V,W):
-        print "loss start"
+        #print "loss start"
         XO = critical.HadamardProdOfSparseTensor(U,V,W,ObservedList)
         loss = norm(XO - X)
-        print "loss end"
+        #print "loss end"
         return loss
 
     #Xinit = flattenAs(As)
     print "start bfgs"
 
 
+    J = alg.createUnitTensor(3,R)
+    #Mask = getMaskTensor(ObservedList,shape)
+
     U,V,W = As
     Lu,Lv,Lw=Ls
+    beta = 0.000
+    Lu += alpha * Lu + beta * eye(n) 
+    Lv += alpha * Lv + beta * eye(m) 
+    Lw += alpha * Lw + beta * eye(l) 
+    #Lu = zeros((n,n))
+    #Lv = zeros((m,m))
+    #Lw = zeros((l,l))
+    #Lu = beta* eye(n)
+    #Lv = beta* eye(m)
+    #Lw = beta* eye(l)
     print U.shape, V.shape, W.shape
-    maxiter=3
-    while True:
-        print "optimization of U"
-        grad = lambda vU:critical.Gradient(X,ObservedList,(vU.reshape(n,R),V,W),Lu,shape,R,0).flatten()
-        loss = lambda vU:lossfunc(vU.reshape(n,R),V,W)
-        vu = U.flatten()
-        vU = opt.fmin_bfgs(loss,U.flatten(),grad,maxiter=maxiter)
-        U = vU.reshape(n,R)
 
-        print "optimization of V"
-        grad = lambda vV:critical.Gradient(X,ObservedList,(U,vV.reshape(m,R),W),Lv,shape,R,1).flatten()
-        loss = lambda vV:lossfunc(U,vV.reshape(m,R),W)
-        vV = opt.fmin_bfgs(loss,V.flatten(),grad,maxiter=maxiter)
-        V = vV.reshape(m,R)
+    Xest = XoriginalTensor #memory consuming
 
-        print "optimization of W"
-        grad = lambda vW:critical.Gradient(X,ObservedList,(U,V,vW.reshape(l,R)),Lw,shape,R,2).flatten()
-        loss = lambda vW:lossfunc(U,V,vW.reshape(l,R))
-        vW = opt.fmin_bfgs(loss,W.flatten(),grad,maxiter=maxiter)
-        W = vW.reshape(l,R)
+    maxiter=8
+    errorold = -inf
+    import itertools
+    for steps in itertools.count():
+        #print "optimization of U"
+        #print [U.shape,V.shape,W.shape]
+        grad = lambda U:critical.Gradient(X,ObservedList,(U,V,W),Lu,shape,R,0)
+        loss = lambda U:lossfunc(U,V,W)
+        U = LBFGS_matrix(loss,U,grad,maxiter=maxiter)
+        #print [U.shape,V.shape,W.shape]
+
+        #print "optimization of V"
+        grad = lambda V:critical.Gradient(X,ObservedList,(U,V,W),Lv,shape,R,1)
+        loss = lambda V:lossfunc(U,V,W)
+        V = LBFGS_matrix(loss,V,grad,maxiter=maxiter)
+
+        #print "optimization of W"
+        grad = lambda W:critical.Gradient(X,ObservedList,(U,V,W),Lw,shape,R,2)
+        loss = lambda W:lossfunc(U,V,W)
+        W = LBFGS_matrix(loss,W,grad,maxiter=maxiter)
+
+        #grad = lambda (U,V,W)
+        
+        if steps % 3 == 1:
+            Xest = alg.expand(J,[U,V,W])
+
+        error = norm(Xest - XoriginalTensor)
+        errorObserved = lossfunc(U,V,W)
+        print "iter:",steps," err:",error ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xest)
+        errorold = error
+
+        #errortrue = norm((Xest - XoriginalTensor)*Mask)
+        #print "true ", errortrue, ", obs ",errorObserved
+
+        #raw_input()
+
+def getMaskTensor(ObsList,shape):
+    n,m,l=shape
+    W = zeros(shape)
+    size = len(ObsList)/3
+    for ind in xrange(size):
+        p = ind * 3
+        i = ObsList[p]
+        j = ObsList[p+1]
+        k = ObsList[p+2]
+        W[i,j,k] = 1
+
+    return W
+
 
 
 def createObservedCoordList(ObsTensor):
@@ -101,7 +235,10 @@ def createObservedCoordList(ObsTensor):
                     ObsList.append(k)
     return ObsList
 
-if __name__=="__main__":
+def CompressSparseTensorToVector(*param):
+    return critical.CompressSparseTensorToVector(*param)
+
+if __name__=="main__":
 
     if True:
         import benchmark 
@@ -115,7 +252,7 @@ if __name__=="__main__":
 
 
         per = 1
-        obsize = n*m*l * per / 100 / 2
+        obsize = n*m*l * per / 100 *5
         print obsize
         #Wlst=set([])
         for ind in xrange(obsize):

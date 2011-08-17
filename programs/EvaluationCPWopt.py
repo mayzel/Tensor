@@ -170,24 +170,24 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
         print "rank_estimate",rank_estimate
 
         n,m,l=shape
-        def coord(index):
-            i=index / (m*l)
-            index = index - i*m*l
-            j=index/l
-            index = index - j*l
-            k=index
-            if i >=n or j>=m or k>=l:
-                print "KDKDKDKDKD"
-            return (i,j,k)
-        ObservedList = [coord(ind) for ind in trainingData]
 
-
+        def getobslist(trainingData):
+            for index in trainingData:
+                i=index / (m*l)
+                index = index - i*m*l
+                j=index/l
+                index = index - j*l
+                k=index
+                yield i;yield j;yield k
+        
+        #ObservedList = array(reduce(lambda a,b:a+b,[coord(ind) for ind in trainingData]))
+        ObservedList = array(list(getobslist(trainingData)))
         Xobs = CPWOPT.CompressSparseTensorToVector(X,ObservedList)
         print "LEN",Xobs.shape
         print "Xobs ",type(Xobs)
         print "shape ",type(shape)
         print "trainingData ",type(trainingData)
-        return CPWOPT.CompletionGradient(Xobs,shape, ObservedList,rank_estimate,L,alpha)
+        return CPWOPT.CompletionGradient(Xobs,shape, ObservedList,rank_estimate,L,alpha,X)
 
     
 
