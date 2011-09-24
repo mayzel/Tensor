@@ -1,0 +1,35 @@
+
+
+\documentclass{jsarticle}
+\usepackage{amsthm}
+%\usepackage[mathscr]{eucal}
+\usepackage{amsmath,amssymb}
+%\usepackage[dvips]{graphicx}
+%\usepackage{graphics}
+%\usepackage{wrapfig}
+%\usepackage{ascmac}
+%\usepackage{bm}
+%
+%\usepackage{stmaryrd} %provides \llbracket and \rrbracket
+%\usepackage{fancybox}
+
+%\usepackage{subfigmat}
+%\usepackage{graphicx}
+\usepackage{bm}
+
+\begin{document}
+
+\section{Exercise15-18}
+\subsection{(15)}
+$W$ is not a vector space.
+
+Choose a point $ \bm{v} = \left[ \begin{array}{c} 0 \\ -1 \\ 0 \end{array} \right] \in W $ by setting $(a,b)=(0,0)$.
+        In this case, $ 2\bm{v} = \left[ \begin{array}{c} 0 \\ -2 \\ 0 \end{array} \right] $ is not int $W$
+
+\subsection{(16)}
+
+
+
+\end{document}
+
+

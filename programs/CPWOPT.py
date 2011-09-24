@@ -64,7 +64,7 @@ def LBFGS_matrix(f,xinit,fprime,maxiter):
         #golden separation method
         near=0.0;far=5.0
         goldenration = 0.618033988
-        for sepaiter in range(4):
+        for sepaiter in range(6):
             tn = near + (far - near)*(1-goldenration)
             tf = near + (far - near)*goldenration
 
@@ -104,23 +104,7 @@ def LBFGS_matrix(f,xinit,fprime,maxiter):
         q = qnew
         #print "-------------------------"
 
-
     return x
-
-
-#size = (10,10)
-#c=random.rand(*size)
-#def los(x):
-#    y=x-c
-#    return sum((y*y).flatten())+0.5
-#def fprime(x):
-#    return 2*(x-c)
-#
-#xinit = random.rand(*size)
-#LBFGS_matrix(los,xinit,fprime,100)
-
-
-
 
 
 """
@@ -137,7 +121,17 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
     N = 3
     Xns = [critical.unfold(X,n,shape,ObservedList) for n in xrange(N)]
     print "unfolded"
-    As = [SVD.getLeadingSingularVects(Xns[n],R) for n in xrange(N)]
+    As = [zeros((shape[n],R)) for n in xrange(N)]
+    #As = [SVD.getLeadingSingularVects(Xns[n],R) for n in xrange(N)]
+    Rev = 100
+    for i in xrange(Rev):
+        Asadd = [SVD.getLeadingSingularVects(Xns[n],R) for n in xrange(N)]
+        for k in xrange(N):
+            As[k] += Asadd[k]
+    for k in xrange(N):
+        As[k] /= Rev 
+        #As[k] += random.randn(shape[k],R)*0.01
+
     print "HOSVD finished"
 
 
@@ -158,55 +152,74 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
 
     U,V,W = As
     Lu,Lv,Lw=Ls
-    beta = 0.000
+    beta = 0.0001
     Lu += alpha * Lu + beta * eye(n) 
     Lv += alpha * Lv + beta * eye(m) 
     Lw += alpha * Lw + beta * eye(l) 
-    #Lu = zeros((n,n))
-    #Lv = zeros((m,m))
-    #Lw = zeros((l,l))
-    #Lu = beta* eye(n)
-    #Lv = beta* eye(m)
-    #Lw = beta* eye(l)
     print U.shape, V.shape, W.shape
 
     Xest = XoriginalTensor #memory consuming
 
-    maxiter=8
-    errorold = -inf
+    threshold = 0.01*const.ConvergenceThreshold_NewCompletion
+    maxiter=100
+    bfgs_maxiter=3
+    errorold = inf
+    errorTest = inf
+    expandedX = 0
     import itertools
     for steps in itertools.count():
         #print "optimization of U"
         #print [U.shape,V.shape,W.shape]
         grad = lambda U:critical.Gradient(X,ObservedList,(U,V,W),Lu,shape,R,0)
         loss = lambda U:lossfunc(U,V,W)
-        U = LBFGS_matrix(loss,U,grad,maxiter=maxiter)
+        U = LBFGS_matrix(loss,U,grad,maxiter=bfgs_maxiter)
         #print [U.shape,V.shape,W.shape]
 
         #print "optimization of V"
         grad = lambda V:critical.Gradient(X,ObservedList,(U,V,W),Lv,shape,R,1)
         loss = lambda V:lossfunc(U,V,W)
-        V = LBFGS_matrix(loss,V,grad,maxiter=maxiter)
+        V = LBFGS_matrix(loss,V,grad,maxiter=bfgs_maxiter)
 
         #print "optimization of W"
         grad = lambda W:critical.Gradient(X,ObservedList,(U,V,W),Lw,shape,R,2)
         loss = lambda W:lossfunc(U,V,W)
-        W = LBFGS_matrix(loss,W,grad,maxiter=maxiter)
+        W = LBFGS_matrix(loss,W,grad,maxiter=bfgs_maxiter)
 
         #grad = lambda (U,V,W)
         
-        if steps % 3 == 1:
+        if False:
+            XO = critical.HadamardProdOfSparseTensor(U,V,W,ObservedList)
+            normrate = norm(XO) / norm(X)
+            qubicnormrate = normrate ** (1.0 / 3)
+            U /= qubicnormrate
+            V /= qubicnormrate
+            W /= qubicnormrate
+
+        if steps % 5 == 1:
             Xest = alg.expand(J,[U,V,W])
+            errorTest = norm(Xest - XoriginalTensor)
+            #print U
 
-        error = norm(Xest - XoriginalTensor)
         errorObserved = lossfunc(U,V,W)
-        print "iter:",steps," err:",error ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xest)
-        errorold = error
 
-        #errortrue = norm((Xest - XoriginalTensor)*Mask)
-        #print "true ", errortrue, ", obs ",errorObserved
 
-        #raw_input()
+        if steps % 5 == 1:
+            print "iter:",steps," err:",errorTest ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xest)
+
+        faultThreshold = 1e4
+        if steps > maxiter or errorObserved > faultThreshold or errorObserved != errorObserved:
+            #やりなおし
+            return CompletionGradient(X,shape,ObservedList,R,Ls,alpha,XoriginalTensor)
+
+        if abs(errorObserved - errorold) < threshold:
+            expandedX = alg.expand(J,[U,V,W])
+            print "estimation finished in ",(steps+1),"steps."
+            break
+
+        errorold = errorObserved
+
+    return expandedX
+
 
 def getMaskTensor(ObsList,shape):
     n,m,l=shape

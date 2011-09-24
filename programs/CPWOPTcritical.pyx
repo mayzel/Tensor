@@ -10,7 +10,7 @@ import scipy.sparse as sparse
 
 @cython.boundscheck(False)
 def HadamardProdOfSparseTensor(np.ndarray[np.float_t,ndim=2] U not None,np.ndarray[np.float_t,ndim=2] V not None,np.ndarray[np.float_t,ndim=2] W not None,np.ndarray[np.int_t,ndim=1] Obs not None):
-    print "HP start"
+    #print "HP start"
     cdef int size
     cdef int n,m,l
     #cdef Coords *Obs
@@ -41,14 +41,14 @@ def HadamardProdOfSparseTensor(np.ndarray[np.float_t,ndim=2] U not None,np.ndarr
             sumval += U[i,r]*V[j,r]*W[k,r]
         data[n] = sumval
     
-    print "HP end"
+    #print "HP end"
     return data
 
 
 @cython.boundscheck(False)
 def unfold(np.ndarray[np.float_t,ndim=1] X not None, int mode, tuple shape not None,np.ndarray[np.int_t,ndim=1] ObsList not None):
     #X is dense vector with only observed elements
-    print "unfold start"
+    #print "unfold start"
 
     cdef int n,m,l,size,N,M,L,i,j,k
     cdef np.ndarray[np.int_t,ndim=1] col,row
@@ -67,7 +67,7 @@ def unfold(np.ndarray[np.float_t,ndim=1] X not None, int mode, tuple shape not N
             i,j,k = ObsList[n*3],ObsList[n*3+1],ObsList[n*3+2]
             row[n] = i
             col[n] = j+k*M
-        print "unfold end"
+        #print "unfold end"
         return sparse.csr_matrix((X,(row,col)),shape=(N,M*L))
     elif mode==1:
         row = np.zeros(size,dtype=int)
@@ -76,7 +76,7 @@ def unfold(np.ndarray[np.float_t,ndim=1] X not None, int mode, tuple shape not N
             i,j,k = ObsList[n*3],ObsList[n*3+1],ObsList[n*3+2]
             row[n] = j
             col[n] = i+k*N
-        print "unfold end"
+        #print "unfold end"
         return sparse.csr_matrix((X,(row,col)),shape=(M,N*L))
     else:
         row = np.zeros(size,dtype=int)
@@ -85,7 +85,7 @@ def unfold(np.ndarray[np.float_t,ndim=1] X not None, int mode, tuple shape not N
             i,j,k = ObsList[n*3],ObsList[n*3+1],ObsList[n*3+2]
             row[n] = k
             col[n] = i+j*N
-        print "unfold end"
+        #print "unfold end"
         return sparse.csr_matrix((X,(row,col)),shape=(L,N*M))
 
 
@@ -111,7 +111,7 @@ def Gradient(np.ndarray[np.float_t,ndim=1] X not None,np.ndarray[np.int_t,ndim=1
     #Ls must be given as CSR_matrix
     #Obs must be given as list of coordinate tuples
     #X is given as dense vector with only observed elements
-    print "Gradient starat"
+    #print "Gradient starat"
 
 
     cdef int n,m,l,ind,i,j,k
@@ -136,7 +136,7 @@ def Gradient(np.ndarray[np.float_t,ndim=1] X not None,np.ndarray[np.int_t,ndim=1
         dA = 2*Left_f.dot(KRproduct(W,U)) + L.dot(V)
     else:
         dA = 2*Left_f.dot(KRproduct(V,U)) + L.dot(W)
-    print "Gradient end"
+    #print "Gradient end"
     return dA.squeeze()
 
     #return squeezeAs((dU,dV,dW))

@@ -225,8 +225,8 @@ def Artificial3():
 
     return dataLoader(mat,getTensor,getLaplacian)
 def Artificial():
-    #size = [50,50,50]
-    size = [130,131,150]
+    size = [30,30,30]
+    #size = [130,131,150]
     dim = len(size)
     rank = 2
     def getTensor(mat):
@@ -377,6 +377,9 @@ def Renkanhyo():
         a = readinMatrix(path)
         elementsByYear.append(a)
 
+    sorted(wholerowIndex)
+    sorted(wholecolumnIndex)
+
     rows = len(wholerowIndex)
     columns = len(wholecolumnIndex)
     #print wholerowIndex
@@ -390,10 +393,39 @@ def Renkanhyo():
     mat = X
 
     def getTensor(mat):
-        pass
+        return X
 
     def getLaplacian(mat):
-        return [None,None,None]
+        #idを1万で割って同じ人達をくくる
+        (r,c,y) = X.shape
+        cav = 100000
+        categoryold = -1 
+        blocks = []
+        begin = -1
+        for r,row in enumerate(wholerowIndex):
+            category = row / cav
+            if category!=categoryold:
+                if begin>0:
+                    blocks.append(createCompleteLaplacian(r - begin))
+                begin = r
+                categoryold=category
+        L1 = block_diag(blocks)
+
+        blocks=[]
+        begin=-1
+        categoryold=-1
+        for c,col in enumerate(wholecolumnIndex):
+            category = col / cav
+            if category!=categoryold:
+                if begin>0:
+                    blocks.append(createCompleteLaplacian(c - begin))
+                begin = c
+                categoryold=category
+        L2 = block_diag(blocks)
+
+
+        T = createChainLaplacian(len(years))
+        return [L1,L2,T]
 
     return dataLoader(mat,getTensor,getLaplacian)
 

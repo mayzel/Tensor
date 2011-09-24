@@ -8,7 +8,7 @@ from Evaluation import *
 
 data = benchmark.Artificial3()
 
-dataname = "Artificial0817"
+dataname = "Artificial0302"
 
 def evaluate(Mask,unobserved):
     prefix = Mask + "_" + dataname

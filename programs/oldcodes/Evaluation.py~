@@ -37,10 +37,10 @@ def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedR
     テンソル補完の方法を指定して、クロスバリデーションにより評価し、結果を逐次出力する。
 
     """
-    #try:
-    EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates,alpha,ranks)
-    #except Exception,e:
-        #print e
+    try:
+        EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates,alpha,ranks)
+    except Exception,e:
+        print e
 
 
 def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):

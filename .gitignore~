@@ -1,0 +1,4 @@
+*.log
+benchmarkData
+*.o
+*.so
