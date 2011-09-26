@@ -5,9 +5,6 @@ from numpy.linalg import *
 
 import itertools as it
 
-import sys
-sys.path.insert(0,"oldcodes")
-
 import const
 
 from logger import *
@@ -22,7 +19,7 @@ import SVD
 
 import CPWOPTcritical as critical
 
-
+global info
 
 #def flattenAs(Div):
 #    (dU,dV,dW) = Div

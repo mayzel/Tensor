@@ -1,4 +1,241 @@
-class Decomposition:
-	def Decompose():
-		pass
+#coding: utf-8
 
+import numpy
+import scipy
+from TensorComputation import *
+
+class Decomposition:
+    def DecomposeOneStep(self,As=None,G=None,X=None,Rs=0,alpha=0.0,beta=0.0,Ls=None,Ps=None,Ds=None,Xns=None):
+        #alpha: for Relation 
+        #beta: for U,V,W
+        pass
+
+    def solveGeneralizedSylvester(self,Ls,Rs,C):
+        """
+        一般化シルベスタ方程式を解く
+        L1XR1 + L2XR2 + ... = C
+        ただし、L1¥otimesR1 + L2¥otimesR2 ... は正定値対称
+        またLi Riはすべて正方
+        """
+        def dotsylv(V):
+            def dots(L,R):
+                if L == None and R == None:
+                    return V
+                elif L != None and R == None:
+                    return dot(L,V)
+                elif L==None and R!=None:
+                    return dot(V,R)
+                else:
+                    return dot(dot(L,V),R)
+            terms = (dots(Ls[i],Rs[i]) for i in xrange(len(Ls)))
+            return reduce(lambda a,b:a+b,terms)
+
+        time = prod(C.shape) +1
+        #time = 4
+        #w = Ls[0].shape[1]
+        #h = Rs[0].shape[0]
+        X = zeros(C.shape)
+
+        R = C.copy()
+        P = R.copy()
+        rtr = sum(R*R)
+        import itertools
+        for k in itertools.count():
+            LPR = dotsylv(P)
+            alpha = rtr / sum(P*LPR)
+            Xnew = X + alpha * P
+            Rnew = R - alpha * LPR
+    #if Rnew is sufficiently small then exit loop
+            if k >= time:
+                break
+            rtrnew = sum(Rnew*Rnew)
+            beta = rtrnew / rtr
+            P = Rnew + beta*P
+            R = Rnew
+            X = Xnew
+            rtr = rtrnew
+        return Xnew
+    #columnwise minimizing : tr(U'AU) + tr(UBU') - 2tr(UX')
+    #where A and B are symmetric
+    #update AX + XB = C 
+    #P and D is eigenvalue decomp of A
+    def sylvesterColumnwiseUpdating(self,P,D,B,C,X):
+        """
+        列ごとにSylvester方程式を解く。どうやらAとBが正定値でないと収束は保証されないっぽい。
+        """
+        (n,m) = X.shape
+        for d in xrange(m):
+            de = 1.0 / (D + B[d,d])
+            Linv = dot(P*de,P.T)
+
+            b = B[:,d]
+            R = C[:,d] - dot(X,b) + X[:,d] * B[d,d]
+
+            u = dot(Linv,R)
+            X[:,d] = u
+        return X
+
+    def initializeAs(self,X,Rs):
+        """
+        反復を開始する前の因子の初期化。Xを展開し特異ベクトルをとる。
+        """
+        N = X.ndim
+        return [getLeadingSingularVects(unfold(X,n), Rs[n]) for n in xrange(N)]
+
+    def separateLaplacian(self, L,size):
+        """
+        グラフラプラシアンを類似度行列と対角成分に分解
+        """
+        if L == None:
+            return ones(size),eye(size)
+
+        D = diag(L)+1
+        K = diag(D) - L
+        
+        return D,K
+
+class TuckerSum(Decomposition):
+    def DecomposeOneStep(self,As,G,X,Rs,alpha=0.0,beta=0.0,Ls=None,Ps=None,Ds=None,Xns=None):
+        return self.HOOIstep(G,As,X,Rs,alpha,Ls)
+
+    def HOOIstep(self,G,As,X,Rs,alpha = 0.0,Ls=None):
+        """
+        Tucker分解1ステップ
+        """
+        N = X.ndim
+        if As == None:
+            As = Decomposition.initializeAs(self,X,Rs)
+        for time in xrange(1):
+            for n in xrange(N):
+                Y = X
+                for i in xrange(N):
+                    if i != n:
+                        Y = Nproduct(Y,transpose(As[i]),i) 
+
+                Yn = unfold(Y,n)
+                
+                L = Ls[n]
+                if L != None:
+                    An = getLeadingEigenVects(dot(Yn,Yn.T) - alpha * L, Rs[n])
+                else:
+                    An = getLeadingSingularVects(Yn,Rs[n])
+                As[n] = An
+
+        G = getG(X,As)
+        return (G,As)
+class TuckerProd(Decomposition):
+    def DecomposeOneStep(self,As=None,G=None,X=None,Rs=0,alpha=0.0,beta=0.0,Ls=None,Ps=None,Ds=None,Xns=None):
+        return self.HOOIProdstep(G,As,X,Rs,alpha,Ls)
+
+    def HOOIProdstep(self,G,As,X,Rs,alpha = 0.0,Ls=None):
+        """
+        Kronecker積バージョン/Tucker分解1ステップ
+        """
+        N = X.ndim
+        print "hogefugahofe"
+        if As == None:
+            As = Decomposition.initializeAs(self,X,Rs)
+        for time in xrange(1):
+            for n in xrange(N):
+                Y = X
+                for i in xrange(N):
+                    if i != n:
+                        Y = Nproduct(Y,transpose(As[i]),i) 
+
+                Yn = unfold(Y,n)
+                
+                DS=alpha
+                KS=alpha
+                for i in xrange(N):
+                    if i != n:
+                        size = As[i].shape[0]
+                        D,K=Decomposition.separateLaplacian(self,Ls[i],size)
+                        DS = DS * trace(dot(As[i].T*D,As[i]))
+                        KS = KS * trace(dot(As[i].T,dot(K,As[i])))
+
+                size = As[n].shape[0]
+                D,K=Decomposition.separateLaplacian(self,Ls[n],size)
+                D = diag(D)
+                S = dot(Yn,Yn.T) 
+                S = S - DS*D + KS*K
+
+                As[n] = getLeadingEigenVects(S , Rs[n])
+
+        G = getG(X,As)
+        return (G,As)
+class CPSum(Decomposition):
+    def DecomposeOneStep(self,As=None,G=None,X=None,Rs=0,alpha=0.0,beta=0.0,Ls=None,Ps=None,Ds=None,Xns=None):
+        if not type(Rs) == int:
+            assert(False)
+        return self.RRMFCPstep(As,X,Rs,beta,Ls,Ps,Ds,alpha,Xns)
+
+    def RRMFCPstep(self,As,X,R,beta,Ls,Ps,Ds,alpha=0,Xns = None):
+        """
+        CP分解1ステップ
+        """
+        N = X.ndim
+        if Xns == None:
+            Xns = [unfold(X,n) for n in xrange(N)]
+        if As==None:
+            As = [getLeadingSingularVects(Xns[n],R) for n in xrange(N)]
+
+        for time in xrange(1):
+            for n in xrange(N):
+                S = reduce(lambda x, y: KRproduct(y,x), [As[i] for i in range(N) if i != n]) #順序が逆
+                StS = reduce(lambda x,y: dot(x.T,x)*dot(y.T,y), [As[i] for i in range(N) if i != n])
+                Xn = Xns[n]
+                L = Ls[n]
+                if L == None:
+                    I = eye(*StS.shape)
+                    As[n] = solve(StS + beta*I, (dot(Xn,S)).T).T
+                else:
+                    #print beta
+                    An = As[n]
+                    An = Decomposition.sylvesterColumnwiseUpdating(self,Ps[n],beta + alpha*Ds[n],StS,dot(Xn,S),An)
+                    As[n] = An
+
+        return As
+class CPProd(Decomposition):
+    def DecomposeOneStep(self,As=None,G=None,X=None,Rs=0,alpha=0.0,beta=0.0,Ls=None,Ps=None,Ds=None,Xns=None):
+        if not type(Rs) == int:
+            assert(False)
+        return self.RRMFCPProdstep(As,X,Rs,beta,Ls,alpha,Xns)
+
+    def RRMFCPProdstep(self,As,X,R,beta,Ls,alpha=0,Xns = None):
+        """
+        Kronecker積バージョン/CP分解1ステップ
+        """
+        N = X.ndim
+        if Xns == None:
+            Xns = [unfold(X,n) for n in xrange(N)]
+        if As==None:
+            As = [getLeadingSingularVects(Xns[n],R) for n in xrange(N)]
+
+
+        for time in xrange(1):
+            for n in xrange(N):
+                S = reduce(lambda x, y: KRproduct(y,x), [As[i] for i in range(N) if i != n]) #順序が逆
+                StS = reduce(lambda x,y: dot(x.T,x)*dot(y.T,y), [As[i] for i in range(N) if i != n])
+                Xn = Xns[n]
+                L = Ls[n]
+
+                DS=alpha
+                KS=alpha
+                for i in xrange(N):
+                    if i != n:
+                        size = As[i].shape[0]
+                        D,K=Decomposition.separateLaplacian(self,Ls[i],size)
+                        DS = DS * trace(dot(As[i].T*D,As[i]))
+                        KS = KS * trace(dot(As[i].T,dot(K,As[i])))
+                size = As[n].shape[0]
+                D,K=Decomposition.separateLaplacian(self,Ls[n],size)
+
+                import lsqrsylv
+                D = diag(D)
+                Left = [None, DS*D-KS*K]
+                Right = [StS,None]
+                As[n] = lsqrsylv.lsqrsylv(Left,Right,dot(Xn,S))
+                #D,P= eigh(DS*D-KS*K)
+                #As[n] = sylvesterColumnwiseUpdating(P,D,StS,dot(Xn,S),As[n])
+
+        return As

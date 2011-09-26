@@ -2,29 +2,20 @@
 
 from logger import *
 
-import sys
-sys.path.insert(0,"oldcodes")
-
+#sys.path.insert(0,"oldcodes")
 import benchmark
 
-import EvaluationCPWopt
-import Evaluation as EvaluationOld
+import EvaluationCPWopt 
+from info import *
+#import Evaluation as EvaluationOld
 
-
-info = {}
-log = {}
-
-data = benchmark.Artificial()
-#data = benchmark.Flow_Injection()
-
-dataname = "Artificial0817"
-dataname = "Flowl0817"
 
 def evaluate(Mask,unobserved):
     prefix = Mask + "_" + dataname
 
     logger = Logger(prefix+"_CPWOPT")
-    EvaluationCPWopt.EvaluateCompletion(data,Mask,"CPWOPT",True,exectimes,logger,unobserved,alpha,ranks)
+    EvaluationCPWopt.EvaluateCompletion(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
+    #EvaluationCPWopt.EvaluateCompletion(data,Mask,"CPWOPT",True,exectimes,logger,unobserved,alpha,ranks)
 
     if False:
         logger = Logger(prefix+"_Subspace_Relation")
@@ -36,19 +27,47 @@ def evaluate(Mask,unobserved):
         #EvaluationOld.EvaluateCompletion(data,Mask,"Tucker",False,exectimes,logger,unobserved,alpha,ranks)
 
 
+if __name__ == "__main__":
+    #global information
+    #method = "CPWOPT"
+    method = "CP"
+    #method = "CPProd"
+    #method = "Tucker"
+    #method = "TuckerProd"
+    exectimes = 5
+    ranks=[2]
+    alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L
+    alpha =[pow(10,x) for x in [-3]] #for L
+
+    #----------------loading data----------------
+    data = benchmark.Artificial()
+    #data = benchmark.Flow_Injection()
+
+    dataname = "Artificial0926"
+
+    masking = "Random"
+    #masking = "Fiber"
+    #masking = "Slice"
+    evaluate("Random",[0.9])
 
 
-alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L
-#alpha =[pow(10,x) for x in [-3]] #for L
-exectimes = 10
-ranks=[2]
+    #----------------file output----------------
+    import json
+    import datetime
+    name = "loggingTest"
+    d = datetime.datetime.today()
+    filename = "jsonlog/" + name + '%04d.%02d%02d.%02d%02d.%02d.log' % (d.year, d.month, d.day, d.hour, d.minute, d.second)
 
-#evaluate("Random",[0.75,0.9,0.95,0.99])
-evaluate("Random",[0.95,0.99])
-#evaluate("Random",[0.99])
-#for i in xrange(10):
-#    evaluate("Random",[0.75,0.9,0.95,0.99])
-#    evaluate("Fiber"[0.5,0.75,0.9,0.95])
-#    evaluate("Slice",[0.25,0.50,0.75,0.9])
+    fh = file(filename,"w") 
+    information = strInfo(information)
+    sttr = json.dumps(information)
+    print sttr
+    fh.write(sttr)
+    fh.close()
+
+
+
+
+
 
 

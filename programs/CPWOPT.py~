@@ -22,7 +22,7 @@ import SVD
 
 import CPWOPTcritical as critical
 
-
+global info
 
 #def flattenAs(Div):
 #    (dU,dV,dW) = Div
@@ -187,7 +187,7 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
 
         #grad = lambda (U,V,W)
         
-        if True:
+        if False:
             XO = critical.HadamardProdOfSparseTensor(U,V,W,ObservedList)
             normrate = norm(XO) / norm(X)
             qubicnormrate = normrate ** (1.0 / 3)

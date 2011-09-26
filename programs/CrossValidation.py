@@ -1,9 +1,8 @@
 # coding: utf-8
-"""@package Evaluation
-クロスバリデーションによってテンソルの補完を評価するためのコード塊
 
 """
-
+クロスバリデーション用のコード塊
+"""
 
 
 from numpy import *
@@ -17,7 +16,7 @@ import random
 
 import itertools as it
 
-import DataStream
+#import DataStream
 import benchmark
 import gc
 import functools
@@ -27,7 +26,7 @@ import forkmap
 
 #評価。
 #dataSeparator :: originalIndex -> (evaluationData, trainingData)
-def CrossValidation(
+def Evaluate(
         trainingData,
         estimator,
         lossFunction,

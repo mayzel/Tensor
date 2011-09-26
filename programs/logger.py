@@ -10,6 +10,7 @@ class Logger:
     def printline(self,message):
         print "#", message
 
+
     def __init__(self,name):
         self.flushInterval = datetime.timedelta(0,30,0)
         self.disp = True
@@ -21,8 +22,17 @@ class Logger:
 
         self.lastUpdate = d
 
+        self.info = {}
+
     def __del__(self):
         self.filestream.close()
+
+    def __setitem__(self,key,value):
+        self.info[key]=value
+
+    def __getitem__(self,key):
+        return self.info[key]
+
 
     def WriteLine(self,message="",disp=True):
         self.Write(str(message) + "\n",disp)
@@ -37,8 +47,11 @@ class Logger:
             self.filestream.flush()
             self.lastUpdate = now
 
-    def add(name,obj):
-        info[name] = obj
+    def dumpInfo(self,filename):
+        pass
+
+    #def add(self,name,obj):
+    #    info[name] = obj
 
     def Release(self):
         self.filestream.close()

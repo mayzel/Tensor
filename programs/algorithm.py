@@ -512,37 +512,6 @@ def SumCP(L,A,B,C):
     return X
 
 
-def getLeadingSingularVects(X,R):
-    """
-    大きい方からR個の左特異ベクトルをとる
-    """
-    return getLeadingEigenVects(dot(X, X.T), R)
-
-import numpy.linalg
-import scipy.linalg
-def getLeadingEigenVects(X,R):
-    """
-    大きい方からR個の固有ベクトルをとる
-    """
-    X = (X + X.T)/2
-    [val,vec] = scipy.linalg.eig(X)
-    vec = real(vec)
-    #[val,vec] = numpy.linalg.eigh(X)
-    index = argsort(val, kind='mergesort')
-    index = index[::-1]
-
-    return vec[:,index[:R]]
-
-
-
-def initializeAs(X,Rs):
-    """
-    反復を開始する前の因子の初期化。Xを展開し特異ベクトルをとる。
-    """
-    N = X.ndim
-    return [getLeadingSingularVects(unfold(X,n), Rs[n]) for n in xrange(N)]
-
-
 def getG(X,As):
     """
     テンソルと因子からTucker分解の場合に最適なコアテンソルを生成。

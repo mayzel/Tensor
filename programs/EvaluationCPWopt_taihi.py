@@ -17,11 +17,11 @@ import random
 
 import itertools as it
 
+import DataStream
 import benchmark
 import gc
 import functools
 
-from info import *
 
 def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):
     """
@@ -157,28 +157,38 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
         rs = Toolbox.GenerateRandomSeparation(targetIndeces, hiddens)
         return Toolbox.Take(rs,separatingNumber)
 
-    import CompletionMethods
-    import Decomposition
-    if method in ["Tucker","TuckerSum"]:
-        decomposition = Decomposition.TuckerSum()
-        completionMethod = CompletionMethods.Tucker(X,L,decomposition)
-    elif method in ["CP","CPSum"]:
-        print "hogehogehgoehgoe"
-        decomposition = Decomposition.CPSum()
-        completionMethod = CompletionMethods.CP(X,L,decomposition)
-    elif method == "TuckerProd":
-        decomposition = Decomposition.TuckerProd()
-        completionMethod = CompletionMethods.Tucker(X,L,decomposition)
-    elif method == "CPProd":
-        decomposition = Decomposition.CPProd()
-        completionMethod = CompletionMethods.CP(X,L,decomposition)
-    elif method == "CPWOPT":
-        completionMethod = CompletionMethods.CPWOPT(X,L)
 
-    #convert list of indeces to binary tensor
-    completionMethod.createObservedTensor = createObservedTensor
+    #methodに関係なく
+    def estimator(param,trainingData):
+        #trainingData must be given as list of coordinate tuples
+        #rank_estimate = param
+        print param
+        print len(trainingData) , " / " , elems
+        (alpha,r)=param 
+        rank_estimate = r
+        print "alpha:",alpha
+        print "rank_estimate",rank_estimate
 
-    estimator = completionMethod.estimator
+        n,m,l=shape
+
+        def getobslist(trainingData):
+            for index in trainingData:
+                i=index / (m*l)
+                index = index - i*m*l
+                j=index/l
+                index = index - j*l
+                k=index
+                yield i;yield j;yield k
+        
+        #ObservedList = array(reduce(lambda a,b:a+b,[coord(ind) for ind in trainingData]))
+        ObservedList = array(list(getobslist(trainingData)))
+        Xobs = CPWOPT.CompressSparseTensorToVector(X,ObservedList)
+        print "LEN",Xobs.shape
+        print "Xobs ",type(Xobs)
+        print "shape ",type(shape)
+        print "trainingData ",type(trainingData)
+        return CPWOPT.CompletionGradient(Xobs,shape, ObservedList,rank_estimate,L,alpha,X)
+
     
 
     def lossFunction(estimation,evalData):
@@ -195,43 +205,124 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
     log.WriteLine("Unobserved Rates:"+str(unobservedRates))
     log.WriteLine("HyperParameters alpha to try:"+str(alpha))
     log.WriteLine("hyperParameters rank to try:" + str(ranks))
-    print type(information)
-    information["setting"]={}
-    information["setting"]["method"] = method
-    information["setting"]["using relation data"] = useRelation
-    information["setting"]["rank for estimation"] = ranks
-    information["setting"]["fraction of unobserved elements"] = unobservedRates
-    information["setting"]["tested alpha"] = alpha 
-    information["setting"]["tested rank"] = ranks
-    information["result"]={}
-
-
     for unobservedRate in unobservedRates:
-        information["result"][unobservedRate]={}
         #log.WriteLine("unobserved rate, "+str(unobservedRate)+ " ")
 
         time = varianceTimes
-
-        import CrossValidation
         
         parameters = [(a,rank) for a in alpha for rank in ranks] 
-        errors = CrossValidation.Evaluate(
+        errors = CrossValidation(
                 trainingData,
                 estimator,
                 lossFunction,
                 functools.partial(evalDataGenerator,time,unobservedRate),
                 parameters,
                 functools.partial(hpOptimDataGenerator,1,unobservedRate))
-
         #[log.Write(", " + str(error),False) for error in errors]
         for error in errors:
             e = error["error"]
             param = error["param"]
             log.WriteLine("unobserved, "+ str(unobservedRate)+", param,"+str(param)+", error, "+str(e))
 
-            if not param in information["result"][unobservedRate]:
-                information["result"][unobservedRate][param]=[]
-            information["result"][unobservedRate][param].append(e)
-
-
         log.WriteLine()
+
+import forkmap
+
+#評価。
+#dataSeparator :: originalIndex -> (evaluationData, trainingData)
+def CrossValidation(
+        trainingData,
+        estimator,
+        lossFunction,
+        evaluatingDataSeparator,
+        hyperParameters,
+        parameterOptimizingDataSeparator):
+    """
+    @param trainingData 訓練データのジェネレータ
+    @param estimator ハイパーパラメータと訓練データを受け取って学習し、モデルを返す関数
+    @param lossFunction 誤差関数。評価データとモデルを受け取り、誤差を返す。
+    @param evaluatingDataSeparator 訓練データの一部を評価データとして分割するための関数
+    @param hyperParameters 最適化を行うためのハイパーパラメータの集合をジェネレータで与える。
+    @param parameterOptimizingDataSeparator 訓練データからハイパーパラメータ最適化用にデータを分割するための関数
+
+    ハイパーパラメータ最適化をしながらクロスバリデーションを行う。
+    """
+
+    #Simplified CrossValidation
+
+    global log
+
+    import forkmap 
+
+    @forkmap.parallelizable(6)
+    def evaluateData(evalAndTrainIx,hyperParameters):
+        (evalIx, trainIx) = evalAndTrainIx
+        
+        bestScore = float("inf")
+        if not isinstance(hyperParameters,list):
+            hyperParameters = [hyperParameters]
+
+        doesOptimizeHyperParameter = len(hyperParameters) > 1
+
+        alldata = arange(len(trainingData))
+
+        assert(len(set(evalIx)&set(trainIx)) == 0)
+        if(doesOptimizeHyperParameter):
+            #ハイパーパラメータ最適化のループ
+            for hyperParameter in hyperParameters:
+
+                rawList = parameterOptimizingDataSeparator(trainIx)
+                for (evalIxHP, trainIxHP) in rawList:
+
+                    assert(len(set(evalIxHP)&set(evalIx)) == 0)
+                    assert(len(set(trainIxHP) & set(evalIx)) == 0)
+
+                    #print "Run LossFunction. hyperParam:", hyperParameter, 
+                    estimation = estimator(hyperParameter,trainIxHP)
+                    score = lossFunction(estimation,evalIxHP)
+                    break #Simplified
+
+                print "error:",score," at param=",hyperParameter
+                if bestScore > score:
+                    bestScore = score
+                    bestParameter = hyperParameter
+        else:
+            bestParameter = hyperParameters[0]
+
+        #最良のモデルを使う
+        if doesOptimizeHyperParameter:
+            print "Best parameter:",bestParameter
+        #log.Write(", param, " + str(bestParameter))
+        estimation = estimator(bestParameter,trainIx)
+
+        score = lossFunction(estimation,alldata)
+        print "Evaluation:",score
+        return {"error":score,"param":bestParameter}
+        #scores.append(score)
+    
+    from ThreadFunc import tmap
+    #評価のループ。バリアンeスを作るループ
+    #datastream = Toolbox.ToArray(evaluatingDataSeparator(arange(len(trainingData))))
+    #datastream = Toolbox.ToArray(datastream)
+    #datastream = Toolbox.ToArray(evaluatingDataSeparator(arange(len(trainingData))))
+    datastream = evaluatingDataSeparator(arange(len(trainingData)))
+    #datastream = Toolbox.ToArray(datastream)
+    try:
+        assert(False)
+        print "Multi-Threading"
+        def forkeval(data):
+            return evaluateData(data,hyperParameters)
+        result  = forkmap.map(forkeval,datastream)
+        for r in result:
+            yield r
+    except Exception, e:
+        print "Single Threading"
+        for evalAndTrainIx in datastream:
+            yield evaluateData(evalAndTrainIx,hyperParameters)
+        #return map(lambda evalAndTrainIx:evaluateData(evalAndTrainIx,hyperParameters),datastream)
+
+
+    #return scores
+    
+#EvaluateCompletion("CP",False)
+

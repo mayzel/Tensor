@@ -1,223 +1,127 @@
-# coding: utf-8
-"""
-テンソルを補完するための函数を呼ぶ前のインターフェイスとか前処理
-"""
+#coding: utf-8
 
 from numpy import *
 from numpy.linalg import *
 
-import algorithm as alg
-import newalg
+import itertools as it
 
-from logger import *
 import const
+from logger import *
+from TensorComputation import *
 
-#log = Logger("Completion")
+class Completion:
+    def __init__(self,X,L,decomposition=None):
+        self.X = X
+        self.L = L
+        self.decomposition = decomposition
 
-def InitializeDiagAndSimilarity(Y,Ls):
+    def estimator(self,param, trainingData):
+        pass
+    def lossFunction(self):
+        pass
+
+    def DecomposeLaplacians(self,Ls):
+        """
+        グラフラプラシアンを固有値分解する。
+        """
+        Ds=[]
+        Ps=[]
+        for n in xrange(len(Ls)):
+            if Ls[n]==None:
+                Ps.append(None)
+                Ds.append(None)
+            else:
+                (v,P) = eigh(Ls[n])
+                Ps.append(P)
+                Ds.append(v)
+        return (Ps,Ds)
+
+#completion
     """
-    書いた覚えがない…
-    内容的にはseparateLaplacianと同一
+    EM-ALSによってテンソルを補完する
     """
-    for n,size in enumerate(Y.shape):
-        if Ls[n] == None:
-            Ls[n] = eye(size,size)
+    def CompletionStep(self,TrueX,Observed,X,updater):
+        """
+        @param TrueX 真のテンソル。答え。
+        @param Observed 観測要素を表すテンソル。1:観測 0:未観測
+        @param X これ意味ないかも…
+        @param updater XとObservedを受け取って新しい補完Xを返す函数
 
-    Ds = [diag(L) for L in Ls]
-    Ws = [-(Ls[i] - Ds[i]) for i in xrange(len(Ls))]
+        @blief EM-ALSによりテンソルを補完する。
+        """
+        #updater :: (X,As) -> (G,As)
+        pred = vectorize(lambda x: 0 if x==0 else 1)
+        Observed = pred(Observed)
 
-    return Ws,Ds
+        elems = prod(X.shape)
+        n = sum(Observed)
 
-def DecomposeLaplacians(Ls):
-    """
-    グラフラプラシアンを固有値分解する。
-    """
-    Ds=[]
-    Ps=[]
-    for n in xrange(len(Ls)):
-        if Ls[n]==None:
-            Ps.append(None)
-            Ds.append(None)
-        else:
-            (v,P) = eigh(Ls[n])
-            Ps.append(P)
-            Ds.append(v)
-    return (Ps,Ds)
-def CompletionCP(Y,observed,rank_estimate,Ls,alpha,beta):
-    """
-    CP分解による補完
-    """
-    assert(isinstance(Ls,list))
-    assert(not isinstance(rank_estimate,list))
+        mean = sum(X * Observed) * 1.0 / n
+        Unobserved = 1 - Observed
+        rand = random.rand(*Observed.shape)
+        overwrite = vectorize(lambda x,y,w:x if w!=0 else y)
 
-    if Ls == None:
-        Ls = [None for i in xrange(N)]
-    (Ps,Ds) = DecomposeLaplacians(Ls)
-    #print "Singular Decomposed L"
-        
-    I = alg.createUnitTensor(Y.ndim,rank_estimate)
-    def approximate(Xin):
-        As = alg.RRMFCP(Xin,rank_estimate,beta,Ls,alpha,Ps,Ds)
-        Xs = alg.expand(I,As)
-        return Xs
+        #X = overwrite(TrueX,Unobserved*(rand - 0.5)*mean*2.0,Observed)
+        X = overwrite(TrueX,Unobserved*mean,Observed)
+        X = overwrite(TrueX,Unobserved*0,Observed)
+        #X = overwrite(TrueX,Init,Observed)
+        #print TrueX
+        #print "initdiff:", norm(TrueX-X)
+        #log.WriteLine(norm(TrueX-X),False)
+        errorold = float("inf")
 
-    return Completion(Y,observed,approximate)
+        As = None
+        G = None
+        maxiter = 600
+        threshold = const.ConvergenceThreshold_NewCompletion
+        vint = vectorize(int)
+        print "rapid algorithm"
+        for steps in it.count():
 
-def CompletionTucker(Y,Observed,rank_estimate,L,alpha):
-    """
-    Tucker分解による補完
-    """
-    assert(isinstance(L,list))
-    assert(isinstance(rank_estimate,list))
+            #import matplotlib.pyplot as plt
+            #im = plt.imshow(X.reshape(89*4,100*3))
+            #plt.savefig("Est_Flow%03d.png" % steps,vmax=0.01566,vmin=-0.00010001)
 
-    #print L
+            #benchmark.SaveImage(X.reshape(89*4,100*3),"Est_Flow%03d" % steps)
+            (G,As)= updater(X,G,As) #update parameters
+            Xnew = expand(G,As)
 
-    def approximate(Xin):
-        (G,As) = alg.HOOI(Xin,rank_estimate,alpha,L)
-        Xs = alg.expand(G,As)
-        return Xs
-    return Completion(Y,Observed,approximate)
+            #print norm(X*Observed)
+            #Xnew = Xnew * norm(X*Observed) / norm(Xnew*Observed) #ノルムの調整
 
+            #Enron用
+            if False:
+                Xnew = Xnew * (sign(Xnew) + 1) / 2 #必ず正に
+                errorObserved = norm((TrueX-vint(Xnew))*Observed)
+                error = norm(TrueX-vint(X)) # * sqrt(elems * 1.0 / n)
+            else:
+                #Xnew = TrueX*Observed
+                #Xnew = vint(Xnew)
+                errorObserved = norm((TrueX-Xnew)*Observed)
+                error = norm(TrueX-X) # * sqrt(elems * 1.0 / n)
 
-
-#Cp分解による補完
-def CompletionCP_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):
-    """
-    EM-ALS CP分解
-    """
-    assert(isinstance(Ls,list))
-    assert(not isinstance(rank_estimate,list))
-    N = Y.ndim
-    R = rank_estimate
-#X,As->Xnew
-    if Ls == None:
-        Ls = [None for i in xrange(N)]
-
-    Ps,Ds = DecomposeLaplacians(Ls)
-
-    I = alg.createUnitTensor(N,R)
-
-    updater = lambda X,G,As:(I,alg.RRMFCPstep(As=As,X=X,R=rank_estimate,beta=beta,Ls=Ls,Ps=Ps,Ds=Ds,alpha=alpha))
-    return newalg.CompletionStep(Y,Observed,Y,updater)
+            diff = norm(Xnew/norm(Xnew)-X/norm(X))
+            X = overwrite(TrueX,Xnew,Observed)
+            #import benchmark
 
 
-#Cp分解による補完
-def CompletionCPProd_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):
-    """
-    EM-ALS CP分解/Kronecker積バージョン
-    """
-    assert(isinstance(Ls,list))
-    assert(not isinstance(rank_estimate,list))
-    N = Y.ndim
-    R = rank_estimate
-#X,As->Xnew
-    if Ls == None:
-        Ls = [None for i in xrange(N)]
+            print "iter:",steps," err:",error ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xnew)
 
-    I = alg.createUnitTensor(N,R)
+            faultThreshold = 1e4
+            if error > faultThreshold:
+                X = faultThreshold
+                return X
 
-    updater = lambda X,G,As:(I,alg.RRMFCPProdstep(As=As,X=X,R=rank_estimate,beta=beta,Ls=Ls,alpha=alpha))
-    return newalg.CompletionStep(Y,Observed,Y,updater)
+            if abs(errorObserved- errorold) < threshold or steps + 1 >= maxiter:
+                print "estimation finished in ",(steps+1),"steps."
+                break
 
-#Tucker分解による補完 高速版
-def CompletionTucker_EveryStep(Y,Observed,rank_estimate,L,alpha):
-    """
-    EM-ALS Tucker分解
-    """
-    assert(isinstance(L,list))
-    assert(isinstance(rank_estimate,list))
-
-#X,As->G,AS
-    updater = lambda X,G,As:alg.HOOIstep(G,As,X,Rs=rank_estimate,alpha=alpha,Ls=L)
-    return newalg.CompletionStep(Y,Observed,Y,updater)
-
-#Tucker分解による補完 高速版
-def CompletionTuckerProd_EveryStep(Y,Observed,rank_estimate,L,alpha):
-    """
-    EM-ALS Tucker分解/Kronecker積バージョン
-    """
-    assert(isinstance(L,list))
-    assert(isinstance(rank_estimate,list))
-
-#X,As->G,AS
-    updater = lambda X,G,As:alg.HOOIProdstep(G,As,X,Rs=rank_estimate,alpha=alpha,Ls=L)
-    return newalg.CompletionStep(Y,Observed,Y,updater)
-
-def CompletionKS_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):
-    """
-    EM-ALS CP分解/全体に対する正則化
-    """
-    N = Y.ndim
-    R = rank_estimate
-#X,As->Xnew
-    if Ls == None:
-        Ls = [None for i in xrange(N)]
-    Ps,Ds = DecomposeLaplacians(Ls)
-
-    I = alg.createUnitTensor(N,R)
-
-    updater = lambda X,G,As:(I,alg.CPKsumStep(As=As,X=X,R=rank_estimate,Ls=Ls,Ps=Ps,Ds=Ds,alpha=alpha))
-    return newalg.CompletionStep(Y,Observed,Y,updater)
-
-
-def CompletionKS_Tucker_EveryStep(Y,Observed,rank_estimate,L,alpha):
-    """
-    EM-ALS Tucker分解/全体に対する正則化
-    """
-    assert(isinstance(L,list))
-    assert(isinstance(rank_estimate,list))
-
-    Ps,Ds = DecomposeLaplacians(L)
-#X,As->G,AS
-    updater = lambda X,G,As:alg.TuckerKsumStep(G,As,X,Rs=rank_estimate,Ls=L,Ps=Ps,Ds=Ds,alpha=alpha)
-    return newalg.CompletionStep(Y,Observed,Y,updater)
+            errorold = errorObserved 
+            
+        return X
 
 
 
-def CompletionKP_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):
-    """
-    EM-ALS CP分解/全体に対する正則化/Kronecker積バージョン
-    """
-    assert(isinstance(Ls,list))
-
-    N = Y.ndim
-    R = rank_estimate
-    Ws,Ds = InitializeDiagAndSimilarity(Y,Ls)
-    PWs,DWs = DecomposeLaplacians(Ws)
-    I = alg.createUnitTensor(N,R)
-
-    updater = lambda X,G,As:(I,alg.CPKprodStep(As=As,X=X,R=rank_estimate,Ds=Ds,Ws=Ws,PWs=PWs,DWs=DWs,alpha=alpha))
-    return newalg.CompletionStep(Y,Observed,Y,updater)
-
-def CompletionKP_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):
-    """
-    EM-ALS Tucker分解/全体に対する正則化/Kronecker積バージョン
-    """
-    assert(isinstance(Ls,list))
-    assert(isinstance(rank_estimate,list))
-
-    Ws,Ds = InitializeDiagAndSimilarity(Y,Ls)
-    PWs,DWs = DecomposeLaplacians(Ws)
-
-#X,As->G,AS
-    updater = lambda X,G,As:alg.TuckerKprodStep(G,As,X,Rs=rank_estimate,Ds=Ds,Ws=Ws,PWs=PWs,DWs=DWs,alpha=alpha)
-    return newalg.CompletionStep(Y,Observed,Y,updater)
 
 
-def CompletionDistance_CP_Everystep(Y,Observed,rank_estimate,Ls,alpha):
-    """
-    EM-ALS CP分解/損失関数にラプラシアン
-    """
-    N = Y.ndim
-    R = rank_estimate
-    I = alg.createUnitTensor(N,R)
-    updater = lambda X,G,As:(I,alg.CPDistanceStep(As,X,R=rank_estimate,Ls=Ls,alpha=alpha))
-    return newalg.CompletionStep(Y,Observed,Y,updater)
-
-def CompletionDistance_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):
-    """
-    EM-ALS Tucker分解/損失関数にラプラシアン
-    """
-    updater = lambda X,G,As:alg.TuckerDistanceStep(G,As,X,Rs=rank_estimate,Ls=Ls,alpha=alpha)
-    return newalg.CompletionStep(Y,Observed,Y,updater)
 

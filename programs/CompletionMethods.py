@@ -1,23 +1,105 @@
+#coding: utf-8
 
-class Completion:
-    def estimator(param, trainingData):
-        pass
-    def lossFunction():
-        pass
+import sys
+for p in sys.path:
+    print p
+
+from Completion import *
+from numpy import *
+from TensorComputation import *
+
+class CP(Completion):
+
+    def estimator(self,param,trainingData):
+        #rank_estimate = param
+        X = self.X
+        L = self.L
+        shape = X.shape
+        elems = prod(shape) 
+        print param
+        print len(trainingData) , " / " , elems
+        beta = 1e-8 #普通の正則化はとりあえず固定
+        #alpha = param
+        (alpha,rank_estimate) = param
+        trainingData = self.createObservedTensor(trainingData)
+        Xobs = X * trainingData  
+        Xobs = X
+        return self.CompletionCP_EveryStep(Xobs,trainingData,rank_estimate,L,alpha,beta)
+
+    #Cp分解による補完
+    def CompletionCP_EveryStep(self,Y,Observed,rank_estimate,Ls,alpha,beta):
+        """
+        EM-ALS CP分解
+        """
+        assert(isinstance(Ls,list))
+        assert(not isinstance(rank_estimate,list))
+        N = Y.ndim
+        R = rank_estimate
+    #X,As->Xnew
+        if Ls == None:
+            Ls = [None for i in xrange(N)]
+
+        Ps,Ds = Completion.DecomposeLaplacians(self,Ls)
+
+        I = createUnitTensor(N,R)
+
+        updater = lambda X,G,As:(I,self.decomposition.DecomposeOneStep(As=As,X=X,Rs=rank_estimate,beta=beta,Ls=Ls,Ps=Ps,Ds=Ds,alpha=alpha))
+        return Completion.CompletionStep(self,Y,Observed,Y,updater)
+
+class Tucker(Completion):
+    #Tucker分解による補完 高速版
+    def CompletionTucker_EveryStep(self,Y,Observed,rank_estimate,L,alpha):
+        """
+        EM-ALS Tucker分解
+        """
+        assert(isinstance(L,list))
+        assert(isinstance(rank_estimate,list))
+
+    #X,As->G,AS
+
+        updater = lambda X,G,As:self.decomposition.DecomposeOneStep(As=As,G=G,X=X,Rs=rank_estimate,alpha=alpha,Ls=L)
+        #updater = lambda X,G,As:alg.HOOIstep(G,As,X,Rs=rank_estimate,alpha=alpha,Ls=L)
+        return Completion.CompletionStep(self,Y,Observed,Y,updater)
+
+    def estimator(self,param,trainingData):
+        #rank_estimate = param
+        X = self.X
+        L = self.L
+        shape = X.shape
+        elems = prod(shape) 
+        print param
+        print len(trainingData) , " / " , elems
+        (alpha,r)=param 
+        rank_estimate = [r,r,r]
+        print "alpha:",alpha
+        print "rank_estimate",rank_estimate
+
+        trainingData = self.createObservedTensor(trainingData)
+        Xobs = X * trainingData
+        Xobs = X
+        return self.CompletionTucker_EveryStep(Xobs,trainingData,rank_estimate,L,alpha)
 
 
 class CPWOPT(Completion):
-    def estimator(param,trainingData):
+    def estimator(self,param,trainingData):
+
         #trainingData must be given as list of coordinate tuples
-        #rank_estimate = param
+
+        X = self.X
+        L = self.L
+        shape = X.shape
+        elems = prod(shape) 
+
         print param
         print len(trainingData) , " / " , elems
+
+        #decompose parameters
         (alpha,r)=param 
         rank_estimate = r
         print "alpha:",alpha
         print "rank_estimate",rank_estimate
 
-        n,m,l=shape
+        n,m,l=X.shape
 
         def getobslist(trainingData):
             for index in trainingData:
@@ -27,13 +109,13 @@ class CPWOPT(Completion):
                 index = index - j*l
                 k=index
                 yield i;yield j;yield k
-        
+
+        import CPWOPT
         #ObservedList = array(reduce(lambda a,b:a+b,[coord(ind) for ind in trainingData]))
         ObservedList = array(list(getobslist(trainingData)))
         Xobs = CPWOPT.CompressSparseTensorToVector(X,ObservedList)
         print "LEN",Xobs.shape
         print "Xobs ",type(Xobs)
-        print "shape ",type(shape)
         print "trainingData ",type(trainingData)
 
         result = CPWOPT.CompletionGradient(Xobs,shape, ObservedList,rank_estimate,L,alpha,X)

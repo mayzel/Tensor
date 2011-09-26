@@ -6,409 +6,1566 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.6b1J2	//
-A	SVD.py	/^A = zeros((s,s))$/;"	v
-add	ThreadFunc.py	/^    def add(x,y):$/;"	f	function:test_treduce
-aggregate	ThreadFunc.py	/^    def aggregate(a,b):$/;"	f	function:mapreducetest
+15	log/rep_linalg_toshikawa.tex	/^\\subsection{(15)}$/;"	b
+16	log/rep_linalg_toshikawa.tex	/^\\subsection{(16)}$/;"	b
+A	SVD.py	/^    A = zeros((s,s))$/;"	v
+add	logger.py	/^    def add(name,obj):$/;"	m	class:Logger
+add	oldcodes/ThreadFunc.py	/^    def add(x,y):$/;"	f	function:test_treduce
+aggregate	oldcodes/ThreadFunc.py	/^    def aggregate(a,b):$/;"	f	function:mapreducetest
 alpha	ExecuterArtificial.py	/^alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L$/;"	v
-alpha	ExecuterBonnie.py	/^alpha =[pow(10,x) for x in [-3,-2,-1]] #for L$/;"	v
-alpha	ExecuterFlow.py	/^alpha =[pow(10,x) for x in [-4,-3,-2,-1]] #for L$/;"	v
-alpha	ExecuterThreeD.py	/^alpha =[pow(10,x) for x in [-3,-2,-1,0]] #for L$/;"	v
+alpha	oldcodes/ExecuterArtificial.py	/^alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L$/;"	v
+alpha	oldcodes/ExecuterBonnie.py	/^alpha =[pow(10,x) for x in [-3,-2,-1]] #for L$/;"	v
+alpha	oldcodes/ExecuterFlow.py	/^alpha =[pow(10,x) for x in [-4,-3,-2,-1]] #for L$/;"	v
+alpha	oldcodes/ExecuterThreeD.py	/^alpha =[pow(10,x) for x in [-3,-2,-1,0]] #for L$/;"	v
 approximate	Completion.py	/^    def approximate(Xin):$/;"	f	function:CompletionCP
 approximate	Completion.py	/^    def approximate(Xin):$/;"	f	function:CompletionTucker
-approximate	tensor.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_CP
-approximate	tensor.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_Tucker
-approximate	tensortest.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_CP
-approximate	tensortest.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_Tucker
-approximateCP	tensortest.py	/^    def approximateCP(Xin):$/;"	f	function:testCompletion
-approximateTucker	tensortest.py	/^    def approximateTucker(Xin):$/;"	f	function:testCompletion
-Artificial	benchmark.py	/^def Artificial():$/;"	f
-Artificial2	benchmark.py	/^def Artificial2():$/;"	f
-Artificial3	benchmark.py	/^def Artificial3():$/;"	f
-ArtificialTucker	benchmark.py	/^def ArtificialTucker():$/;"	f
-ax	benchmark.py	/^    ax = fig.add_subplot(111)$/;"	v
-Bonnie	benchmark.py	/^def Bonnie():$/;"	f
-busybeaver	forkmap.py	/^    def busybeaver(x):$/;"	f
-busybeaver	paralellmap.py	/^    def busybeaver(x):$/;"	f
-can	mlabwrap.py	/^    __all__ = [] #XXX a hack, so that this class can fake a module; don't mutate$/;"	c	class:MlabWrap
+approximate	oldcodes/Completion.py	/^    def approximate(Xin):$/;"	f	function:CompletionCP
+approximate	oldcodes/Completion.py	/^    def approximate(Xin):$/;"	f	function:CompletionTucker
+approximate	oldcodes/tensor.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_CP
+approximate	oldcodes/tensor.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_Tucker
+approximate	oldcodes/tensortest.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_CP
+approximate	oldcodes/tensortest.py	/^            def approximate(Xin):$/;"	f	function:Evaluation_Tucker
+approximateCP	oldcodes/tensortest.py	/^    def approximateCP(Xin):$/;"	f	function:testCompletion
+approximateTucker	oldcodes/tensortest.py	/^    def approximateTucker(Xin):$/;"	f	function:testCompletion
+Artificial	oldcodes/benchmark.py	/^def Artificial():$/;"	f
+Artificial2	oldcodes/benchmark.py	/^def Artificial2():$/;"	f
+Artificial3	oldcodes/benchmark.py	/^def Artificial3():$/;"	f
+ArtificialTucker	oldcodes/benchmark.py	/^def ArtificialTucker():$/;"	f
+ax	oldcodes/benchmark.py	/^    ax = fig.add_subplot(111)$/;"	v
+Bonnie	oldcodes/benchmark.py	/^def Bonnie():$/;"	f
+buf	CPWOPT.c	/^     void *buf;$/;"	m	struct:__anon1	file:
+buf	CPWOPTcritical.c	/^     void *buf;$/;"	m	struct:__anon5	file:
+busybeaver	oldcodes/forkmap.py	/^    def busybeaver(x):$/;"	f
+busybeaver	oldcodes/paralellmap.py	/^    def busybeaver(x):$/;"	f
+c	CPWOPTcritical.c	/^typedef struct { char c; double x; } __Pyx_st_double;$/;"	m	struct:__anon17	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; float x; } __Pyx_st_float;$/;"	m	struct:__anon16	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; int x; } __Pyx_st_int;$/;"	m	struct:__anon14	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; long double x; } __Pyx_st_longdouble;$/;"	m	struct:__anon18	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; long x; } __Pyx_st_long;$/;"	m	struct:__anon15	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; PY_LONG_LONG x; } __Pyx_s_long_long;$/;"	m	struct:__anon20	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; short x; } __Pyx_st_short;$/;"	m	struct:__anon13	file:
+c	CPWOPTcritical.c	/^typedef struct { char c; void *x; } __Pyx_st_void_p;$/;"	m	struct:__anon19	file:
+can	oldcodes/mlabwrap.py	/^    __all__ = [] #XXX a hack, so that this class can fake a module; don't mutate$/;"	c	class:MlabWrap
 CheckingFrequence	const.py	/^CheckingFrequence = 10$/;"	v
-cleanup	ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:tmap
-cleanup	ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:_parallel
-cleanup	ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:_treduce
-Close	matlab.py	/^    def Close():$/;"	m	class:Matlab
+CheckingFrequence	oldcodes/const.py	/^CheckingFrequence = 10$/;"	v
+cleanup	oldcodes/ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:tmap
+cleanup	oldcodes/ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:_parallel
+cleanup	oldcodes/ThreadFunc.py	/^    def cleanup(self):$/;"	m	class:_treduce
+Close	oldcodes/matlab.py	/^    def Close():$/;"	m	class:Matlab
+cmdclass	setup.py	/^    cmdclass={"build_ext":build_ext},$/;"	v
+colors	log/dataAnalyzer.py	/^colors={"Normal":"blue","Relation":"red","KSum":"green","WOPT":"purple"}$/;"	v
+Completion	CompletionMethods.py	/^class Completion:$/;"	c
 CompletionCP	Completion.py	/^def CompletionCP(Y,observed,rank_estimate,Ls,alpha,beta):$/;"	f
+CompletionCP	oldcodes/Completion.py	/^def CompletionCP(Y,observed,rank_estimate,Ls,alpha,beta):$/;"	f
 CompletionCPProd_EveryStep	Completion.py	/^def CompletionCPProd_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):$/;"	f
+CompletionCPProd_EveryStep	oldcodes/Completion.py	/^def CompletionCPProd_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):$/;"	f
 CompletionCP_EveryStep	Completion.py	/^def CompletionCP_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):$/;"	f
+CompletionCP_EveryStep	oldcodes/Completion.py	/^def CompletionCP_EveryStep(Y,Observed,rank_estimate,Ls,alpha,beta):$/;"	f
 CompletionDistance_CP_Everystep	Completion.py	/^def CompletionDistance_CP_Everystep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionDistance_CP_Everystep	oldcodes/Completion.py	/^def CompletionDistance_CP_Everystep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
 CompletionDistance_Tucker_EveryStep	Completion.py	/^def CompletionDistance_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionDistance_Tucker_EveryStep	oldcodes/Completion.py	/^def CompletionDistance_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionGradient	CPWOPT.py	/^def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):$/;"	f
 CompletionKP_CP_EveryStep	Completion.py	/^def CompletionKP_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKP_CP_EveryStep	oldcodes/Completion.py	/^def CompletionKP_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
 CompletionKP_Tucker_EveryStep	Completion.py	/^def CompletionKP_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKP_Tucker_EveryStep	oldcodes/Completion.py	/^def CompletionKP_Tucker_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
 CompletionKS_CP_EveryStep	Completion.py	/^def CompletionKS_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
+CompletionKS_CP_EveryStep	oldcodes/Completion.py	/^def CompletionKS_CP_EveryStep(Y,Observed,rank_estimate,Ls,alpha):$/;"	f
 CompletionKS_Tucker_EveryStep	Completion.py	/^def CompletionKS_Tucker_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionKS_Tucker_EveryStep	oldcodes/Completion.py	/^def CompletionKS_Tucker_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
 CompletionStep	newalg.py	/^def CompletionStep(TrueX,Observed,X,updater):$/;"	f
+CompletionStep	oldcodes/newalg.py	/^def CompletionStep(TrueX,Observed,X,updater):$/;"	f
 CompletionTucker	Completion.py	/^def CompletionTucker(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionTucker	oldcodes/Completion.py	/^def CompletionTucker(Y,Observed,rank_estimate,L,alpha):$/;"	f
 CompletionTuckerProd_EveryStep	Completion.py	/^def CompletionTuckerProd_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionTuckerProd_EveryStep	oldcodes/Completion.py	/^def CompletionTuckerProd_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
 CompletionTucker_EveryStep	Completion.py	/^def CompletionTucker_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompletionTucker_EveryStep	oldcodes/Completion.py	/^def CompletionTucker_EveryStep(Y,Observed,rank_estimate,L,alpha):$/;"	f
+CompressSparseTensorToVector	CPWOPT.py	/^def CompressSparseTensorToVector(*param):$/;"	f
+CompressSparseTensorToVector	CPWOPTcritical.pyx	/^def CompressSparseTensorToVector(np.ndarray[np.float_t,ndim=3] X not None, np.ndarray[np.int_t,ndim=1] ObservedList not None):$/;"	f
 ConvergenceThreshold_Completion	const.py	/^ConvergenceThreshold_Completion = 1e-4 $/;"	v
+ConvergenceThreshold_Completion	oldcodes/const.py	/^ConvergenceThreshold_Completion = 1e-4 $/;"	v
 ConvergenceThreshold_Decomposition	const.py	/^ConvergenceThreshold_Decomposition = 1e-4$/;"	v
+ConvergenceThreshold_Decomposition	oldcodes/const.py	/^ConvergenceThreshold_Decomposition = 1e-4$/;"	v
 ConvergenceThreshold_NewCompletion	const.py	/^ConvergenceThreshold_NewCompletion = 1e-5 *0.7$/;"	v
+ConvergenceThreshold_NewCompletion	oldcodes/const.py	/^ConvergenceThreshold_NewCompletion = 1e-5 *0.7$/;"	v
+CP	CompletionMethods.py	/^class CP(Completion):$/;"	c
+CP	Decomposition.py	/^class CP:$/;"	c
 CPDistanceStep	algorithm.py	/^def CPDistanceStep(As,X,R,Ls,alpha=0.0,Xns=None):$/;"	f
+CPDistanceStep	oldcodes/algorithm.py	/^def CPDistanceStep(As,X,R,Ls,alpha=0.0,Xns=None):$/;"	f
 CPKprodStep	algorithm.py	/^def CPKprodStep(As,X,R,Ds,Ws,PWs,DWs,alpha=0,Xns = None):$/;"	f
+CPKprodStep	oldcodes/algorithm.py	/^def CPKprodStep(As,X,R,Ds,Ws,PWs,DWs,alpha=0,Xns = None):$/;"	f
 CPKsumStep	algorithm.py	/^def CPKsumStep(As,X,R,Ls,Ps,Ds,alpha=0,Xns = None):$/;"	f
-CP_ALS	algorithm_old.py	/^def CP_ALS(X,R):$/;"	f
-createChainLaplacian	benchmark.py	/^def createChainLaplacian(size):$/;"	f
-createCompleteLaplacian	benchmark.py	/^def createCompleteLaplacian(size):$/;"	f
+CPKsumStep	oldcodes/algorithm.py	/^def CPKsumStep(As,X,R,Ls,Ps,Ds,alpha=0,Xns = None):$/;"	f
+CPWOPT	CompletionMethods.py	/^class CPWOPT(Completion):$/;"	c
+CP_ALS	oldcodes/algorithm_old.py	/^def CP_ALS(X,R):$/;"	f
+createChainLaplacian	oldcodes/benchmark.py	/^def createChainLaplacian(size):$/;"	f
+createCompleteLaplacian	oldcodes/benchmark.py	/^def createCompleteLaplacian(size):$/;"	f
 createG	algorithm.py	/^    def createG(X,As):$/;"	f	function:TuckerKprodStep
 createG	algorithm.py	/^    def createG(X,As):$/;"	f	function:TuckerKsumStep
+createG	oldcodes/algorithm.py	/^    def createG(X,As):$/;"	f	function:TuckerKprodStep
+createG	oldcodes/algorithm.py	/^    def createG(X,As):$/;"	f	function:TuckerKsumStep
 createLaplacian	algorithm.py	/^def createLaplacian(A):$/;"	f
-createMask	DataStream.py	/^    def createMask(shape,unobservedRate):$/;"	f	function:RandomObservedTensorStream
-createMask	mattest.py	/^def createMask(sizelist,rate):$/;"	f
-createMask	tensor.py	/^def createMask(sizelist,zerorate):$/;"	f
-createMask	tensortest.py	/^def createMask(sizelist,zerorate):$/;"	f
-createNormalizedLaplacian	benchmark.py	/^def createNormalizedLaplacian(A):$/;"	f
-createObservedTensor	Evaluation.py	/^        def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
-createObservedTensor	EvaluationFiber.py	/^    def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
-createTestLaplacian	tensor.py	/^def createTestLaplacian(size):$/;"	f
-createTestLaplacian	tensortest.py	/^def createTestLaplacian(size):$/;"	f
+createLaplacian	oldcodes/algorithm.py	/^def createLaplacian(A):$/;"	f
+createMask	oldcodes/DataStream.py	/^    def createMask(shape,unobservedRate):$/;"	f	function:RandomObservedTensorStream
+createMask	oldcodes/mattest.py	/^def createMask(sizelist,rate):$/;"	f
+createMask	oldcodes/tensor.py	/^def createMask(sizelist,zerorate):$/;"	f
+createMask	oldcodes/tensortest.py	/^def createMask(sizelist,zerorate):$/;"	f
+createNormalizedLaplacian	oldcodes/benchmark.py	/^def createNormalizedLaplacian(A):$/;"	f
+createObservedCoordList	CPWOPT.py	/^def createObservedCoordList(ObsTensor):$/;"	f
+createObservedTensor	EvaluationCPWopt.py	/^        def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createObservedTensor	EvaluationCPWopt_taihi.py	/^        def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createObservedTensor	oldcodes/Evaluation.py	/^        def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createObservedTensor	oldcodes/EvaluationFiber.py	/^    def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createObservedTensor	oldcodes/FactorizeMethods.py	/^        def createObservedTensor(data):$/;"	f	function:EvaluateCompletionMain
+createTestLaplacian	oldcodes/tensor.py	/^def createTestLaplacian(size):$/;"	f
+createTestLaplacian	oldcodes/tensortest.py	/^def createTestLaplacian(size):$/;"	f
 createUnitTensor	algorithm.py	/^def createUnitTensor(dim,D):$/;"	f
-CrossValidation	Evaluation.py	/^def CrossValidation($/;"	f
-CrossValidation	EvaluationFiber.py	/^def CrossValidation($/;"	f
-CurlyIndexer	mlabwrap.py	/^class CurlyIndexer(object):$/;"	c
-data	benchmark.py	/^    data = X[:,:,120]$/;"	v
-data	Executer.py	/^data = benchmark.Enron()$/;"	v
-data	ExecuterArtificial.py	/^data = benchmark.Artificial3()$/;"	v
-data	ExecuterBonnie.py	/^data = benchmark.Bonnie()$/;"	v
-data	ExecuterEnron.py	/^data = benchmark.Enron()$/;"	v
-data	ExecuterFlow.py	/^data = benchmark.Flow_Injection()$/;"	v
-data	ExecuterRandomtest.py	/^data = benchmark.RandomSmallTensor()$/;"	v
-data	ExecuterSugar.py	/^data = benchmark.Sugar()$/;"	v
-data	ExecuterThreeD.py	/^data = benchmark.ThreeDNoseData()$/;"	v
-data	ExecuterWine.py	/^data = benchmark.Wine_v6()$/;"	v
-dataGenerator	Evaluation.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
-dataGenerator	EvaluationFiber.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
-dataLoader	benchmark.py	/^def dataLoader(mat,tensorGetter,laplacianGetter):$/;"	f
-dataname	Executer.py	/^dataname = "Enron"$/;"	v
-dataname	ExecuterArtificial.py	/^dataname = "Artificial0302"$/;"	v
-dataname	ExecuterBonnie.py	/^dataname = "Bonnie0128"$/;"	v
-dataname	ExecuterEnron.py	/^dataname = "Enron0121"$/;"	v
-dataname	ExecuterFlow.py	/^dataname = "Flow0302"$/;"	v
-dataname	ExecuterRandomtest.py	/^dataname = "Random"$/;"	v
-dataname	ExecuterSugar.py	/^dataname = "Sugar0120"$/;"	v
-dataname	ExecuterThreeD.py	/^dataname = "ThreeD0128"$/;"	v
-dataname	ExecuterWine.py	/^dataname = "Wine"$/;"	v
+createUnitTensor	oldcodes/algorithm.py	/^def createUnitTensor(dim,D):$/;"	f
+CrossValidation	EvaluationCPWopt_taihi.py	/^def CrossValidation($/;"	f
+CrossValidation	oldcodes/Evaluation.py	/^def CrossValidation($/;"	f
+CrossValidation	oldcodes/EvaluationFiber.py	/^def CrossValidation($/;"	f
+CrossValidation	oldcodes/FactorizeMethods.py	/^def CrossValidation($/;"	f
+CurlyIndexer	oldcodes/mlabwrap.py	/^class CurlyIndexer(object):$/;"	c
+CYTHON_CCOMPLEX	CPWOPTcritical.c	/^    #define CYTHON_CCOMPLEX /;"	d	file:
+CYTHON_INLINE	CPWOPT.c	/^    #define CYTHON_INLINE /;"	d	file:
+CYTHON_INLINE	CPWOPT.c	/^    #define CYTHON_INLINE$/;"	d	file:
+CYTHON_INLINE	CPWOPTcritical.c	/^    #define CYTHON_INLINE /;"	d	file:
+CYTHON_INLINE	CPWOPTcritical.c	/^    #define CYTHON_INLINE$/;"	d	file:
+CYTHON_REFNANNY	CPWOPT.c	/^  #define CYTHON_REFNANNY /;"	d	file:
+CYTHON_REFNANNY	CPWOPTcritical.c	/^  #define CYTHON_REFNANNY /;"	d	file:
+CYTHON_UNUSED	CPWOPT.c	/^#     define CYTHON_UNUSED /;"	d	file:
+CYTHON_UNUSED	CPWOPT.c	/^#     define CYTHON_UNUSED$/;"	d	file:
+CYTHON_UNUSED	CPWOPT.c	/^#   define CYTHON_UNUSED /;"	d	file:
+CYTHON_UNUSED	CPWOPT.c	/^#   define CYTHON_UNUSED$/;"	d	file:
+CYTHON_UNUSED	CPWOPTcritical.c	/^#     define CYTHON_UNUSED /;"	d	file:
+CYTHON_UNUSED	CPWOPTcritical.c	/^#     define CYTHON_UNUSED$/;"	d	file:
+CYTHON_UNUSED	CPWOPTcritical.c	/^#   define CYTHON_UNUSED /;"	d	file:
+CYTHON_UNUSED	CPWOPTcritical.c	/^#   define CYTHON_UNUSED$/;"	d	file:
+CYTHON_WITHOUT_ASSERTIONS	CPWOPT.c	/^#define CYTHON_WITHOUT_ASSERTIONS$/;"	d	file:
+CYTHON_WITHOUT_ASSERTIONS	CPWOPTcritical.c	/^#define CYTHON_WITHOUT_ASSERTIONS$/;"	d	file:
+dat	oldcodes/benchmark.py	/^    dat = Renkanhyo()$/;"	v
+data	ExecuterArtificial.py	/^data = benchmark.Artificial()$/;"	v
+data	oldcodes/benchmark.py	/^    data = X[:,:,120]$/;"	v
+data	oldcodes/Executer.py	/^data = benchmark.Enron()$/;"	v
+data	oldcodes/ExecuterArtificial.py	/^data = benchmark.Artificial3()$/;"	v
+data	oldcodes/ExecuterBonnie.py	/^data = benchmark.Bonnie()$/;"	v
+data	oldcodes/ExecuterEnron.py	/^data = benchmark.Enron()$/;"	v
+data	oldcodes/ExecuterFlow.py	/^data = benchmark.Flow_Injection()$/;"	v
+data	oldcodes/ExecuterRandomtest.py	/^data = benchmark.RandomSmallTensor()$/;"	v
+data	oldcodes/ExecuterSugar.py	/^data = benchmark.Sugar()$/;"	v
+data	oldcodes/ExecuterThreeD.py	/^data = benchmark.ThreeDNoseData()$/;"	v
+data	oldcodes/ExecuterWine.py	/^data = benchmark.Wine_v6()$/;"	v
+dataGenerator	EvaluationCPWopt.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataGenerator	EvaluationCPWopt_taihi.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataGenerator	oldcodes/Evaluation.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataGenerator	oldcodes/EvaluationFiber.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataGenerator	oldcodes/FactorizeMethods.py	/^    def dataGenerator(hiddens,separatingNumber,unobservedRate,targetIndeces):$/;"	f	function:EvaluateCompletionMain
+dataLoader	oldcodes/benchmark.py	/^def dataLoader(mat,tensorGetter,laplacianGetter):$/;"	f
+dataname	ExecuterArtificial.py	/^dataname = "Artificial0817"$/;"	v
+dataname	ExecuterArtificial.py	/^dataname = "Flowl0817"$/;"	v
+dataname	oldcodes/Executer.py	/^dataname = "Enron"$/;"	v
+dataname	oldcodes/ExecuterArtificial.py	/^dataname = "Artificial0817"$/;"	v
+dataname	oldcodes/ExecuterBonnie.py	/^dataname = "Bonnie0128"$/;"	v
+dataname	oldcodes/ExecuterEnron.py	/^dataname = "Enron0121"$/;"	v
+dataname	oldcodes/ExecuterFlow.py	/^dataname = "Flow0302"$/;"	v
+dataname	oldcodes/ExecuterRandomtest.py	/^dataname = "Random"$/;"	v
+dataname	oldcodes/ExecuterSugar.py	/^dataname = "Sugar0120"$/;"	v
+dataname	oldcodes/ExecuterThreeD.py	/^dataname = "ThreeD0128"$/;"	v
+dataname	oldcodes/ExecuterWine.py	/^dataname = "Wine"$/;"	v
 DecomposeLaplacians	Completion.py	/^def DecomposeLaplacians(Ls):$/;"	f
-decompTest	benchmark.py	/^def decompTest():$/;"	f
-decorate	forkmap.py	/^    def decorate(f):$/;"	f	function:parallelizable
-decorate	paralellmap.py	/^    def decorate(f):$/;"	f	function:parallelizable
+DecomposeLaplacians	oldcodes/Completion.py	/^def DecomposeLaplacians(Ls):$/;"	f
+Decomposition	Decomposition.py	/^class Decomposition:$/;"	c
+decompTest	oldcodes/benchmark.py	/^def decompTest():$/;"	f
+decorate	oldcodes/forkmap.py	/^    def decorate(f):$/;"	f	function:parallelizable
+decorate	oldcodes/paralellmap.py	/^    def decorate(f):$/;"	f	function:parallelizable
+DECREF	CPWOPT.c	/^    void (*DECREF)(void*, PyObject*, int);$/;"	m	struct:__anon3	file:
+DECREF	CPWOPTcritical.c	/^    void (*DECREF)(void*, PyObject*, int);$/;"	m	struct:__anon9	file:
+DL_EXPORT	CPWOPT.c	/^  #define DL_EXPORT(/;"	d	file:
+DL_EXPORT	CPWOPTcritical.c	/^  #define DL_EXPORT(/;"	d	file:
+DL_IMPORT	CPWOPT.c	/^  #define DL_IMPORT(/;"	d	file:
+DL_IMPORT	CPWOPTcritical.c	/^  #define DL_IMPORT(/;"	d	file:
 dots	algorithm.py	/^        def dots(L,R):$/;"	f	function:solveGeneralizedSylvester/dotsylv
-dots	lsqrsylv.py	/^        def dots(L,R):$/;"	f	function:lsqrsylv/dotsylv
+dots	oldcodes/algorithm.py	/^        def dots(L,R):$/;"	f	function:solveGeneralizedSylvester/dotsylv
+dots	oldcodes/lsqrsylv.py	/^        def dots(L,R):$/;"	f	function:lsqrsylv/dotsylv
 dotsylv	algorithm.py	/^    def dotsylv(V):$/;"	f	function:solveGeneralizedSylvester
-dotsylv	lsqrsylv.py	/^    def dotsylv(V):$/;"	f	function:lsqrsylv
-double	ThreadFunc.py	/^    def double(x):$/;"	f	function:test_tmap
+dotsylv	oldcodes/algorithm.py	/^    def dotsylv(V):$/;"	f	function:solveGeneralizedSylvester
+dotsylv	oldcodes/lsqrsylv.py	/^    def dotsylv(V):$/;"	f	function:lsqrsylv
+double	oldcodes/ThreadFunc.py	/^    def double(x):$/;"	f	function:test_tmap
 Ds	newalg.py	/^Ds=[]$/;"	v
-E	SVD.py	/^E = E * sign(E[0,0])$/;"	v
-E	SVD.py	/^E = E \/ 101$/;"	v
-E	SVD.py	/^E=getLeadingSingularVects(A,3).T$/;"	v
-Enron	benchmark.py	/^def Enron():$/;"	f
-estimator	Evaluation.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
-estimator	Evaluation.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
-estimator	EvaluationFiber.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
-estimator	EvaluationFiber.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
-Eval	matlab.py	/^    def Eval(exp):$/;"	m	class:Matlab
+Ds	oldcodes/newalg.py	/^Ds=[]$/;"	v
+E	SVD.py	/^    E = E * sign(E[0,0])$/;"	v
+E	SVD.py	/^    E = E \/ 101$/;"	v
+E	SVD.py	/^    E=getLeadingSingularVects(A,3).T$/;"	v
+encoding	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+encoding	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+enc_count	CPWOPTcritical.c	/^  int new_count, enc_count;$/;"	m	struct:__anon12	file:
+enc_type	CPWOPTcritical.c	/^  char enc_type;$/;"	m	struct:__anon12	file:
+Enron	oldcodes/benchmark.py	/^def Enron():$/;"	f
+estimator	CompletionMethods.py	/^    def estimator(self,param, trainingData):$/;"	m	class:Completion
+estimator	CompletionMethods.py	/^    def estimator(self,param, trainingData):$/;"	m	class:CP
+estimator	CompletionMethods.py	/^    def estimator(self,param, trainingData):$/;"	m	class:Tucker
+estimator	CompletionMethods.py	/^    def estimator(self,param,trainingData):$/;"	m	class:CPWOPT
+estimator	EvaluationCPWopt_taihi.py	/^    def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain
+estimator	oldcodes/Evaluation.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	oldcodes/Evaluation.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	oldcodes/EvaluationFiber.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	oldcodes/EvaluationFiber.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	oldcodes/FactorizeMethods.py	/^        def estimator(param, trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+estimator	oldcodes/FactorizeMethods.py	/^        def estimator(param,trainingData):$/;"	f	function:EvaluateCompletionMain/dataGenerator
+Eval	oldcodes/matlab.py	/^    def Eval(exp):$/;"	m	class:Matlab
+Evaluate	CrossValidation.py	/^def Evaluate($/;"	f
 evaluate	ExecuterArtificial.py	/^def evaluate(Mask,unobserved):$/;"	f
-evaluate	ExecuterBonnie.py	/^def evaluate(Mask,unobserved):$/;"	f
-evaluate	ExecuterFlow.py	/^def evaluate(Mask,unobserved):$/;"	f
-EvaluateCompletion	Evaluation.py	/^def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
-EvaluateCompletion	EvaluationFiber.py	/^def EvaluateCompletion(data,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
-EvaluateCompletionMain	Evaluation.py	/^def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
-EvaluateCompletionMain	EvaluationFiber.py	/^def EvaluateCompletionMain(data,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
-evaluateData	Evaluation.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
-evaluateData	EvaluationFiber.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
-Evaluation_CP	tensor.py	/^def Evaluation_CP():$/;"	f
-Evaluation_CP	tensortest.py	/^def Evaluation_CP():$/;"	f
-Evaluation_Tucker	tensor.py	/^def Evaluation_Tucker():$/;"	f
-Evaluation_Tucker	tensortest.py	/^def Evaluation_Tucker():$/;"	f
-exectimes	Executer.py	/^exectimes = 6$/;"	v
-exectimes	ExecuterArtificial.py	/^exectimes = 2$/;"	v
-exectimes	ExecuterBonnie.py	/^exectimes = 1$/;"	v
-exectimes	ExecuterEnron.py	/^exectimes = 4$/;"	v
-exectimes	ExecuterFlow.py	/^exectimes = 2$/;"	v
-exectimes	ExecuterRandomtest.py	/^exectimes = 6$/;"	v
-exectimes	ExecuterSugar.py	/^exectimes = 4$/;"	v
-exectimes	ExecuterThreeD.py	/^exectimes = 1$/;"	v
-exectimes	ExecuterWine.py	/^exectimes = 1$/;"	v
+evaluate	oldcodes/ExecuterArtificial.py	/^def evaluate(Mask,unobserved):$/;"	f
+evaluate	oldcodes/ExecuterBonnie.py	/^def evaluate(Mask,unobserved):$/;"	f
+evaluate	oldcodes/ExecuterFlow.py	/^def evaluate(Mask,unobserved):$/;"	f
+EvaluateCompletion	EvaluationCPWopt.py	/^def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletion	EvaluationCPWopt_taihi.py	/^def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletion	oldcodes/Evaluation.py	/^def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletion	oldcodes/EvaluationFiber.py	/^def EvaluateCompletion(data,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	EvaluationCPWopt.py	/^def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	EvaluationCPWopt_taihi.py	/^def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	oldcodes/Evaluation.py	/^def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	oldcodes/EvaluationFiber.py	/^def EvaluateCompletionMain(data,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+EvaluateCompletionMain	oldcodes/FactorizeMethods.py	/^def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):$/;"	f
+evaluateData	CrossValidation.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:Evaluate
+evaluateData	EvaluationCPWopt_taihi.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
+evaluateData	oldcodes/Evaluation.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
+evaluateData	oldcodes/EvaluationFiber.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
+evaluateData	oldcodes/FactorizeMethods.py	/^    def evaluateData(evalAndTrainIx,hyperParameters):$/;"	f	function:CrossValidation
+Evaluation_CP	oldcodes/tensor.py	/^def Evaluation_CP():$/;"	f
+Evaluation_CP	oldcodes/tensortest.py	/^def Evaluation_CP():$/;"	f
+Evaluation_Tucker	oldcodes/tensor.py	/^def Evaluation_Tucker():$/;"	f
+Evaluation_Tucker	oldcodes/tensortest.py	/^def Evaluation_Tucker():$/;"	f
+exectimes	ExecuterArtificial.py	/^exectimes = 10$/;"	v
+exectimes	oldcodes/Executer.py	/^exectimes = 6$/;"	v
+exectimes	oldcodes/ExecuterArtificial.py	/^exectimes = 2$/;"	v
+exectimes	oldcodes/ExecuterBonnie.py	/^exectimes = 1$/;"	v
+exectimes	oldcodes/ExecuterEnron.py	/^exectimes = 4$/;"	v
+exectimes	oldcodes/ExecuterFlow.py	/^exectimes = 2$/;"	v
+exectimes	oldcodes/ExecuterRandomtest.py	/^exectimes = 6$/;"	v
+exectimes	oldcodes/ExecuterSugar.py	/^exectimes = 4$/;"	v
+exectimes	oldcodes/ExecuterThreeD.py	/^exectimes = 1$/;"	v
+exectimes	oldcodes/ExecuterWine.py	/^exectimes = 1$/;"	v
+Exercise15 18	log/rep_linalg_toshikawa.tex	/^\\section{Exercise15-18}$/;"	s
 expand	algorithm.py	/^def expand(G,As):$/;"	f
-F	SVD.py	/^F = F * sign(F[0,0])$/;"	v
-F	SVD.py	/^F=getLeadingSingularVects_obs(A,3).T$/;"	v
-fig	benchmark.py	/^    fig = plt.figure()$/;"	v
-Flow_Injection	benchmark.py	/^def Flow_Injection():$/;"	f
-forkeval	Evaluation.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
-forkeval	EvaluationFiber.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
-fuga	ThreadFunc.py	/^    def fuga(a): #something time-consuming procedure #2$/;"	f	function:test_parallel
+expand	oldcodes/algorithm.py	/^def expand(G,As):$/;"	f
+ext_modules	setup.py	/^    ext_modules=[Extension("CPWOPTcritical",["CPWOPTcritical.pyx"]$/;"	v
+F	SVD.py	/^    F = F * sign(F[0,0])$/;"	v
+F	SVD.py	/^    F=getLeadingSingularVects_obs(A,3).T$/;"	v
+field	CPWOPTcritical.c	/^  __Pyx_StructField* field;$/;"	m	struct:__anon11	file:
+fields	CPWOPTcritical.c	/^  struct __Pyx_StructField_* fields;$/;"	m	struct:__anon10	typeref:struct:__anon10::__Pyx_StructField_	file:
+fig	oldcodes/benchmark.py	/^    fig = plt.figure()$/;"	v
+FinishContext	CPWOPT.c	/^    void (*FinishContext)(void**);$/;"	m	struct:__anon3	file:
+FinishContext	CPWOPTcritical.c	/^    void (*FinishContext)(void**);$/;"	m	struct:__anon9	file:
+Flow_Injection	oldcodes/benchmark.py	/^def Flow_Injection():$/;"	f
+fmt_offset	CPWOPTcritical.c	/^  size_t fmt_offset;$/;"	m	struct:__anon12	file:
+forkeval	CrossValidation.py	/^        def forkeval(data):$/;"	f	function:Evaluate/evaluateData
+forkeval	EvaluationCPWopt_taihi.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
+forkeval	oldcodes/Evaluation.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
+forkeval	oldcodes/EvaluationFiber.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
+forkeval	oldcodes/FactorizeMethods.py	/^        def forkeval(data):$/;"	f	function:CrossValidation/evaluateData
+format	CPWOPT.c	/^     char *format;$/;"	m	struct:__anon1	file:
+format	CPWOPTcritical.c	/^     char *format;$/;"	m	struct:__anon5	file:
+fuga	oldcodes/ThreadFunc.py	/^    def fuga(a): #something time-consuming procedure #2$/;"	f	function:test_parallel
+func	CPWOPT.c	/^    PyCFunctionObject func;$/;"	m	struct:__anon4	file:
+GenerateMaskingSparseTensor	Toolbox.py	/^def GenerateMaskingSparseTensor(size,rate):$/;"	f
+GenerateRandomSeparation	oldcodes/Toolbox.py	/^def GenerateRandomSeparation(targetIndeces,size):$/;"	f
 GenerateRandomSeparation	Toolbox.py	/^def GenerateRandomSeparation(targetIndeces,size):$/;"	f
-Get	matlab.py	/^    def Get(name):$/;"	m	class:Matlab
+Get	oldcodes/matlab.py	/^    def Get(name):$/;"	m	class:Matlab
 getAxis	algorithm.py	/^def getAxis(dim,n):$/;"	f
-getAxis	TensorComputation.py	/^    def getAxis(self, dim,n):$/;"	m	class:TensorCoputation
-getBonnie	benchmark.py	/^def getBonnie(mat):$/;"	f
+getAxis	oldcodes/algorithm.py	/^def getAxis(dim,n):$/;"	f
+getAxis	TensorComputation.py	/^def getAxis(dim,n):$/;"	f
+getBonnie	oldcodes/benchmark.py	/^def getBonnie(mat):$/;"	f
 getG	algorithm.py	/^def getG(X,As):$/;"	f
-getG	TensorComputation.py	/^    def getG(self,X,As):$/;"	m	class:TensorCoputation
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial2
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial3
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:ArtificialTucker
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Bonnie
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Enron
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Flow_Injection
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:RandomSmallTensor
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Sugar
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:ThreeDNoseData
-getLaplacian	benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Wine_v6
-getLaplacian	RRMF.py	/^def getLaplacian(A):$/;"	f
+getG	oldcodes/algorithm.py	/^def getG(X,As):$/;"	f
+getG	TensorComputation.py	/^def getG(X,As):$/;"	f
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial2
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Artificial3
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:ArtificialTucker
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Bonnie
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Enron
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Flow_Injection
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:RandomSmallTensor
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Renkanhyo
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Sugar
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:ThreeDNoseData
+getLaplacian	oldcodes/benchmark.py	/^    def getLaplacian(mat):$/;"	f	function:Wine_v6
+getLaplacian	oldcodes/RRMF.py	/^def getLaplacian(A):$/;"	f
 getLeadingEigenVects	algorithm.py	/^def getLeadingEigenVects(X,R):$/;"	f
+getLeadingEigenVects	oldcodes/algorithm.py	/^def getLeadingEigenVects(X,R):$/;"	f
 getLeadingEigenVects_obs	SVD.py	/^def getLeadingEigenVects_obs(X,R):$/;"	f
 getLeadingSingularVects	algorithm.py	/^def getLeadingSingularVects(X,R):$/;"	f
+getLeadingSingularVects	oldcodes/algorithm.py	/^def getLeadingSingularVects(X,R):$/;"	f
 getLeadingSingularVects	SVD.py	/^def getLeadingSingularVects(X,R):$/;"	f
 getLeadingSingularVects_obs	SVD.py	/^def getLeadingSingularVects_obs(X,R):$/;"	f
 getM	algorithm.py	/^            def getM(i):$/;"	f	function:CPDistanceStep
-getSeparatingArraySize	Evaluation.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
-getSeparatingArraySize	EvaluationFiber.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial2
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial3
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:ArtificialTucker
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Bonnie
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Enron
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Flow_Injection
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:RandomSmallTensor
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Sugar
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:ThreeDNoseData
-getTensor	benchmark.py	/^    def getTensor(mat):$/;"	f	function:Wine_v6
-get_input	ThreadFunc.py	/^    def get_input(self):$/;"	m	class:tmap
+getM	oldcodes/algorithm.py	/^            def getM(i):$/;"	f	function:CPDistanceStep
+getMaskTensor	CPWOPT.py	/^def getMaskTensor(ObsList,shape):$/;"	f
+getobslist	CompletionMethods.py	/^        def getobslist(trainingData):$/;"	f	function:CPWOPT.estimator
+getobslist	EvaluationCPWopt_taihi.py	/^        def getobslist(trainingData):$/;"	f	function:EvaluateCompletionMain/estimator
+getSeparatingArraySize	oldcodes/Evaluation.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+getSeparatingArraySize	oldcodes/EvaluationFiber.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+getSeparatingArraySize	oldcodes/FactorizeMethods.py	/^    def getSeparatingArraySize(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial2
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Artificial3
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:ArtificialTucker
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Bonnie
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Enron
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Flow_Injection
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:RandomSmallTensor
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Renkanhyo
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Sugar
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:ThreeDNoseData
+getTensor	oldcodes/benchmark.py	/^    def getTensor(mat):$/;"	f	function:Wine_v6
+get_input	oldcodes/ThreadFunc.py	/^    def get_input(self):$/;"	m	class:tmap
 get_transposing_permutation	algorithm.py	/^    def get_transposing_permutation(n,dim):$/;"	f	function:unfold
-get_transposing_permutation	TensorComputation.py	/^        def get_transposing_permutation(n,dim):$/;"	f	function:TensorCoputation.unfold
+get_transposing_permutation	oldcodes/algorithm.py	/^    def get_transposing_permutation(n,dim):$/;"	f	function:unfold
+get_transposing_permutation	TensorComputation.py	/^    def get_transposing_permutation(n,dim):$/;"	f	function:unfold
 get_unfolding_matrix_size	algorithm.py	/^def get_unfolding_matrix_size(A, n):$/;"	f
-get_unfolding_matrix_size	TensorComputation.py	/^    def get_unfolding_matrix_size(self, A, n):$/;"	m	class:TensorCoputation
-handle_input	ThreadFunc.py	/^    def handle_input(self, input):$/;"	m	class:tmap
-hoge	ThreadFunc.py	/^    def hoge(a): $/;"	f	function:test_parallel
+get_unfolding_matrix_size	oldcodes/algorithm.py	/^def get_unfolding_matrix_size(A, n):$/;"	f
+get_unfolding_matrix_size	TensorComputation.py	/^def get_unfolding_matrix_size(A, n):$/;"	f
+GIVEREF	CPWOPT.c	/^    void (*GIVEREF)(void*, PyObject*, int);$/;"	m	struct:__anon3	file:
+GIVEREF	CPWOPTcritical.c	/^    void (*GIVEREF)(void*, PyObject*, int);$/;"	m	struct:__anon9	file:
+GOTREF	CPWOPT.c	/^    void (*GOTREF)(void*, PyObject*, int);$/;"	m	struct:__anon3	file:
+GOTREF	CPWOPTcritical.c	/^    void (*GOTREF)(void*, PyObject*, int);$/;"	m	struct:__anon9	file:
+Gradient	CPWOPTcritical.pyx	/^def Gradient(np.ndarray[np.float_t,ndim=1] X not None,np.ndarray[np.int_t,ndim=1] Obs not None,tuple As,np.ndarray[np.float_t,ndim=2] L not None,tuple shape,int R,int mode):$/;"	f
+HadamardProdOfSparseTensor	CPWOPTcritical.pyx	/^def HadamardProdOfSparseTensor(np.ndarray[np.float_t,ndim=2] U not None,np.ndarray[np.float_t,ndim=2] V not None,np.ndarray[np.float_t,ndim=2] W not None,np.ndarray[np.int_t,ndim=1] Obs not None):$/;"	f
+handle_input	oldcodes/ThreadFunc.py	/^    def handle_input(self, input):$/;"	m	class:tmap
+head	CPWOPTcritical.c	/^  __Pyx_BufFmt_StackElem* head;$/;"	m	struct:__anon12	file:
+hoge	oldcodes/ThreadFunc.py	/^    def hoge(a): $/;"	f	function:test_parallel
 HOOI	algorithm.py	/^def HOOI(X,Rs,alpha = 0.0,Ls = None):$/;"	f
+HOOI	oldcodes/algorithm.py	/^def HOOI(X,Rs,alpha = 0.0,Ls = None):$/;"	f
 HOOIProdstep	algorithm.py	/^def HOOIProdstep(G,As,X,Rs,alpha = 0.0,Ls=None):$/;"	f
+HOOIProdstep	oldcodes/algorithm.py	/^def HOOIProdstep(G,As,X,Rs,alpha = 0.0,Ls=None):$/;"	f
 HOOIstep	algorithm.py	/^def HOOIstep(G,As,X,Rs,alpha = 0.0,Ls=None):$/;"	f
+HOOIstep	oldcodes/algorithm.py	/^def HOOIstep(G,As,X,Rs,alpha = 0.0,Ls=None):$/;"	f
 HOOI_obsolete	algorithm.py	/^def HOOI_obsolete(X,Rs,alpha = 0.0,Ls = None):$/;"	f
-HOSVD	algorithm_old.py	/^def HOSVD(X,Rs):$/;"	f
+HOOI_obsolete	oldcodes/algorithm.py	/^def HOOI_obsolete(X,Rs,alpha = 0.0,Ls = None):$/;"	f
+HOSVD	oldcodes/algorithm_old.py	/^def HOSVD(X,Rs):$/;"	f
 Hproduct	algorithm.py	/^def Hproduct(A,B):$/;"	f
-Hproduct	TensorComputation.py	/^    def Hproduct(self, A,B):$/;"	m	class:TensorCoputation
-im	benchmark.py	/^    im = plt.imshow(data)$/;"	v
-indecesOfEvaluationBlocks	Evaluation.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
-indecesOfEvaluationBlocks	EvaluationFiber.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
+Hproduct	oldcodes/algorithm.py	/^def Hproduct(A,B):$/;"	f
+Hproduct	TensorComputation.py	/^def Hproduct(A,B):$/;"	f
+IgnoreThreshold	log/dataAnalyzer.py	/^IgnoreThreshold = 100.0$/;"	v
+im	oldcodes/benchmark.py	/^    im = plt.imshow(data)$/;"	v
+imag	CPWOPTcritical.c	/^    typedef struct { double real, imag; } __pyx_t_double_complex;$/;"	m	struct:__anon8	file:
+imag	CPWOPTcritical.c	/^    typedef struct { float real, imag; } __pyx_t_float_complex;$/;"	m	struct:__anon7	file:
+INCREF	CPWOPT.c	/^    void (*INCREF)(void*, PyObject*, int);$/;"	m	struct:__anon3	file:
+INCREF	CPWOPTcritical.c	/^    void (*INCREF)(void*, PyObject*, int);$/;"	m	struct:__anon9	file:
+indecesOfEvaluationBlocks	oldcodes/Evaluation.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
+indecesOfEvaluationBlocks	oldcodes/EvaluationFiber.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
+indecesOfEvaluationBlocks	oldcodes/FactorizeMethods.py	/^def indecesOfEvaluationBlocks(targetIndeces,blocks):$/;"	f
+initCPWOPT	CPWOPT.c	/^PyMODINIT_FUNC initCPWOPT(void)$/;"	f
+initCPWOPTcritical	CPWOPTcritical.c	/^PyMODINIT_FUNC initCPWOPTcritical(void)$/;"	f
 initializeAs	algorithm.py	/^def initializeAs(X,Rs):$/;"	f
+initializeAs	oldcodes/algorithm.py	/^def initializeAs(X,Rs):$/;"	f
 InitializeDiagAndSimilarity	Completion.py	/^def InitializeDiagAndSimilarity(Y,Ls):$/;"	f
+InitializeDiagAndSimilarity	oldcodes/Completion.py	/^def InitializeDiagAndSimilarity(Y,Ls):$/;"	f
+intern	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+intern	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+internal	CPWOPT.c	/^     void *internal;$/;"	m	struct:__anon1	file:
+internal	CPWOPTcritical.c	/^     void *internal;$/;"	m	struct:__anon5	file:
+is_complex	CPWOPTcritical.c	/^  int is_complex;$/;"	m	struct:__anon12	file:
+is_str	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+is_str	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+is_unicode	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+is_unicode	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+itemsize	CPWOPT.c	/^     Py_ssize_t itemsize;$/;"	m	struct:__anon1	file:
+itemsize	CPWOPTcritical.c	/^     Py_ssize_t itemsize;$/;"	m	struct:__anon5	file:
 KRproduct	algorithm.py	/^def KRproduct(A,B):$/;"	f
-KRproduct	TensorComputation.py	/^    def KRproduct(self, A,B):$/;"	m	class:TensorCoputation
-Learn3	RRMF.py	/^def Learn3(X,A,D):$/;"	f
-Logger	debug.py	/^class Logger:$/;"	c
-logger	Executer.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
-logger	Executer.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
-logger	ExecuterEnron.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
-logger	ExecuterEnron.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
-logger	ExecuterEnron.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
-logger	ExecuterEnron.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
-logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
-logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
-logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
-logger	ExecuterRandomtest.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
-logger	ExecuterSugar.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
-logger	ExecuterSugar.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
-logger	ExecuterSugar.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
-logger	ExecuterSugar.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
-logger	ExecuterThreeD.py	/^    logger = Logger(dataname+"_Distance")$/;"	v
-logger	ExecuterWine.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
-logger	ExecuterWine.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
-logger	ExecuterWine.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
-logger	ExecuterWine.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+KRproduct	oldcodes/algorithm.py	/^def KRproduct(A,B):$/;"	f
+KRproduct	TensorComputation.py	/^def KRproduct(A,B):$/;"	f
+LBFGS_matrix	CPWOPT.py	/^def LBFGS_matrix(f,xinit,fprime,maxiter):$/;"	f
+Learn3	oldcodes/RRMF.py	/^def Learn3(X,A,D):$/;"	f
+len	CPWOPT.c	/^     Py_ssize_t len;$/;"	m	struct:__anon1	file:
+len	CPWOPTcritical.c	/^     Py_ssize_t len;$/;"	m	struct:__anon5	file:
+likely	CPWOPT.c	/^#define likely(/;"	d	file:
+likely	CPWOPTcritical.c	/^#define likely(/;"	d	file:
 Logger	logger.py	/^class Logger:$/;"	c
-lossFunction	Evaluation.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
-lossFunction	EvaluationFiber.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
-lsqrsylv	lsqrsylv.py	/^def lsqrsylv(Left,Right, C, damp=0.0, atol=1e-8, btol=1e-8, conlim=1e8,$/;"	f
+Logger	oldcodes/debug.py	/^class Logger:$/;"	c
+logger	oldcodes/Executer.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	oldcodes/Executer.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	oldcodes/ExecuterEnron.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	oldcodes/ExecuterEnron.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	oldcodes/ExecuterEnron.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	oldcodes/ExecuterEnron.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+logger	oldcodes/ExecuterRandomtest.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	oldcodes/ExecuterRandomtest.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	oldcodes/ExecuterRandomtest.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	oldcodes/ExecuterRandomtest.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+logger	oldcodes/ExecuterSugar.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	oldcodes/ExecuterSugar.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	oldcodes/ExecuterSugar.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	oldcodes/ExecuterSugar.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+logger	oldcodes/ExecuterThreeD.py	/^    logger = Logger(dataname+"_Distance")$/;"	v
+logger	oldcodes/ExecuterWine.py	/^logger = Logger(dataname+"_CP_Normal")$/;"	v
+logger	oldcodes/ExecuterWine.py	/^logger = Logger(dataname+"_CP_Relation")$/;"	v
+logger	oldcodes/ExecuterWine.py	/^logger = Logger(dataname+"_Tucker_Normal")$/;"	v
+logger	oldcodes/ExecuterWine.py	/^logger = Logger(dataname+"_Tucker_Relation")$/;"	v
+Logger	oldcodes/logger.py	/^class Logger:$/;"	c
+lossfunc	CPWOPT.py	/^    def lossfunc(U,V,W):$/;"	f	function:CompletionGradient
+lossFunction	CompletionMethods.py	/^    def lossFunction(self):$/;"	m	class:Completion
+lossFunction	EvaluationCPWopt.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lossFunction	EvaluationCPWopt_taihi.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lossFunction	oldcodes/Evaluation.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lossFunction	oldcodes/EvaluationFiber.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lossFunction	oldcodes/FactorizeMethods.py	/^    def lossFunction(estimation,evalData):$/;"	f	function:EvaluateCompletionMain
+lsqrsylv	oldcodes/lsqrsylv.py	/^def lsqrsylv(Left,Right, C, damp=0.0, atol=1e-8, btol=1e-8, conlim=1e8,$/;"	f
 lyap	algorithm.py	/^def lyap(A,B,C):$/;"	f
-lyap	matlab.py	/^    def lyap(A,B,C):$/;"	m	class:Matlab
-map	forkmap.py	/^def map(function, *sequence):$/;"	f
-map	paralellmap.py	/^def map(function, *sequence):$/;"	f
-mapreducetest	ThreadFunc.py	/^def mapreducetest():$/;"	f
-Matlab	matlab.py	/^class Matlab:$/;"	c
+lyap	oldcodes/algorithm.py	/^def lyap(A,B,C):$/;"	f
+lyap	oldcodes/matlab.py	/^    def lyap(A,B,C):$/;"	m	class:Matlab
+map	oldcodes/forkmap.py	/^def map(function, *sequence):$/;"	f
+map	oldcodes/paralellmap.py	/^def map(function, *sequence):$/;"	f
+mapreducetest	oldcodes/ThreadFunc.py	/^def mapreducetest():$/;"	f
+Matlab	oldcodes/matlab.py	/^class Matlab:$/;"	c
 MaximizeTraceAX	algorithm.py	/^def MaximizeTraceAX(A):$/;"	f
-Methods	methods.py	/^class Methods:$/;"	c
+MaximizeTraceAX	oldcodes/algorithm.py	/^def MaximizeTraceAX(A):$/;"	f
+Methods	oldcodes/methods.py	/^class Methods:$/;"	c
+METH_COEXIST	CPWOPT.c	/^  #define METH_COEXIST /;"	d	file:
+METH_COEXIST	CPWOPTcritical.c	/^  #define METH_COEXIST /;"	d	file:
 mgs	algorithm.py	/^def mgs(a):$/;"	f
+mgs	oldcodes/algorithm.py	/^def mgs(a):$/;"	f
 mgs	SVD.py	/^def mgs(a):$/;"	f
-mkfactor	benchmark.py	/^        def mkfactor(size,rank):$/;"	f	function:Artificial3/getTensor
-mkfactor	benchmark.py	/^        def mkfactor(size,rank):$/;"	f	function:ArtificialTucker/getTensor
-mkfactor	benchmark.py	/^        def mkfactor(size,rank,L,alpha):$/;"	f	function:Artificial/getTensor
-mlab	mlabwrap.py	/^mlab = MlabWrap()$/;"	v
-MlabConversionError	mlabwrap.py	/^class MlabConversionError(Exception):$/;"	c
-MlabError	mlabwrap.py	/^MlabError = mlabraw.error$/;"	v
-MlabObjectProxy	mlabwrap.py	/^class MlabObjectProxy(object):$/;"	c
-MlabWrap	mlabwrap.py	/^class MlabWrap(object):$/;"	c
-mlab_command	mlabwrap.py	/^        def mlab_command(*args, **kwargs):$/;"	f	function:MlabWrap._make_mlab_command
-mmm	ptest.py	/^def mmm(n):$/;"	f
-ndarray	mlabwrap.py	/^    ndarray = Numeric.ArrayType$/;"	v
-ndarray	mlabwrap.py	/^    ndarray = numpy.ndarray$/;"	v
-next	ThreadFunc.py	/^    def next(self):$/;"	m	class:tfilter
-next	ThreadFunc.py	/^    def next(self):$/;"	m	class:tmap
+mkfactor	oldcodes/benchmark.py	/^        def mkfactor(size,rank):$/;"	f	function:Artificial3/getTensor
+mkfactor	oldcodes/benchmark.py	/^        def mkfactor(size,rank):$/;"	f	function:ArtificialTucker/getTensor
+mkfactor	oldcodes/benchmark.py	/^        def mkfactor(size,rank,L,alpha):$/;"	f	function:Artificial/getTensor
+mlab	oldcodes/mlabwrap.py	/^mlab = MlabWrap()$/;"	v
+MlabConversionError	oldcodes/mlabwrap.py	/^class MlabConversionError(Exception):$/;"	c
+MlabError	oldcodes/mlabwrap.py	/^MlabError = mlabraw.error$/;"	v
+MlabObjectProxy	oldcodes/mlabwrap.py	/^class MlabObjectProxy(object):$/;"	c
+MlabWrap	oldcodes/mlabwrap.py	/^class MlabWrap(object):$/;"	c
+mlab_command	oldcodes/mlabwrap.py	/^        def mlab_command(*args, **kwargs):$/;"	f	function:MlabWrap._make_mlab_command
+mmm	oldcodes/ptest.py	/^def mmm(n):$/;"	f
+n	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+n	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+name	CPWOPTcritical.c	/^  const char* name; \/* for error messages only *\/$/;"	m	struct:__anon10	file:
+name	CPWOPTcritical.c	/^  const char* name;$/;"	m	struct:__Pyx_StructField_	file:
+name	setup.py	/^    name="CPWOPTcritical",$/;"	v
+ndarray	oldcodes/mlabwrap.py	/^    ndarray = Numeric.ArrayType$/;"	v
+ndarray	oldcodes/mlabwrap.py	/^    ndarray = numpy.ndarray$/;"	v
+ndim	CPWOPT.c	/^     int ndim;$/;"	m	struct:__anon1	file:
+ndim	CPWOPTcritical.c	/^     int ndim;$/;"	m	struct:__anon5	file:
+new_count	CPWOPTcritical.c	/^  int new_count, enc_count;$/;"	m	struct:__anon12	file:
+next	oldcodes/ThreadFunc.py	/^    def next(self):$/;"	m	class:tfilter
+next	oldcodes/ThreadFunc.py	/^    def next(self):$/;"	m	class:tmap
 Nproduct	algorithm.py	/^def Nproduct(X,U,n):$/;"	f
-Nproduct	TensorComputation.py	/^    def Nproduct(self, X,U,n):$/;"	m	class:TensorCoputation
-Open	matlab.py	/^    def Open():$/;"	m	class:Matlab
-p	benchmark.py	/^        def p(obj):$/;"	f	function:ArtificialTucker/getTensor
-parallel	ThreadFunc.py	/^def parallel(*settings):$/;"	f
-parallelizable	forkmap.py	/^def parallelizable(maxchildren=2, perproc=None):$/;"	f
-parallelizable	paralellmap.py	/^def parallelizable(maxchildren=2, perproc=None):$/;"	f
-prime	ThreadFunc.py	/^    def prime(n):$/;"	f	function:test_tfilter
+Nproduct	oldcodes/algorithm.py	/^def Nproduct(X,U,n):$/;"	f
+Nproduct	TensorComputation.py	/^def Nproduct(X,U,n):$/;"	f
+obj	CPWOPT.c	/^     PyObject *obj;$/;"	m	struct:__anon1	file:
+obj	CPWOPTcritical.c	/^     PyObject *obj;$/;"	m	struct:__anon5	file:
+offset	CPWOPTcritical.c	/^  size_t offset;$/;"	m	struct:__Pyx_StructField_	file:
+offsetof	CPWOPT.c	/^#define offsetof(/;"	d	file:
+offsetof	CPWOPTcritical.c	/^#define offsetof(/;"	d	file:
+Open	oldcodes/matlab.py	/^    def Open():$/;"	m	class:Matlab
+p	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+p	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+p	oldcodes/benchmark.py	/^        def p(obj):$/;"	f	function:ArtificialTucker/getTensor
+packmode	CPWOPTcritical.c	/^  char packmode;$/;"	m	struct:__anon12	file:
+parallel	oldcodes/ThreadFunc.py	/^def parallel(*settings):$/;"	f
+parallelizable	oldcodes/forkmap.py	/^def parallelizable(maxchildren=2, perproc=None):$/;"	f
+parallelizable	oldcodes/paralellmap.py	/^def parallelizable(maxchildren=2, perproc=None):$/;"	f
+parent_offset	CPWOPTcritical.c	/^  size_t parent_offset;$/;"	m	struct:__anon11	file:
+plotData	log/dataAnalyzer.py	/^def plotData(num,data, title):$/;"	f
+prime	oldcodes/ThreadFunc.py	/^    def prime(n):$/;"	f	function:test_tfilter
 printline	logger.py	/^    def printline(self,message):$/;"	m	class:Logger
+printline	oldcodes/logger.py	/^    def printline(self,message):$/;"	m	class:Logger
+Process	log/dataAnalyzer.py	/^def Process(dataname=None):$/;"	f
+processMethod	log/dataAnalyzer.py	/^def processMethod(files):$/;"	f
+processOneData	log/dataAnalyzer.py	/^def processOneData(files):$/;"	f
 Ps	newalg.py	/^Ps=[]$/;"	v
-Put	matlab.py	/^    def Put(name,val):$/;"	m	class:Matlab
-RandomObservedTensorStream	DataStream.py	/^def RandomObservedTensorStream(shape,unobservedRate):$/;"	f
-RandomSmallTensor	benchmark.py	/^def RandomSmallTensor():$/;"	f
+Ps	oldcodes/newalg.py	/^Ps=[]$/;"	v
+Put	oldcodes/matlab.py	/^    def Put(name,val):$/;"	m	class:Matlab
+PyBaseString_Type	CPWOPT.c	/^  #define PyBaseString_Type /;"	d	file:
+PyBaseString_Type	CPWOPTcritical.c	/^  #define PyBaseString_Type /;"	d	file:
+PyBoolObject	CPWOPT.c	/^  #define PyBoolObject /;"	d	file:
+PyBoolObject	CPWOPTcritical.c	/^  #define PyBoolObject /;"	d	file:
+PyBUF_ANY_CONTIGUOUS	CPWOPT.c	/^  #define PyBUF_ANY_CONTIGUOUS /;"	d	file:
+PyBUF_ANY_CONTIGUOUS	CPWOPTcritical.c	/^  #define PyBUF_ANY_CONTIGUOUS /;"	d	file:
+PyBUF_C_CONTIGUOUS	CPWOPT.c	/^  #define PyBUF_C_CONTIGUOUS /;"	d	file:
+PyBUF_C_CONTIGUOUS	CPWOPTcritical.c	/^  #define PyBUF_C_CONTIGUOUS /;"	d	file:
+PyBUF_FORMAT	CPWOPT.c	/^  #define PyBUF_FORMAT /;"	d	file:
+PyBUF_FORMAT	CPWOPTcritical.c	/^  #define PyBUF_FORMAT /;"	d	file:
+PyBUF_F_CONTIGUOUS	CPWOPT.c	/^  #define PyBUF_F_CONTIGUOUS /;"	d	file:
+PyBUF_F_CONTIGUOUS	CPWOPTcritical.c	/^  #define PyBUF_F_CONTIGUOUS /;"	d	file:
+PyBUF_INDIRECT	CPWOPT.c	/^  #define PyBUF_INDIRECT /;"	d	file:
+PyBUF_INDIRECT	CPWOPTcritical.c	/^  #define PyBUF_INDIRECT /;"	d	file:
+PyBUF_ND	CPWOPT.c	/^  #define PyBUF_ND /;"	d	file:
+PyBUF_ND	CPWOPTcritical.c	/^  #define PyBUF_ND /;"	d	file:
+PyBUF_SIMPLE	CPWOPT.c	/^  #define PyBUF_SIMPLE /;"	d	file:
+PyBUF_SIMPLE	CPWOPTcritical.c	/^  #define PyBUF_SIMPLE /;"	d	file:
+PyBUF_STRIDES	CPWOPT.c	/^  #define PyBUF_STRIDES /;"	d	file:
+PyBUF_STRIDES	CPWOPTcritical.c	/^  #define PyBUF_STRIDES /;"	d	file:
+PyBUF_WRITABLE	CPWOPT.c	/^  #define PyBUF_WRITABLE /;"	d	file:
+PyBUF_WRITABLE	CPWOPTcritical.c	/^  #define PyBUF_WRITABLE /;"	d	file:
+PyBytesObject	CPWOPT.c	/^  #define PyBytesObject /;"	d	file:
+PyBytesObject	CPWOPTcritical.c	/^  #define PyBytesObject /;"	d	file:
+PyBytes_AsString	CPWOPT.c	/^  #define PyBytes_AsString /;"	d	file:
+PyBytes_AsString	CPWOPTcritical.c	/^  #define PyBytes_AsString /;"	d	file:
+PyBytes_AsStringAndSize	CPWOPT.c	/^  #define PyBytes_AsStringAndSize /;"	d	file:
+PyBytes_AsStringAndSize	CPWOPTcritical.c	/^  #define PyBytes_AsStringAndSize /;"	d	file:
+PyBytes_AS_STRING	CPWOPT.c	/^  #define PyBytes_AS_STRING /;"	d	file:
+PyBytes_AS_STRING	CPWOPTcritical.c	/^  #define PyBytes_AS_STRING /;"	d	file:
+PyBytes_Check	CPWOPT.c	/^  #define PyBytes_Check /;"	d	file:
+PyBytes_Check	CPWOPTcritical.c	/^  #define PyBytes_Check /;"	d	file:
+PyBytes_CheckExact	CPWOPT.c	/^  #define PyBytes_CheckExact /;"	d	file:
+PyBytes_CheckExact	CPWOPTcritical.c	/^  #define PyBytes_CheckExact /;"	d	file:
+PyBytes_Concat	CPWOPT.c	/^  #define PyBytes_Concat /;"	d	file:
+PyBytes_Concat	CPWOPTcritical.c	/^  #define PyBytes_Concat /;"	d	file:
+PyBytes_ConcatAndDel	CPWOPT.c	/^  #define PyBytes_ConcatAndDel /;"	d	file:
+PyBytes_ConcatAndDel	CPWOPTcritical.c	/^  #define PyBytes_ConcatAndDel /;"	d	file:
+PyBytes_DecodeEscape	CPWOPT.c	/^  #define PyBytes_DecodeEscape /;"	d	file:
+PyBytes_DecodeEscape	CPWOPTcritical.c	/^  #define PyBytes_DecodeEscape /;"	d	file:
+PyBytes_FromFormat	CPWOPT.c	/^  #define PyBytes_FromFormat /;"	d	file:
+PyBytes_FromFormat	CPWOPTcritical.c	/^  #define PyBytes_FromFormat /;"	d	file:
+PyBytes_FromString	CPWOPT.c	/^  #define PyBytes_FromString /;"	d	file:
+PyBytes_FromString	CPWOPTcritical.c	/^  #define PyBytes_FromString /;"	d	file:
+PyBytes_FromStringAndSize	CPWOPT.c	/^  #define PyBytes_FromStringAndSize /;"	d	file:
+PyBytes_FromStringAndSize	CPWOPTcritical.c	/^  #define PyBytes_FromStringAndSize /;"	d	file:
+PyBytes_GET_SIZE	CPWOPT.c	/^  #define PyBytes_GET_SIZE /;"	d	file:
+PyBytes_GET_SIZE	CPWOPTcritical.c	/^  #define PyBytes_GET_SIZE /;"	d	file:
+PyBytes_Repr	CPWOPT.c	/^  #define PyBytes_Repr /;"	d	file:
+PyBytes_Repr	CPWOPTcritical.c	/^  #define PyBytes_Repr /;"	d	file:
+PyBytes_Size	CPWOPT.c	/^  #define PyBytes_Size /;"	d	file:
+PyBytes_Size	CPWOPTcritical.c	/^  #define PyBytes_Size /;"	d	file:
+PyBytes_Type	CPWOPT.c	/^  #define PyBytes_Type /;"	d	file:
+PyBytes_Type	CPWOPTcritical.c	/^  #define PyBytes_Type /;"	d	file:
+PyDict_CheckExact	CPWOPT.c	/^  #define PyDict_CheckExact(/;"	d	file:
+PyDict_CheckExact	CPWOPTcritical.c	/^  #define PyDict_CheckExact(/;"	d	file:
+PyDict_Contains	CPWOPT.c	/^  #define PyDict_Contains(/;"	d	file:
+PyDict_Contains	CPWOPTcritical.c	/^  #define PyDict_Contains(/;"	d	file:
+PyErr_WarnEx	CPWOPT.c	/^  #define PyErr_WarnEx(/;"	d	file:
+PyErr_WarnEx	CPWOPTcritical.c	/^  #define PyErr_WarnEx(/;"	d	file:
+PyFrozenSet_Check	CPWOPT.c	/^  #define PyFrozenSet_Check(/;"	d	file:
+PyFrozenSet_Check	CPWOPTcritical.c	/^  #define PyFrozenSet_Check(/;"	d	file:
+PyIndex_Check	CPWOPT.c	/^  #define PyIndex_Check(/;"	d	file:
+PyIndex_Check	CPWOPTcritical.c	/^  #define PyIndex_Check(/;"	d	file:
+PyIntObject	CPWOPT.c	/^  #define PyIntObject /;"	d	file:
+PyIntObject	CPWOPTcritical.c	/^  #define PyIntObject /;"	d	file:
+PyInt_AsLong	CPWOPT.c	/^  #define PyInt_AsLong /;"	d	file:
+PyInt_AsLong	CPWOPTcritical.c	/^  #define PyInt_AsLong /;"	d	file:
+PyInt_AsSsize_t	CPWOPT.c	/^  #define PyInt_AsSsize_t /;"	d	file:
+PyInt_AsSsize_t	CPWOPT.c	/^  #define PyInt_AsSsize_t(/;"	d	file:
+PyInt_AsSsize_t	CPWOPTcritical.c	/^  #define PyInt_AsSsize_t /;"	d	file:
+PyInt_AsSsize_t	CPWOPTcritical.c	/^  #define PyInt_AsSsize_t(/;"	d	file:
+PyInt_AsUnsignedLongLongMask	CPWOPT.c	/^  #define PyInt_AsUnsignedLongLongMask /;"	d	file:
+PyInt_AsUnsignedLongLongMask	CPWOPTcritical.c	/^  #define PyInt_AsUnsignedLongLongMask /;"	d	file:
+PyInt_AsUnsignedLongMask	CPWOPT.c	/^  #define PyInt_AsUnsignedLongMask /;"	d	file:
+PyInt_AsUnsignedLongMask	CPWOPTcritical.c	/^  #define PyInt_AsUnsignedLongMask /;"	d	file:
+PyInt_AS_LONG	CPWOPT.c	/^  #define PyInt_AS_LONG /;"	d	file:
+PyInt_AS_LONG	CPWOPTcritical.c	/^  #define PyInt_AS_LONG /;"	d	file:
+PyInt_Check	CPWOPT.c	/^  #define PyInt_Check(/;"	d	file:
+PyInt_Check	CPWOPTcritical.c	/^  #define PyInt_Check(/;"	d	file:
+PyInt_CheckExact	CPWOPT.c	/^  #define PyInt_CheckExact(/;"	d	file:
+PyInt_CheckExact	CPWOPTcritical.c	/^  #define PyInt_CheckExact(/;"	d	file:
+PyInt_FromLong	CPWOPT.c	/^  #define PyInt_FromLong /;"	d	file:
+PyInt_FromLong	CPWOPTcritical.c	/^  #define PyInt_FromLong /;"	d	file:
+PyInt_FromSize_t	CPWOPT.c	/^  #define PyInt_FromSize_t /;"	d	file:
+PyInt_FromSize_t	CPWOPTcritical.c	/^  #define PyInt_FromSize_t /;"	d	file:
+PyInt_FromSsize_t	CPWOPT.c	/^  #define PyInt_FromSsize_t /;"	d	file:
+PyInt_FromSsize_t	CPWOPT.c	/^  #define PyInt_FromSsize_t(/;"	d	file:
+PyInt_FromSsize_t	CPWOPTcritical.c	/^  #define PyInt_FromSsize_t /;"	d	file:
+PyInt_FromSsize_t	CPWOPTcritical.c	/^  #define PyInt_FromSsize_t(/;"	d	file:
+PyInt_FromString	CPWOPT.c	/^  #define PyInt_FromString /;"	d	file:
+PyInt_FromString	CPWOPTcritical.c	/^  #define PyInt_FromString /;"	d	file:
+PyInt_FromUnicode	CPWOPT.c	/^  #define PyInt_FromUnicode /;"	d	file:
+PyInt_FromUnicode	CPWOPTcritical.c	/^  #define PyInt_FromUnicode /;"	d	file:
+PyInt_Type	CPWOPT.c	/^  #define PyInt_Type /;"	d	file:
+PyInt_Type	CPWOPTcritical.c	/^  #define PyInt_Type /;"	d	file:
+PyMethod_New	CPWOPT.c	/^  #define PyMethod_New(/;"	d	file:
+PyMethod_New	CPWOPTcritical.c	/^  #define PyMethod_New(/;"	d	file:
+PyNumber_Index	CPWOPT.c	/^  #define PyNumber_Index(/;"	d	file:
+PyNumber_Index	CPWOPTcritical.c	/^  #define PyNumber_Index(/;"	d	file:
+PySet_Check	CPWOPT.c	/^  #define PySet_Check(/;"	d	file:
+PySet_Check	CPWOPTcritical.c	/^  #define PySet_Check(/;"	d	file:
+PySet_CheckExact	CPWOPT.c	/^  #define PySet_CheckExact(/;"	d	file:
+PySet_CheckExact	CPWOPTcritical.c	/^  #define PySet_CheckExact(/;"	d	file:
+PyStringObject	CPWOPT.c	/^  #define PyStringObject /;"	d	file:
+PyStringObject	CPWOPTcritical.c	/^  #define PyStringObject /;"	d	file:
+PyString_Check	CPWOPT.c	/^  #define PyString_Check /;"	d	file:
+PyString_Check	CPWOPTcritical.c	/^  #define PyString_Check /;"	d	file:
+PyString_CheckExact	CPWOPT.c	/^  #define PyString_CheckExact /;"	d	file:
+PyString_CheckExact	CPWOPTcritical.c	/^  #define PyString_CheckExact /;"	d	file:
+PyString_Type	CPWOPT.c	/^  #define PyString_Type /;"	d	file:
+PyString_Type	CPWOPTcritical.c	/^  #define PyString_Type /;"	d	file:
+PyType_Modified	CPWOPT.c	/^  #define PyType_Modified(/;"	d	file:
+PyType_Modified	CPWOPTcritical.c	/^  #define PyType_Modified(/;"	d	file:
+PyVarObject_HEAD_INIT	CPWOPT.c	/^  #define PyVarObject_HEAD_INIT(/;"	d	file:
+PyVarObject_HEAD_INIT	CPWOPTcritical.c	/^  #define PyVarObject_HEAD_INIT(/;"	d	file:
+Py_buffer	CPWOPT.c	/^  } Py_buffer;$/;"	t	typeref:struct:__anon1	file:
+Py_buffer	CPWOPTcritical.c	/^  } Py_buffer;$/;"	t	typeref:struct:__anon5	file:
+PY_FORMAT_SIZE_T	CPWOPT.c	/^  #define PY_FORMAT_SIZE_T /;"	d	file:
+PY_FORMAT_SIZE_T	CPWOPTcritical.c	/^  #define PY_FORMAT_SIZE_T /;"	d	file:
+PY_LONG_LONG	CPWOPT.c	/^  #define PY_LONG_LONG /;"	d	file:
+PY_LONG_LONG	CPWOPTcritical.c	/^  #define PY_LONG_LONG /;"	d	file:
+Py_REFCNT	CPWOPT.c	/^  #define Py_REFCNT(/;"	d	file:
+Py_REFCNT	CPWOPTcritical.c	/^  #define Py_REFCNT(/;"	d	file:
+Py_SIZE	CPWOPT.c	/^  #define Py_SIZE(/;"	d	file:
+Py_SIZE	CPWOPTcritical.c	/^  #define Py_SIZE(/;"	d	file:
+Py_ssize_t	CPWOPT.c	/^  typedef int Py_ssize_t;$/;"	t	file:
+Py_ssize_t	CPWOPTcritical.c	/^  typedef int Py_ssize_t;$/;"	t	file:
+PY_SSIZE_T_CLEAN	CPWOPT.c	/^#define PY_SSIZE_T_CLEAN$/;"	d	file:
+PY_SSIZE_T_CLEAN	CPWOPTcritical.c	/^#define PY_SSIZE_T_CLEAN$/;"	d	file:
+PY_SSIZE_T_MAX	CPWOPT.c	/^  #define PY_SSIZE_T_MAX /;"	d	file:
+PY_SSIZE_T_MAX	CPWOPTcritical.c	/^  #define PY_SSIZE_T_MAX /;"	d	file:
+PY_SSIZE_T_MIN	CPWOPT.c	/^  #define PY_SSIZE_T_MIN /;"	d	file:
+PY_SSIZE_T_MIN	CPWOPTcritical.c	/^  #define PY_SSIZE_T_MIN /;"	d	file:
+Py_TPFLAGS_CHECKTYPES	CPWOPT.c	/^  #define Py_TPFLAGS_CHECKTYPES /;"	d	file:
+Py_TPFLAGS_CHECKTYPES	CPWOPTcritical.c	/^  #define Py_TPFLAGS_CHECKTYPES /;"	d	file:
+Py_TPFLAGS_HAVE_INDEX	CPWOPT.c	/^  #define Py_TPFLAGS_HAVE_INDEX /;"	d	file:
+Py_TPFLAGS_HAVE_INDEX	CPWOPTcritical.c	/^  #define Py_TPFLAGS_HAVE_INDEX /;"	d	file:
+Py_TPFLAGS_HAVE_NEWBUFFER	CPWOPT.c	/^  #define Py_TPFLAGS_HAVE_NEWBUFFER /;"	d	file:
+Py_TPFLAGS_HAVE_NEWBUFFER	CPWOPTcritical.c	/^  #define Py_TPFLAGS_HAVE_NEWBUFFER /;"	d	file:
+Py_TYPE	CPWOPT.c	/^  #define Py_TYPE(/;"	d	file:
+Py_TYPE	CPWOPTcritical.c	/^  #define Py_TYPE(/;"	d	file:
+RandomObservedTensorStream	oldcodes/DataStream.py	/^def RandomObservedTensorStream(shape,unobservedRate):$/;"	f
+RandomSmallTensor	oldcodes/benchmark.py	/^def RandomSmallTensor():$/;"	f
 randomTensorOfNorm	algorithm.py	/^def randomTensorOfNorm(sizelist,ranks,std):$/;"	f
-randomTensorOfNorm	mattest.py	/^def randomTensorOfNorm(sizelist,ranks):$/;"	f
-randomTensorOfNorm	TensorComputation.py	/^    def randomTensorOfNorm(self, sizelist,ranks,std):$/;"	m	class:TensorCoputation
+randomTensorOfNorm	oldcodes/algorithm.py	/^def randomTensorOfNorm(sizelist,ranks,std):$/;"	f
+randomTensorOfNorm	oldcodes/mattest.py	/^def randomTensorOfNorm(sizelist,ranks):$/;"	f
+randomTensorOfNorm	TensorComputation.py	/^def randomTensorOfNorm(sizelist,ranks,std):$/;"	f
 ranks	ExecuterArtificial.py	/^ranks=[2]$/;"	v
-ranks	ExecuterFlow.py	/^ranks = [4]$/;"	v
-ranks	ExecuterThreeD.py	/^ranks = [3]$/;"	v
-recvmessage	forkmap.py	/^    def recvmessage(myend):$/;"	f	function:map
-recvmessage	paralellmap.py	/^    def recvmessage(myend):$/;"	f	function:map
+ranks	oldcodes/ExecuterArtificial.py	/^ranks=[2]$/;"	v
+ranks	oldcodes/ExecuterFlow.py	/^ranks = [4]$/;"	v
+ranks	oldcodes/ExecuterThreeD.py	/^ranks = [3]$/;"	v
+readinMatrix	oldcodes/benchmark.py	/^    def readinMatrix(path):$/;"	f	function:Renkanhyo
+readmatrix	oldcodes/benchmark.py	/^        def readmatrix(rows):$/;"	f	function:Renkanhyo/readinMatrix
+readonly	CPWOPT.c	/^     int readonly;$/;"	m	struct:__anon1	file:
+readonly	CPWOPTcritical.c	/^     int readonly;$/;"	m	struct:__anon5	file:
+real	CPWOPTcritical.c	/^    typedef struct { double real, imag; } __pyx_t_double_complex;$/;"	m	struct:__anon8	file:
+real	CPWOPTcritical.c	/^    typedef struct { float real, imag; } __pyx_t_float_complex;$/;"	m	struct:__anon7	file:
+recvmessage	oldcodes/forkmap.py	/^    def recvmessage(myend):$/;"	f	function:map
+recvmessage	oldcodes/paralellmap.py	/^    def recvmessage(myend):$/;"	f	function:map
 RedSVD	SVD.py	/^def RedSVD(A,R):$/;"	f
-Release	debug.py	/^    def Release(self):$/;"	m	class:Logger
 Release	logger.py	/^    def Release(self):$/;"	m	class:Logger
+Release	oldcodes/debug.py	/^    def Release(self):$/;"	m	class:Logger
+Release	oldcodes/logger.py	/^    def Release(self):$/;"	m	class:Logger
+Renkanhyo	oldcodes/benchmark.py	/^def Renkanhyo():$/;"	f
 resetRRMFCP	newalg.py	/^def resetRRMFCP():$/;"	f
+resetRRMFCP	oldcodes/newalg.py	/^def resetRRMFCP():$/;"	f
+root	CPWOPTcritical.c	/^  __Pyx_StructField root;$/;"	m	struct:__anon12	file:
 RRMFCP	algorithm.py	/^def RRMFCP(X,R,beta,Ls=None,alpha=0,Ps=None,Ds=None):$/;"	f
+RRMFCP	oldcodes/algorithm.py	/^def RRMFCP(X,R,beta,Ls=None,alpha=0,Ps=None,Ds=None):$/;"	f
 RRMFCPProdstep	algorithm.py	/^def RRMFCPProdstep(As,X,R,beta,Ls,alpha=0,Xns = None):$/;"	f
+RRMFCPProdstep	oldcodes/algorithm.py	/^def RRMFCPProdstep(As,X,R,beta,Ls,alpha=0,Xns = None):$/;"	f
 RRMFCPstep	algorithm.py	/^def RRMFCPstep(As,X,R,beta,Ls,Ps,Ds,alpha=0,Xns = None):$/;"	f
+RRMFCPstep	oldcodes/algorithm.py	/^def RRMFCPstep(As,X,R,beta,Ls,Ps,Ds,alpha=0,Xns = None):$/;"	f
 RRMFCP_obsolete	newalg.py	/^def RRMFCP_obsolete(TrueX,Observed,X,R,beta,Ls=None,alpha=0,Ps=None,Ds=None):$/;"	f
-run	ThreadFunc.py	/^    def run(self):$/;"	m	class:tmap
-run	ThreadFunc.py	/^    def run(self):$/;"	m	class:_parallel
-run	ThreadFunc.py	/^    def run(self):$/;"	m	class:_treduce
-s	SVD.py	/^s=500$/;"	v
-SaveArrays	benchmark.py	/^def SaveArrays():$/;"	f
-SaveImage	benchmark.py	/^def SaveImage(X,filename,axis):$/;"	f
-saveVarsInMat	mlabwrap.py	/^def saveVarsInMat(filename, varNamesStr, outOf=None, **opts):$/;"	f
-search	ThreadFunc.py	/^    def search(args):$/;"	f	function:mapreducetest
-sendmessage	forkmap.py	/^    def sendmessage(myend, message):$/;"	f	function:map
-sendmessage	paralellmap.py	/^    def sendmessage(myend, message):$/;"	f	function:map
-separateArrayRandomly	Evaluation.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
-separateArrayRandomly	EvaluationFiber.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+RRMFCP_obsolete	oldcodes/newalg.py	/^def RRMFCP_obsolete(TrueX,Observed,X,R,beta,Ls=None,alpha=0,Ps=None,Ds=None):$/;"	f
+run	oldcodes/ThreadFunc.py	/^    def run(self):$/;"	m	class:tmap
+run	oldcodes/ThreadFunc.py	/^    def run(self):$/;"	m	class:_parallel
+run	oldcodes/ThreadFunc.py	/^    def run(self):$/;"	m	class:_treduce
+s	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon2	file:
+s	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	m	struct:__anon6	file:
+s	SVD.py	/^    s=500$/;"	v
+SaveArrays	oldcodes/benchmark.py	/^def SaveArrays():$/;"	f
+SaveImage	oldcodes/benchmark.py	/^def SaveImage(X,filename,axis):$/;"	f
+saveVarsInMat	oldcodes/mlabwrap.py	/^def saveVarsInMat(filename, varNamesStr, outOf=None, **opts):$/;"	f
+search	oldcodes/ThreadFunc.py	/^    def search(args):$/;"	f	function:mapreducetest
+sendmessage	oldcodes/forkmap.py	/^    def sendmessage(myend, message):$/;"	f	function:map
+sendmessage	oldcodes/paralellmap.py	/^    def sendmessage(myend, message):$/;"	f	function:map
+separateArrayRandomly	oldcodes/Evaluation.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+separateArrayRandomly	oldcodes/EvaluationFiber.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
+separateArrayRandomly	oldcodes/FactorizeMethods.py	/^    def separateArrayRandomly(length,blocks):$/;"	f	function:indecesOfEvaluationBlocks
 separateLaplacian	algorithm.py	/^def separateLaplacian(L,size):$/;"	f
-setter	Evaluation.py	/^            def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
-setter	EvaluationFiber.py	/^        def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+separateLaplacian	oldcodes/algorithm.py	/^def separateLaplacian(L,size):$/;"	f
+setter	EvaluationCPWopt.py	/^            def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+setter	EvaluationCPWopt_taihi.py	/^            def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+setter	oldcodes/Evaluation.py	/^            def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+setter	oldcodes/EvaluationFiber.py	/^        def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+setter	oldcodes/FactorizeMethods.py	/^            def setter(index):$/;"	f	function:EvaluateCompletionMain/createObservedTensor
+SetupContext	CPWOPT.c	/^    void* (*SetupContext)(const char*, int, const char*);$/;"	m	struct:__anon3	file:
+SetupContext	CPWOPTcritical.c	/^    void* (*SetupContext)(const char*, int, const char*);$/;"	m	struct:__anon9	file:
+shape	CPWOPT.c	/^     Py_ssize_t *shape;$/;"	m	struct:__anon1	file:
+shape	CPWOPTcritical.c	/^     Py_ssize_t *shape;$/;"	m	struct:__anon5	file:
+ShuffleArray	oldcodes/Toolbox.py	/^def ShuffleArray(seq):$/;"	f
 ShuffleArray	Toolbox.py	/^def ShuffleArray(seq):$/;"	f
+size	CPWOPTcritical.c	/^  size_t size;     \/* sizeof(type) *\/$/;"	m	struct:__anon10	file:
 solveGeneralizedSylvester	algorithm.py	/^def solveGeneralizedSylvester(Ls,Rs,C):$/;"	f
-StreamMemorizer	DataStream.py	/^class StreamMemorizer:$/;"	c
-Sugar	benchmark.py	/^def Sugar():$/;"	f
+solveGeneralizedSylvester	oldcodes/algorithm.py	/^def solveGeneralizedSylvester(Ls,Rs,C):$/;"	f
+StreamMemorizer	oldcodes/DataStream.py	/^class StreamMemorizer:$/;"	c
+strides	CPWOPT.c	/^     Py_ssize_t *strides;$/;"	m	struct:__anon1	file:
+strides	CPWOPTcritical.c	/^     Py_ssize_t *strides;$/;"	m	struct:__anon5	file:
+suboffsets	CPWOPT.c	/^     Py_ssize_t *suboffsets;$/;"	m	struct:__anon1	file:
+suboffsets	CPWOPTcritical.c	/^     Py_ssize_t *suboffsets;$/;"	m	struct:__anon5	file:
+Sugar	oldcodes/benchmark.py	/^def Sugar():$/;"	f
 SumCP	algorithm.py	/^def SumCP(L,A,B,C):$/;"	f
+SumCP	oldcodes/algorithm.py	/^def SumCP(L,A,B,C):$/;"	f
+swap	oldcodes/Toolbox.py	/^    def swap(arr,a,b):$/;"	f	function:ShuffleArray
 swap	Toolbox.py	/^    def swap(arr,a,b):$/;"	f	function:ShuffleArray
 swapIndex	algorithm.py	/^def swapIndex(n):$/;"	f
-swapIndex	TensorComputation.py	/^    def swapIndex(self, n):$/;"	m	class:TensorCoputation
+swapIndex	oldcodes/algorithm.py	/^def swapIndex(n):$/;"	f
+swapIndex	TensorComputation.py	/^def swapIndex(n):$/;"	f
 sylvesterColumnwiseUpdating	algorithm.py	/^def sylvesterColumnwiseUpdating(P,D,B,C,X):$/;"	f
+sylvesterColumnwiseUpdating	oldcodes/algorithm.py	/^def sylvesterColumnwiseUpdating(P,D,B,C,X):$/;"	f
+Take	oldcodes/Toolbox.py	/^def Take(gen,n):$/;"	f
 Take	Toolbox.py	/^def Take(gen,n):$/;"	f
-TensorCoputation	TensorComputation.py	/^class TensorCoputation:$/;"	c
-test	ThreadFunc.py	/^def test():$/;"	f
-testCompletion	mattest.py	/^def testCompletion():$/;"	f
-testCompletion	tensor.py	/^def testCompletion():$/;"	f
-testCompletion	tensortest.py	/^def testCompletion():$/;"	f
-testCP	tensor.py	/^def testCP():$/;"	f
-testCP	tensortest.py	/^def testCP():$/;"	f
-testL	tensor.py	/^def testL():$/;"	f
-testlogger	debug.py	/^def testlogger():$/;"	f
+test	oldcodes/ThreadFunc.py	/^def test():$/;"	f
+testCompletion	oldcodes/mattest.py	/^def testCompletion():$/;"	f
+testCompletion	oldcodes/tensor.py	/^def testCompletion():$/;"	f
+testCompletion	oldcodes/tensortest.py	/^def testCompletion():$/;"	f
+testCP	oldcodes/tensor.py	/^def testCP():$/;"	f
+testCP	oldcodes/tensortest.py	/^def testCP():$/;"	f
+testL	oldcodes/tensor.py	/^def testL():$/;"	f
 testlogger	logger.py	/^def testlogger():$/;"	f
-testTucker	mattest.py	/^def testTucker():$/;"	f
-testTucker	tensor.py	/^def testTucker():$/;"	f
-testTucker	tensortest.py	/^def testTucker():$/;"	f
-test_parallel	ThreadFunc.py	/^def test_parallel():$/;"	f
-test_tfilter	ThreadFunc.py	/^def test_tfilter(numThreads):$/;"	f
-test_tmap	ThreadFunc.py	/^def test_tmap(numThreads):$/;"	f
-test_treduce	ThreadFunc.py	/^def test_treduce(numThreads):$/;"	f
-tfilter	ThreadFunc.py	/^class tfilter(tmap):$/;"	c
-ThreeDNoseData	benchmark.py	/^def ThreeDNoseData():$/;"	f
-timeouthandler	forkmap.py	/^            def timeouthandler(signum, frame):$/;"	f	function:map/recvmessage
-timeouthandler	paralellmap.py	/^            def timeouthandler(signum, frame):$/;"	f	function:map/recvmessage
-timestwo	forkmap.py	/^    def timestwo(x, y):$/;"	f
-timestwo	paralellmap.py	/^    def timestwo(x, y):$/;"	f
-tmap	ThreadFunc.py	/^class tmap:$/;"	c
+testlogger	oldcodes/debug.py	/^def testlogger():$/;"	f
+testlogger	oldcodes/logger.py	/^def testlogger():$/;"	f
+testTucker	oldcodes/mattest.py	/^def testTucker():$/;"	f
+testTucker	oldcodes/tensor.py	/^def testTucker():$/;"	f
+testTucker	oldcodes/tensortest.py	/^def testTucker():$/;"	f
+test_parallel	oldcodes/ThreadFunc.py	/^def test_parallel():$/;"	f
+test_tfilter	oldcodes/ThreadFunc.py	/^def test_tfilter(numThreads):$/;"	f
+test_tmap	oldcodes/ThreadFunc.py	/^def test_tmap(numThreads):$/;"	f
+test_treduce	oldcodes/ThreadFunc.py	/^def test_treduce(numThreads):$/;"	f
+tfilter	oldcodes/ThreadFunc.py	/^class tfilter(tmap):$/;"	c
+ThreeDNoseData	oldcodes/benchmark.py	/^def ThreeDNoseData():$/;"	f
+timeouthandler	oldcodes/forkmap.py	/^            def timeouthandler(signum, frame):$/;"	f	function:map/recvmessage
+timeouthandler	oldcodes/paralellmap.py	/^            def timeouthandler(signum, frame):$/;"	f	function:map/recvmessage
+timestwo	oldcodes/forkmap.py	/^    def timestwo(x, y):$/;"	f
+timestwo	oldcodes/paralellmap.py	/^    def timestwo(x, y):$/;"	f
+tmap	oldcodes/ThreadFunc.py	/^class tmap:$/;"	c
+ToArray	oldcodes/Toolbox.py	/^def ToArray(gen):$/;"	f
 ToArray	Toolbox.py	/^def ToArray(gen):$/;"	f
-treduce	ThreadFunc.py	/^def treduce(func, biglist, numthreads=5):$/;"	f
+toggleDiv	CPWOPT.html	/^function toggleDiv(id) {$/;"	f
+toggleDiv	CPWOPTcritical.html	/^function toggleDiv(id) {$/;"	f
+treduce	oldcodes/ThreadFunc.py	/^def treduce(func, biglist, numthreads=5):$/;"	f
+Tucker	CompletionMethods.py	/^class Tucker(Completion):$/;"	c
+Tucker	Decomposition.py	/^class Tucker:$/;"	c
 TuckerDistanceStep	algorithm.py	/^def TuckerDistanceStep(G,As,X,Rs,Ls,alpha=0.0):$/;"	f
+TuckerDistanceStep	oldcodes/algorithm.py	/^def TuckerDistanceStep(G,As,X,Rs,Ls,alpha=0.0):$/;"	f
 TuckerKprodStep	algorithm.py	/^def TuckerKprodStep(G,As,X,Rs,Ds,Ws,PWs,DWs,alpha = 0.0):$/;"	f
+TuckerKprodStep	oldcodes/algorithm.py	/^def TuckerKprodStep(G,As,X,Rs,Ds,Ws,PWs,DWs,alpha = 0.0):$/;"	f
 TuckerKsumStep	algorithm.py	/^def TuckerKsumStep(G,As,X,Rs,Ls,Ps,Ds,alpha = 0.0):$/;"	f
+TuckerKsumStep	oldcodes/algorithm.py	/^def TuckerKsumStep(G,As,X,Rs,Ls,Ps,Ds,alpha = 0.0):$/;"	f
+type	CPWOPTcritical.c	/^  __Pyx_TypeInfo* type;$/;"	m	struct:__Pyx_StructField_	file:
+typegroup	CPWOPTcritical.c	/^  char typegroup; \/* _R_eal, _C_omplex, Signed _I_nt, _U_nsigned int, _S_truct, _P_ointer, _O_bject *\/$/;"	m	struct:__anon10	file:
 unfold	algorithm.py	/^def unfold(A, n):$/;"	f
-unfold	TensorComputation.py	/^    def unfold(self, A, n):$/;"	m	class:TensorCoputation
-unobservedRates	ExecuterThreeD.py	/^unobservedRates = array([0.75,0.9,0.95,0.99])$/;"	v
-Wine_v6	benchmark.py	/^def Wine_v6():$/;"	f
-Write	debug.py	/^    def Write(self,message):$/;"	m	class:Logger
+unfold	CPWOPTcritical.pyx	/^def unfold(np.ndarray[np.float_t,ndim=1] X not None, int mode, tuple shape not None,np.ndarray[np.int_t,ndim=1] ObsList not None):$/;"	f
+unfold	oldcodes/algorithm.py	/^def unfold(A, n):$/;"	f
+unfold	TensorComputation.py	/^def unfold(A, n):$/;"	f
+unlikely	CPWOPT.c	/^#define unlikely(/;"	d	file:
+unlikely	CPWOPTcritical.c	/^#define unlikely(/;"	d	file:
+unobservedRates	oldcodes/ExecuterThreeD.py	/^unobservedRates = array([0.75,0.9,0.95,0.99])$/;"	v
+unpackAs	CPWOPTcritical.pyx	/^cdef tuple unpackAs(np.ndarray[np.float_t,ndim=1] Asv,int su,int sv,int sw):$/;"	f
+Wine_v6	oldcodes/benchmark.py	/^def Wine_v6():$/;"	f
 Write	logger.py	/^    def Write(self,message="",disp=True):$/;"	m	class:Logger
-WriteLine	debug.py	/^    def WriteLine(self,message):$/;"	m	class:Logger
+Write	oldcodes/debug.py	/^    def Write(self,message):$/;"	m	class:Logger
+Write	oldcodes/logger.py	/^    def Write(self,message="",disp=True):$/;"	m	class:Logger
 WriteLine	logger.py	/^    def WriteLine(self,message="",disp=True):$/;"	m	class:Logger
-Wtest	mattest.py	/^Wtest = array($/;"	v
-Wtest	tensor.py	/^Wtest = array($/;"	v
-Wtest	tensortest.py	/^Wtest = array($/;"	v
-X	benchmark.py	/^    X = Bonnie()["X"]$/;"	v
-Ytest	mattest.py	/^Ytest = array($/;"	v
-Ytest	tensor.py	/^Ytest = array($/;"	v
-Ytest	tensortest.py	/^Ytest = array($/;"	v
-_convert_index	mlabwrap.py	/^    def _convert_index(self, index):$/;"	m	class:MlabObjectProxy
-_do	mlabwrap.py	/^    def _do(self, cmd, *args, **kwargs):$/;"	m	class:MlabWrap
-_flush_write_stdout	mlabwrap.py	/^def _flush_write_stdout(s):$/;"	f
-_format_struct	mlabwrap.py	/^    def _format_struct(self, varname):$/;"	m	class:MlabWrap
-_get	mlabwrap.py	/^    def _get(self, name, remove=False):$/;"	m	class:MlabWrap
-_get_cell	mlabwrap.py	/^    def _get_cell(self, varname):$/;"	m	class:MlabWrap
-_get_part	mlabwrap.py	/^    def _get_part(self, to_get):$/;"	m	class:MlabObjectProxy
-_get_values	mlabwrap.py	/^    def _get_values(self, varnames):$/;"	m	class:MlabWrap
-_handle_input	ThreadFunc.py	/^    def _handle_input(self):$/;"	m	class:tmap
-_handle_input	ThreadFunc.py	/^    def _handle_input(self):$/;"	m	class:_treduce
-_make_mlab_command	mlabwrap.py	/^    def _make_mlab_command(self, name, nout, doc=None):$/;"	m	class:MlabWrap
-_make_proxy	mlabwrap.py	/^    def _make_proxy(self, varname, parent=None, constructor=MlabObjectProxy):$/;"	m	class:MlabWrap
-_manually_convert	mlabwrap.py	/^    def _manually_convert(self, varname, vartype):$/;"	m	class:MlabWrap
-_matlab_str_repr	mlabwrap.py	/^    def _matlab_str_repr(s):$/;"	m	class:MlabObjectProxy
-_matlab_str_repr	mlabwrap.py	/^    _matlab_str_repr = staticmethod(_matlab_str_repr)$/;"	v	class:MlabObjectProxy
-_parallel	ThreadFunc.py	/^class _parallel:$/;"	c
-_process_func	ThreadFunc.py	/^    def _process_func(self,*args,**kwargs):$/;"	m	class:_parallel
-_set	mlabwrap.py	/^    def _set(self, name, value):$/;"	m	class:MlabWrap
-_set_part	mlabwrap.py	/^    def _set_part(self, to_set, value):$/;"	m	class:MlabObjectProxy
-_sym_ortho	lsqrsylv.py	/^def _sym_ortho(a,b):$/;"	f
-_treduce	ThreadFunc.py	/^class _treduce(tmap):$/;"	c
-_var_type	mlabwrap.py	/^    def _var_type(self, varname):$/;"	m	class:MlabWrap
-__all__	lsqrsylv.py	/^__all__ = ['lsqr']$/;"	v
-__all__	mlabwrap.py	/^    __all__ = [] #XXX a hack, so that this class can fake a module; don't mutate$/;"	v	class:MlabWrap
-__all__	mlabwrap.py	/^__all__ = ['mlab', 'saveVarsInMat', 'MlabWrap', 'MlabError']$/;"	v
-__all__	ThreadFunc.py	/^__all__ = ['tmap','treduce','tfilter', 'parallel','parallel']$/;"	v
-__author__	forkmap.py	/^__author__  = "Kirk Strauser <kirk@strauser.com>"$/;"	v
-__author__	mlabwrap.py	/^__author__   = "Alexander Schmolck <a.schmolck@gmx.net>"$/;"	v
-__author__	paralellmap.py	/^__author__  = "Kirk Strauser <kirk@strauser.com>"$/;"	v
-__date__	forkmap.py	/^__date__    = "$Date: 2007-05-24 10:56:44 -0500 (Thu, 24 May 2007) $"$/;"	v
-__date__	paralellmap.py	/^__date__    = "$Date: 2007-05-24 10:56:44 -0500 (Thu, 24 May 2007) $"$/;"	v
-__del__	debug.py	/^    def __del__(self):$/;"	m	class:Logger	file:
+WriteLine	oldcodes/debug.py	/^    def WriteLine(self,message):$/;"	m	class:Logger
+WriteLine	oldcodes/logger.py	/^    def WriteLine(self,message="",disp=True):$/;"	m	class:Logger
+Wtest	oldcodes/mattest.py	/^Wtest = array($/;"	v
+Wtest	oldcodes/tensor.py	/^Wtest = array($/;"	v
+Wtest	oldcodes/tensortest.py	/^Wtest = array($/;"	v
+x	CPWOPTcritical.c	/^typedef struct { char c; double x; } __Pyx_st_double;$/;"	m	struct:__anon17	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; float x; } __Pyx_st_float;$/;"	m	struct:__anon16	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; int x; } __Pyx_st_int;$/;"	m	struct:__anon14	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; long double x; } __Pyx_st_longdouble;$/;"	m	struct:__anon18	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; long x; } __Pyx_st_long;$/;"	m	struct:__anon15	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; PY_LONG_LONG x; } __Pyx_s_long_long;$/;"	m	struct:__anon20	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; short x; } __Pyx_st_short;$/;"	m	struct:__anon13	file:
+x	CPWOPTcritical.c	/^typedef struct { char c; void *x; } __Pyx_st_void_p;$/;"	m	struct:__anon19	file:
+X	oldcodes/benchmark.py	/^    X = Bonnie()["X"]$/;"	v
+X	oldcodes/benchmark.py	/^    X = dat["X"]$/;"	v
+xyyerr	log/dataAnalyzer.py	/^        def xyyerr(result):$/;"	f	function:processOneData
+Ytest	oldcodes/mattest.py	/^Ytest = array($/;"	v
+Ytest	oldcodes/tensor.py	/^Ytest = array($/;"	v
+Ytest	oldcodes/tensortest.py	/^Ytest = array($/;"	v
+_Complex_I	CPWOPTcritical.c	/^  #define _Complex_I /;"	d	file:
+_Complex_I	CPWOPTcritical.c	/^  #undef _Complex_I$/;"	d	file:
+_convert_index	oldcodes/mlabwrap.py	/^    def _convert_index(self, index):$/;"	m	class:MlabObjectProxy
+_do	oldcodes/mlabwrap.py	/^    def _do(self, cmd, *args, **kwargs):$/;"	m	class:MlabWrap
+_flush_write_stdout	oldcodes/mlabwrap.py	/^def _flush_write_stdout(s):$/;"	f
+_format_struct	oldcodes/mlabwrap.py	/^    def _format_struct(self, varname):$/;"	m	class:MlabWrap
+_get	oldcodes/mlabwrap.py	/^    def _get(self, name, remove=False):$/;"	m	class:MlabWrap
+_get_cell	oldcodes/mlabwrap.py	/^    def _get_cell(self, varname):$/;"	m	class:MlabWrap
+_get_part	oldcodes/mlabwrap.py	/^    def _get_part(self, to_get):$/;"	m	class:MlabObjectProxy
+_get_values	oldcodes/mlabwrap.py	/^    def _get_values(self, varnames):$/;"	m	class:MlabWrap
+_handle_input	oldcodes/ThreadFunc.py	/^    def _handle_input(self):$/;"	m	class:tmap
+_handle_input	oldcodes/ThreadFunc.py	/^    def _handle_input(self):$/;"	m	class:_treduce
+_make_mlab_command	oldcodes/mlabwrap.py	/^    def _make_mlab_command(self, name, nout, doc=None):$/;"	m	class:MlabWrap
+_make_proxy	oldcodes/mlabwrap.py	/^    def _make_proxy(self, varname, parent=None, constructor=MlabObjectProxy):$/;"	m	class:MlabWrap
+_manually_convert	oldcodes/mlabwrap.py	/^    def _manually_convert(self, varname, vartype):$/;"	m	class:MlabWrap
+_matlab_str_repr	oldcodes/mlabwrap.py	/^    def _matlab_str_repr(s):$/;"	m	class:MlabObjectProxy
+_matlab_str_repr	oldcodes/mlabwrap.py	/^    _matlab_str_repr = staticmethod(_matlab_str_repr)$/;"	v	class:MlabObjectProxy
+_parallel	oldcodes/ThreadFunc.py	/^class _parallel:$/;"	c
+_process_func	oldcodes/ThreadFunc.py	/^    def _process_func(self,*args,**kwargs):$/;"	m	class:_parallel
+_set	oldcodes/mlabwrap.py	/^    def _set(self, name, value):$/;"	m	class:MlabWrap
+_set_part	oldcodes/mlabwrap.py	/^    def _set_part(self, to_set, value):$/;"	m	class:MlabObjectProxy
+_sym_ortho	oldcodes/lsqrsylv.py	/^def _sym_ortho(a,b):$/;"	f
+_treduce	oldcodes/ThreadFunc.py	/^class _treduce(tmap):$/;"	c
+_USE_MATH_DEFINES	CPWOPT.c	/^#define _USE_MATH_DEFINES$/;"	d	file:
+_USE_MATH_DEFINES	CPWOPTcritical.c	/^#define _USE_MATH_DEFINES$/;"	d	file:
+_var_type	oldcodes/mlabwrap.py	/^    def _var_type(self, varname):$/;"	m	class:MlabWrap
+__all__	oldcodes/lsqrsylv.py	/^__all__ = ['lsqr']$/;"	v
+__all__	oldcodes/mlabwrap.py	/^    __all__ = [] #XXX a hack, so that this class can fake a module; don't mutate$/;"	v	class:MlabWrap
+__all__	oldcodes/mlabwrap.py	/^__all__ = ['mlab', 'saveVarsInMat', 'MlabWrap', 'MlabError']$/;"	v
+__all__	oldcodes/ThreadFunc.py	/^__all__ = ['tmap','treduce','tfilter', 'parallel','parallel']$/;"	v
+__author__	oldcodes/forkmap.py	/^__author__  = "Kirk Strauser <kirk@strauser.com>"$/;"	v
+__author__	oldcodes/mlabwrap.py	/^__author__   = "Alexander Schmolck <a.schmolck@gmx.net>"$/;"	v
+__author__	oldcodes/paralellmap.py	/^__author__  = "Kirk Strauser <kirk@strauser.com>"$/;"	v
+__cdecl	CPWOPT.c	/^    #define __cdecl$/;"	d	file:
+__cdecl	CPWOPTcritical.c	/^    #define __cdecl$/;"	d	file:
+__date__	oldcodes/forkmap.py	/^__date__    = "$Date: 2007-05-24 10:56:44 -0500 (Thu, 24 May 2007) $"$/;"	v
+__date__	oldcodes/paralellmap.py	/^__date__    = "$Date: 2007-05-24 10:56:44 -0500 (Thu, 24 May 2007) $"$/;"	v
 __del__	logger.py	/^    def __del__(self):$/;"	m	class:Logger	file:
-__del__	matlab.py	/^    def __del__():$/;"	m	class:Matlab	file:
-__del__	mlabwrap.py	/^    def __del__(self):$/;"	m	class:MlabObjectProxy	file:
-__del__	mlabwrap.py	/^    def __del__(self):$/;"	m	class:MlabWrap	file:
-__docformat__	mlabwrap.py	/^__docformat__ = "restructuredtext en"$/;"	v
-__getattr__	mlabwrap.py	/^    def __getattr__(self, attr):$/;"	m	class:MlabObjectProxy	file:
-__getattr__	mlabwrap.py	/^    def __getattr__(self, attr):$/;"	m	class:MlabWrap	file:
-__getitem__	mlabwrap.py	/^    def __getitem__(self, index):$/;"	m	class:CurlyIndexer	file:
-__getitem__	mlabwrap.py	/^    def __getitem__(self, index, parens='()'):$/;"	m	class:MlabObjectProxy	file:
-__getstate__	mlabwrap.py	/^    def __getstate__(self):$/;"	m	class:MlabObjectProxy	file:
-__init__	debug.py	/^    def __init__(self,name):$/;"	m	class:Logger
+__del__	oldcodes/debug.py	/^    def __del__(self):$/;"	m	class:Logger	file:
+__del__	oldcodes/logger.py	/^    def __del__(self):$/;"	m	class:Logger	file:
+__del__	oldcodes/matlab.py	/^    def __del__():$/;"	m	class:Matlab	file:
+__del__	oldcodes/mlabwrap.py	/^    def __del__(self):$/;"	m	class:MlabObjectProxy	file:
+__del__	oldcodes/mlabwrap.py	/^    def __del__(self):$/;"	m	class:MlabWrap	file:
+__docformat__	oldcodes/mlabwrap.py	/^__docformat__ = "restructuredtext en"$/;"	v
+__fastcall	CPWOPT.c	/^    #define __fastcall$/;"	d	file:
+__fastcall	CPWOPTcritical.c	/^    #define __fastcall$/;"	d	file:
+__getattr__	oldcodes/mlabwrap.py	/^    def __getattr__(self, attr):$/;"	m	class:MlabObjectProxy	file:
+__getattr__	oldcodes/mlabwrap.py	/^    def __getattr__(self, attr):$/;"	m	class:MlabWrap	file:
+__getitem__	oldcodes/mlabwrap.py	/^    def __getitem__(self, index):$/;"	m	class:CurlyIndexer	file:
+__getitem__	oldcodes/mlabwrap.py	/^    def __getitem__(self, index, parens='()'):$/;"	m	class:MlabObjectProxy	file:
+__getstate__	oldcodes/mlabwrap.py	/^    def __getstate__(self):$/;"	m	class:MlabObjectProxy	file:
+__init__	CompletionMethods.py	/^    def __init__(self,X,L):$/;"	m	class:Completion
 __init__	logger.py	/^    def __init__(self,name):$/;"	m	class:Logger
-__init__	mlabwrap.py	/^    def __init__(self):$/;"	m	class:MlabWrap
-__init__	mlabwrap.py	/^    def __init__(self, mlabwrap, name, parent=None):$/;"	m	class:MlabObjectProxy
-__init__	mlabwrap.py	/^    def __init__(self, proxy):$/;"	m	class:CurlyIndexer
-__init__	ThreadFunc.py	/^    def __init__(self, *settings):$/;"	m	class:_parallel
-__init__	ThreadFunc.py	/^    def __init__(self, func=None, data=None, numthreads=2):$/;"	m	class:tmap
-__init__	ThreadFunc.py	/^    def __init__(self, func=None, data=None, numthreads=2):$/;"	m	class:_treduce
-__iter__	mlabwrap.py	/^    def __iter__(self):$/;"	m	class:MlabObjectProxy	file:
-__iter__	ThreadFunc.py	/^    def __iter__(self):$/;"	m	class:tmap	file:
-__len__	mlabwrap.py	/^    def __len__(self):$/;"	m	class:MlabObjectProxy	file:
-__nonzero__	mlabwrap.py	/^    def __nonzero__(self):$/;"	m	class:MlabObjectProxy	file:
-__repr__	mlabwrap.py	/^    def __repr__(self):$/;"	m	class:MlabObjectProxy	file:
-__setattr__	mlabwrap.py	/^    def __setattr__(self, attr, value):$/;"	m	class:MlabObjectProxy	file:
-__setitem__	mlabwrap.py	/^    def __setitem__(self, index, value):$/;"	m	class:CurlyIndexer	file:
-__setitem__	mlabwrap.py	/^    def __setitem__(self, index, value, parens='()'):$/;"	m	class:MlabObjectProxy	file:
-__setstate__	mlabwrap.py	/^    def __setstate__(self, state):$/;"	m	class:MlabObjectProxy	file:
-__version__	forkmap.py	/^__version__ = "$Rev: 1139 $"$/;"	v
-__version__	mlabwrap.py	/^__version__ = '1.1'$/;"	v
-__version__	paralellmap.py	/^__version__ = "$Rev: 1139 $"$/;"	v
+__init__	oldcodes/debug.py	/^    def __init__(self,name):$/;"	m	class:Logger
+__init__	oldcodes/logger.py	/^    def __init__(self,name):$/;"	m	class:Logger
+__init__	oldcodes/mlabwrap.py	/^    def __init__(self):$/;"	m	class:MlabWrap
+__init__	oldcodes/mlabwrap.py	/^    def __init__(self, mlabwrap, name, parent=None):$/;"	m	class:MlabObjectProxy
+__init__	oldcodes/mlabwrap.py	/^    def __init__(self, proxy):$/;"	m	class:CurlyIndexer
+__init__	oldcodes/ThreadFunc.py	/^    def __init__(self, *settings):$/;"	m	class:_parallel
+__init__	oldcodes/ThreadFunc.py	/^    def __init__(self, func=None, data=None, numthreads=2):$/;"	m	class:tmap
+__init__	oldcodes/ThreadFunc.py	/^    def __init__(self, func=None, data=None, numthreads=2):$/;"	m	class:_treduce
+__iter__	oldcodes/mlabwrap.py	/^    def __iter__(self):$/;"	m	class:MlabObjectProxy	file:
+__iter__	oldcodes/ThreadFunc.py	/^    def __iter__(self):$/;"	m	class:tmap	file:
+__len__	oldcodes/mlabwrap.py	/^    def __len__(self):$/;"	m	class:MlabObjectProxy	file:
+__nonzero__	oldcodes/mlabwrap.py	/^    def __nonzero__(self):$/;"	m	class:MlabObjectProxy	file:
+__Pyx_AddTraceback	CPWOPT.c	/^static void __Pyx_AddTraceback(const char *funcname) {$/;"	f	file:
+__Pyx_AddTraceback	CPWOPTcritical.c	/^static void __Pyx_AddTraceback(const char *funcname) {$/;"	f	file:
+__Pyx_ArgTypeTest	CPWOPTcritical.c	/^static int __Pyx_ArgTypeTest(PyObject *obj, PyTypeObject *type, int none_allowed,$/;"	f	file:
+__pyx_b	CPWOPT.c	/^static PyObject *__pyx_b;$/;"	v	file:
+__pyx_b	CPWOPTcritical.c	/^static PyObject *__pyx_b;$/;"	v	file:
+__pyx_binding_PyCFunctionType	CPWOPT.c	/^static PyTypeObject *__pyx_binding_PyCFunctionType = NULL;$/;"	v	file:
+__pyx_binding_PyCFunctionType_dealloc	CPWOPT.c	/^static void __pyx_binding_PyCFunctionType_dealloc(__pyx_binding_PyCFunctionType_object *m) {$/;"	f	file:
+__pyx_binding_PyCFunctionType_descr_get	CPWOPT.c	/^static PyObject *__pyx_binding_PyCFunctionType_descr_get(PyObject *func, PyObject *obj, PyObject *type) {$/;"	f	file:
+__pyx_binding_PyCFunctionType_init	CPWOPT.c	/^static int __pyx_binding_PyCFunctionType_init(void) {$/;"	f	file:
+__pyx_binding_PyCFunctionType_New	CPWOPT.c	/^#define __pyx_binding_PyCFunctionType_New(/;"	d	file:
+__pyx_binding_PyCFunctionType_NewEx	CPWOPT.c	/^static PyObject *__pyx_binding_PyCFunctionType_NewEx(PyMethodDef *ml, PyObject *self, PyObject *module) {$/;"	f	file:
+__pyx_binding_PyCFunctionType_object	CPWOPT.c	/^} __pyx_binding_PyCFunctionType_object;$/;"	t	typeref:struct:__anon4	file:
+__pyx_binding_PyCFunctionType_type	CPWOPT.c	/^static PyTypeObject __pyx_binding_PyCFunctionType_type;$/;"	v	file:
+__pyx_binding_PyCFunctionType_USED	CPWOPT.c	/^#define __pyx_binding_PyCFunctionType_USED /;"	d	file:
+__Pyx_BufFmt_CheckString	CPWOPTcritical.c	/^static const char* __Pyx_BufFmt_CheckString(__Pyx_BufFmt_Context* ctx, const char* ts) {$/;"	f	file:
+__Pyx_BufFmt_Context	CPWOPTcritical.c	/^} __Pyx_BufFmt_Context;$/;"	t	typeref:struct:__anon12	file:
+__Pyx_BufFmt_DescribeTypeChar	CPWOPTcritical.c	/^static const char* __Pyx_BufFmt_DescribeTypeChar(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_FirstPack	CPWOPTcritical.c	/^static int __Pyx_BufFmt_FirstPack(__Pyx_BufFmt_Context* ctx) {$/;"	f	file:
+__Pyx_BufFmt_Init	CPWOPTcritical.c	/^static void __Pyx_BufFmt_Init(__Pyx_BufFmt_Context* ctx,$/;"	f	file:
+__Pyx_BufFmt_ParseNumber	CPWOPTcritical.c	/^static int __Pyx_BufFmt_ParseNumber(const char** ts) {$/;"	f	file:
+__Pyx_BufFmt_ProcessTypeChunk	CPWOPTcritical.c	/^static int __Pyx_BufFmt_ProcessTypeChunk(__Pyx_BufFmt_Context* ctx) {$/;"	f	file:
+__Pyx_BufFmt_RaiseExpected	CPWOPTcritical.c	/^static void __Pyx_BufFmt_RaiseExpected(__Pyx_BufFmt_Context* ctx) {$/;"	f	file:
+__Pyx_BufFmt_RaiseUnexpectedChar	CPWOPTcritical.c	/^static void __Pyx_BufFmt_RaiseUnexpectedChar(char ch) {$/;"	f	file:
+__Pyx_BufFmt_StackElem	CPWOPTcritical.c	/^} __Pyx_BufFmt_StackElem;$/;"	t	typeref:struct:__anon11	file:
+__Pyx_BufFmt_TypeCharToAlignment	CPWOPTcritical.c	/^static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToGroup	CPWOPTcritical.c	/^static size_t __Pyx_BufFmt_TypeCharToGroup(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToNativeSize	CPWOPTcritical.c	/^static size_t __Pyx_BufFmt_TypeCharToNativeSize(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToStandardSize	CPWOPTcritical.c	/^static size_t __Pyx_BufFmt_TypeCharToStandardSize(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufPtrStrided1d	CPWOPTcritical.c	/^#define __Pyx_BufPtrStrided1d(/;"	d	file:
+__Pyx_BufPtrStrided2d	CPWOPTcritical.c	/^#define __Pyx_BufPtrStrided2d(/;"	d	file:
+__pyx_builtin_enumerate	CPWOPT.c	/^static PyObject *__pyx_builtin_enumerate;$/;"	v	file:
+__Pyx_BUILTIN_MODULE_NAME	CPWOPT.c	/^  #define __Pyx_BUILTIN_MODULE_NAME /;"	d	file:
+__Pyx_BUILTIN_MODULE_NAME	CPWOPTcritical.c	/^  #define __Pyx_BUILTIN_MODULE_NAME /;"	d	file:
+__pyx_builtin_range	CPWOPTcritical.c	/^static PyObject *__pyx_builtin_range;$/;"	v	file:
+__pyx_builtin_RuntimeError	CPWOPTcritical.c	/^static PyObject *__pyx_builtin_RuntimeError;$/;"	v	file:
+__pyx_builtin_sum	CPWOPT.c	/^static PyObject *__pyx_builtin_sum;$/;"	v	file:
+__pyx_builtin_ValueError	CPWOPTcritical.c	/^static PyObject *__pyx_builtin_ValueError;$/;"	v	file:
+__pyx_builtin_xrange	CPWOPT.c	/^static PyObject *__pyx_builtin_xrange;$/;"	v	file:
+__pyx_builtin_xrange	CPWOPTcritical.c	/^static PyObject *__pyx_builtin_xrange;$/;"	v	file:
+__pyx_cfilenm	CPWOPT.c	/^static const char * __pyx_cfilenm= __FILE__;$/;"	v	file:
+__pyx_cfilenm	CPWOPTcritical.c	/^static const char * __pyx_cfilenm= __FILE__;$/;"	v	file:
+__Pyx_CIMAG	CPWOPTcritical.c	/^    #define __Pyx_CIMAG(/;"	d	file:
+__pyx_clineno	CPWOPT.c	/^static int __pyx_clineno = 0;$/;"	v	file:
+__pyx_clineno	CPWOPTcritical.c	/^static int __pyx_clineno = 0;$/;"	v	file:
+__Pyx_CREAL	CPWOPTcritical.c	/^    #define __Pyx_CREAL(/;"	d	file:
+__Pyx_c_abs	CPWOPTcritical.c	/^        #define __Pyx_c_abs(/;"	d	file:
+__Pyx_c_abs	CPWOPTcritical.c	/^        static CYTHON_INLINE double __Pyx_c_abs(__pyx_t_double_complex z) {$/;"	f	file:
+__Pyx_c_absf	CPWOPTcritical.c	/^        #define __Pyx_c_absf(/;"	d	file:
+__Pyx_c_absf	CPWOPTcritical.c	/^        static CYTHON_INLINE float __Pyx_c_absf(__pyx_t_float_complex z) {$/;"	f	file:
+__Pyx_c_conj	CPWOPTcritical.c	/^    #define __Pyx_c_conj(/;"	d	file:
+__Pyx_c_conj	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_conj(__pyx_t_double_complex a) {$/;"	f	file:
+__Pyx_c_conjf	CPWOPTcritical.c	/^    #define __Pyx_c_conjf(/;"	d	file:
+__Pyx_c_conjf	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_conjf(__pyx_t_float_complex a) {$/;"	f	file:
+__Pyx_c_diff	CPWOPTcritical.c	/^    #define __Pyx_c_diff(/;"	d	file:
+__Pyx_c_diff	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_diff(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_difff	CPWOPTcritical.c	/^    #define __Pyx_c_difff(/;"	d	file:
+__Pyx_c_difff	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_difff(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_eq	CPWOPTcritical.c	/^    #define __Pyx_c_eq(/;"	d	file:
+__Pyx_c_eq	CPWOPTcritical.c	/^    static CYTHON_INLINE int __Pyx_c_eq(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_eqf	CPWOPTcritical.c	/^    #define __Pyx_c_eqf(/;"	d	file:
+__Pyx_c_eqf	CPWOPTcritical.c	/^    static CYTHON_INLINE int __Pyx_c_eqf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_is_zero	CPWOPTcritical.c	/^    #define __Pyx_c_is_zero(/;"	d	file:
+__Pyx_c_is_zero	CPWOPTcritical.c	/^    static CYTHON_INLINE int __Pyx_c_is_zero(__pyx_t_double_complex a) {$/;"	f	file:
+__Pyx_c_is_zerof	CPWOPTcritical.c	/^    #define __Pyx_c_is_zerof(/;"	d	file:
+__Pyx_c_is_zerof	CPWOPTcritical.c	/^    static CYTHON_INLINE int __Pyx_c_is_zerof(__pyx_t_float_complex a) {$/;"	f	file:
+__Pyx_c_neg	CPWOPTcritical.c	/^    #define __Pyx_c_neg(/;"	d	file:
+__Pyx_c_neg	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_neg(__pyx_t_double_complex a) {$/;"	f	file:
+__Pyx_c_negf	CPWOPTcritical.c	/^    #define __Pyx_c_negf(/;"	d	file:
+__Pyx_c_negf	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_negf(__pyx_t_float_complex a) {$/;"	f	file:
+__Pyx_c_pow	CPWOPTcritical.c	/^        #define __Pyx_c_pow(/;"	d	file:
+__Pyx_c_pow	CPWOPTcritical.c	/^        static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_pow(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_powf	CPWOPTcritical.c	/^        #define __Pyx_c_powf(/;"	d	file:
+__Pyx_c_powf	CPWOPTcritical.c	/^        static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_powf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_prod	CPWOPTcritical.c	/^    #define __Pyx_c_prod(/;"	d	file:
+__Pyx_c_prod	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_prod(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_prodf	CPWOPTcritical.c	/^    #define __Pyx_c_prodf(/;"	d	file:
+__Pyx_c_prodf	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_prodf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_quot	CPWOPTcritical.c	/^    #define __Pyx_c_quot(/;"	d	file:
+__Pyx_c_quot	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_quot(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_quotf	CPWOPTcritical.c	/^    #define __Pyx_c_quotf(/;"	d	file:
+__Pyx_c_quotf	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_quotf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_sum	CPWOPTcritical.c	/^    #define __Pyx_c_sum(/;"	d	file:
+__Pyx_c_sum	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_sum(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_sumf	CPWOPTcritical.c	/^    #define __Pyx_c_sumf(/;"	d	file:
+__Pyx_c_sumf	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_sumf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_DECREF	CPWOPT.c	/^  #define __Pyx_DECREF(/;"	d	file:
+__Pyx_DECREF	CPWOPTcritical.c	/^  #define __Pyx_DECREF(/;"	d	file:
+__Pyx_DelAttrString	CPWOPT.c	/^  #define __Pyx_DelAttrString(/;"	d	file:
+__Pyx_DelAttrString	CPWOPTcritical.c	/^  #define __Pyx_DelAttrString(/;"	d	file:
+__Pyx_div_Py_ssize_t	CPWOPTcritical.c	/^static CYTHON_INLINE Py_ssize_t __Pyx_div_Py_ssize_t(Py_ssize_t a, Py_ssize_t b) {$/;"	f	file:
+__Pyx_DOCSTR	CPWOPT.c	/^  #define __Pyx_DOCSTR(/;"	d	file:
+__Pyx_DOCSTR	CPWOPTcritical.c	/^  #define __Pyx_DOCSTR(/;"	d	file:
+__pyx_doc_6CPWOPT_1KRproduct	CPWOPT.c	/^static char __pyx_doc_6CPWOPT_1KRproduct[] = "\\n    Khatri-Rao\\347\\251\\215\\n    ";$/;"	v	file:
+__pyx_empty_bytes	CPWOPT.c	/^static PyObject *__pyx_empty_bytes;$/;"	v	file:
+__pyx_empty_bytes	CPWOPTcritical.c	/^static PyObject *__pyx_empty_bytes;$/;"	v	file:
+__pyx_empty_tuple	CPWOPT.c	/^static PyObject *__pyx_empty_tuple;$/;"	v	file:
+__pyx_empty_tuple	CPWOPTcritical.c	/^static PyObject *__pyx_empty_tuple;$/;"	v	file:
+__Pyx_EndUnpack	CPWOPT.c	/^static int __Pyx_EndUnpack(PyObject *iter, Py_ssize_t expected) {$/;"	f	file:
+__Pyx_ErrFetch	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_ErrFetch(PyObject **type, PyObject **value, PyObject **tb) {$/;"	f	file:
+__Pyx_ErrRestore	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_ErrRestore(PyObject *type, PyObject *value, PyObject *tb) {$/;"	f	file:
+__PYX_EXTERN_C	CPWOPT.c	/^#define __PYX_EXTERN_C /;"	d	file:
+__PYX_EXTERN_C	CPWOPTcritical.c	/^#define __PYX_EXTERN_C /;"	d	file:
+__pyx_f	CPWOPT.c	/^static const char *__pyx_f[] = {$/;"	v	file:
+__pyx_f	CPWOPTcritical.c	/^static const char *__pyx_f[] = {$/;"	v	file:
+__pyx_filename	CPWOPT.c	/^static const char *__pyx_filename;$/;"	v	file:
+__pyx_filename	CPWOPTcritical.c	/^static const char *__pyx_filename;$/;"	v	file:
+__pyx_f_14CPWOPTcritical_KRproduct	CPWOPTcritical.c	/^static  PyArrayObject *__pyx_f_14CPWOPTcritical_KRproduct(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B) {$/;"	f	file:
+__pyx_f_14CPWOPTcritical_unpackAs	CPWOPTcritical.c	/^static  PyObject *__pyx_f_14CPWOPTcritical_unpackAs(PyArrayObject *__pyx_v_Asv, int __pyx_v_su, int __pyx_v_sv, int __pyx_v_sw) {$/;"	f	file:
+__pyx_f_5numpy_get_array_base	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__pyx_v_arr) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew1	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__pyx_v_a) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew2	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__pyx_v_a, PyObject *__pyx_v_b) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew3	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_c) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew4	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_c, PyObject *__pyx_v_d) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew5	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_c, PyObject *__pyx_v_d, PyObject *__pyx_v_e) {$/;"	f	file:
+__pyx_f_5numpy_set_array_base	CPWOPTcritical.c	/^static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_arr, PyObject *__pyx_v_base) {$/;"	f	file:
+__pyx_f_5numpy__util_dtypestring	CPWOPTcritical.c	/^static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx_v_descr, char *__pyx_v_f, char *__pyx_v_end, int *__pyx_v_offset) {$/;"	f	file:
+__Pyx_GetAttrString	CPWOPT.c	/^  #define __Pyx_GetAttrString(/;"	d	file:
+__Pyx_GetAttrString	CPWOPTcritical.c	/^  #define __Pyx_GetAttrString(/;"	d	file:
+__Pyx_GetBuffer	CPWOPTcritical.c	/^#define __Pyx_GetBuffer /;"	d	file:
+__Pyx_GetBuffer	CPWOPTcritical.c	/^static int __Pyx_GetBuffer(PyObject *obj, Py_buffer *view, int flags) {$/;"	f	file:
+__Pyx_GetBufferAndValidate	CPWOPTcritical.c	/^static CYTHON_INLINE int __Pyx_GetBufferAndValidate(Py_buffer* buf, PyObject* obj, __Pyx_TypeInfo* dtype, int flags, int nd, int cast, __Pyx_BufFmt_StackElem* stack) {$/;"	f	file:
+__Pyx_GetItemInt	CPWOPT.c	/^#define __Pyx_GetItemInt(/;"	d	file:
+__Pyx_GetItemInt	CPWOPTcritical.c	/^#define __Pyx_GetItemInt(/;"	d	file:
+__Pyx_GetItemInt_Fast	CPWOPT.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i) {$/;"	f	file:
+__Pyx_GetItemInt_Fast	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i) {$/;"	f	file:
+__Pyx_GetItemInt_Generic	CPWOPT.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {$/;"	f	file:
+__Pyx_GetItemInt_Generic	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {$/;"	f	file:
+__Pyx_GetItemInt_List	CPWOPT.c	/^#define __Pyx_GetItemInt_List(/;"	d	file:
+__Pyx_GetItemInt_List	CPWOPTcritical.c	/^#define __Pyx_GetItemInt_List(/;"	d	file:
+__Pyx_GetItemInt_List_Fast	CPWOPT.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i) {$/;"	f	file:
+__Pyx_GetItemInt_List_Fast	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i) {$/;"	f	file:
+__Pyx_GetItemInt_Tuple	CPWOPT.c	/^#define __Pyx_GetItemInt_Tuple(/;"	d	file:
+__Pyx_GetItemInt_Tuple	CPWOPTcritical.c	/^#define __Pyx_GetItemInt_Tuple(/;"	d	file:
+__Pyx_GetItemInt_Tuple_Fast	CPWOPT.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i) {$/;"	f	file:
+__Pyx_GetItemInt_Tuple_Fast	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i) {$/;"	f	file:
+__Pyx_GetName	CPWOPT.c	/^static PyObject *__Pyx_GetName(PyObject *dict, PyObject *name) {$/;"	f	file:
+__Pyx_GetName	CPWOPTcritical.c	/^static PyObject *__Pyx_GetName(PyObject *dict, PyObject *name) {$/;"	f	file:
+__Pyx_GetStdout	CPWOPT.c	/^static PyObject *__Pyx_GetStdout(void) {$/;"	f	file:
+__Pyx_GIVEREF	CPWOPT.c	/^  #define __Pyx_GIVEREF(/;"	d	file:
+__Pyx_GIVEREF	CPWOPTcritical.c	/^  #define __Pyx_GIVEREF(/;"	d	file:
+__Pyx_GOTREF	CPWOPT.c	/^  #define __Pyx_GOTREF(/;"	d	file:
+__Pyx_GOTREF	CPWOPTcritical.c	/^  #define __Pyx_GOTREF(/;"	d	file:
+__PYX_HAVE_API__CPWOPT	CPWOPT.c	/^#define __PYX_HAVE_API__CPWOPT$/;"	d	file:
+__PYX_HAVE_API__CPWOPTcritical	CPWOPTcritical.c	/^#define __PYX_HAVE_API__CPWOPTcritical$/;"	d	file:
+__PYX_HAVE_RT_ImportModule	CPWOPTcritical.c	/^#define __PYX_HAVE_RT_ImportModule$/;"	d	file:
+__PYX_HAVE_RT_ImportType	CPWOPTcritical.c	/^#define __PYX_HAVE_RT_ImportType$/;"	d	file:
+__Pyx_Import	CPWOPT.c	/^static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list) {$/;"	f	file:
+__Pyx_Import	CPWOPTcritical.c	/^static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list) {$/;"	f	file:
+__Pyx_ImportModule	CPWOPTcritical.c	/^static PyObject *__Pyx_ImportModule(const char *name) {$/;"	f	file:
+__Pyx_ImportType	CPWOPTcritical.c	/^static PyTypeObject *__Pyx_ImportType(const char *module_name, const char *class_name,$/;"	f	file:
+__Pyx_import_all_from	CPWOPT.c	/^__Pyx_import_all_from(PyObject *locals, PyObject *v)$/;"	f	file:
+__pyx_import_star	CPWOPT.c	/^static int __pyx_import_star(PyObject* m) {$/;"	f	file:
+__pyx_import_star_set	CPWOPT.c	/^static int __pyx_import_star_set(PyObject *o, PyObject* py_name, char *name) {$/;"	f	file:
+__pyx_import_star_type_names	CPWOPT.c	/^char* __pyx_import_star_type_names[] = {$/;"	v
+__Pyx_INCREF	CPWOPT.c	/^  #define __Pyx_INCREF(/;"	d	file:
+__Pyx_INCREF	CPWOPTcritical.c	/^  #define __Pyx_INCREF(/;"	d	file:
+__Pyx_InitCachedBuiltins	CPWOPT.c	/^static int __Pyx_InitCachedBuiltins(void) {$/;"	f	file:
+__Pyx_InitCachedBuiltins	CPWOPTcritical.c	/^static int __Pyx_InitCachedBuiltins(void) {$/;"	f	file:
+__Pyx_InitCachedConstants	CPWOPT.c	/^static int __Pyx_InitCachedConstants(void) {$/;"	f	file:
+__Pyx_InitCachedConstants	CPWOPTcritical.c	/^static int __Pyx_InitCachedConstants(void) {$/;"	f	file:
+__Pyx_InitGlobals	CPWOPT.c	/^static int __Pyx_InitGlobals(void) {$/;"	f	file:
+__Pyx_InitGlobals	CPWOPTcritical.c	/^static int __Pyx_InitGlobals(void) {$/;"	f	file:
+__Pyx_InitStrings	CPWOPT.c	/^static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {$/;"	f	file:
+__Pyx_InitStrings	CPWOPTcritical.c	/^static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {$/;"	f	file:
+__pyx_int_0	CPWOPT.c	/^static PyObject *__pyx_int_0;$/;"	v	file:
+__pyx_int_1	CPWOPT.c	/^static PyObject *__pyx_int_1;$/;"	v	file:
+__pyx_int_1	CPWOPTcritical.c	/^static PyObject *__pyx_int_1;$/;"	v	file:
+__pyx_int_100	CPWOPT.c	/^static PyObject *__pyx_int_100;$/;"	v	file:
+__pyx_int_15	CPWOPTcritical.c	/^static PyObject *__pyx_int_15;$/;"	v	file:
+__pyx_int_2	CPWOPT.c	/^static PyObject *__pyx_int_2;$/;"	v	file:
+__pyx_int_2	CPWOPTcritical.c	/^static PyObject *__pyx_int_2;$/;"	v	file:
+__pyx_int_3	CPWOPT.c	/^static PyObject *__pyx_int_3;$/;"	v	file:
+__pyx_int_3	CPWOPTcritical.c	/^static PyObject *__pyx_int_3;$/;"	v	file:
+__Pyx_IsLittleEndian	CPWOPTcritical.c	/^static CYTHON_INLINE int __Pyx_IsLittleEndian(void) {$/;"	f	file:
+__pyx_kp_s_17	CPWOPT.c	/^static PyObject *__pyx_kp_s_17;$/;"	v	file:
+__pyx_kp_s_8	CPWOPT.c	/^static PyObject *__pyx_kp_s_8;$/;"	v	file:
+__pyx_kp_s_9	CPWOPT.c	/^static PyObject *__pyx_kp_s_9;$/;"	v	file:
+__pyx_kp_u_10	CPWOPTcritical.c	/^static PyObject *__pyx_kp_u_10;$/;"	v	file:
+__pyx_kp_u_11	CPWOPTcritical.c	/^static PyObject *__pyx_kp_u_11;$/;"	v	file:
+__pyx_kp_u_14	CPWOPTcritical.c	/^static PyObject *__pyx_kp_u_14;$/;"	v	file:
+__pyx_kp_u_4	CPWOPTcritical.c	/^static PyObject *__pyx_kp_u_4;$/;"	v	file:
+__pyx_kp_u_6	CPWOPTcritical.c	/^static PyObject *__pyx_kp_u_6;$/;"	v	file:
+__pyx_kp_u_8	CPWOPTcritical.c	/^static PyObject *__pyx_kp_u_8;$/;"	v	file:
+__pyx_k_10	CPWOPT.c	/^static char __pyx_k_10[] = "*";$/;"	v	file:
+__pyx_k_10	CPWOPTcritical.c	/^static char __pyx_k_10[] = "unknown dtype code in numpy.pxd (%d)";$/;"	v	file:
+__pyx_k_11	CPWOPT.c	/^static char __pyx_k_11[] = "numpy.linalg";$/;"	v	file:
+__pyx_k_11	CPWOPTcritical.c	/^static char __pyx_k_11[] = "Format string allocated too short, see comment in numpy.pxd";$/;"	v	file:
+__pyx_k_13	CPWOPT.c	/^static char __pyx_k_13[] = "scipy.sparse";$/;"	v	file:
+__pyx_k_14	CPWOPT.c	/^static char __pyx_k_14[] = "scipy.optimize";$/;"	v	file:
+__pyx_k_14	CPWOPTcritical.c	/^static char __pyx_k_14[] = "Format string allocated too short.";$/;"	v	file:
+__pyx_k_15	CPWOPT.c	/^static char __pyx_k_15[] = "CompressSparseTensorToVector";$/;"	v	file:
+__pyx_k_16	CPWOPT.c	/^static char __pyx_k_16[] = "createObservedCoordList";$/;"	v	file:
+__pyx_k_16	CPWOPTcritical.c	/^static char __pyx_k_16[] = "scipy.sparse";$/;"	v	file:
+__pyx_k_17	CPWOPT.c	/^static char __pyx_k_17[] = "created test data";$/;"	v	file:
+__pyx_k_17	CPWOPTcritical.c	/^static char __pyx_k_17[] = "*";$/;"	v	file:
+__pyx_k_18	CPWOPTcritical.c	/^static char __pyx_k_18[] = "CompressSparseTensorToVector";$/;"	v	file:
+__pyx_k_3	CPWOPTcritical.c	/^static char __pyx_k_3[] = "HadamardProdOfSparseTensor";$/;"	v	file:
+__pyx_k_4	CPWOPTcritical.c	/^static char __pyx_k_4[] = "ndarray is not C contiguous";$/;"	v	file:
+__pyx_k_6	CPWOPT.c	/^static char __pyx_k_6[] = "HadamardProdOfSparseTensor";$/;"	v	file:
+__pyx_k_6	CPWOPTcritical.c	/^static char __pyx_k_6[] = "ndarray is not Fortran contiguous";$/;"	v	file:
+__pyx_k_7	CPWOPT.c	/^static char __pyx_k_7[] = "getLeadingSingularVects";$/;"	v	file:
+__pyx_k_8	CPWOPT.c	/^static char __pyx_k_8[] = "HOSVD finished";$/;"	v	file:
+__pyx_k_8	CPWOPTcritical.c	/^static char __pyx_k_8[] = "Non-native byte order not supported";$/;"	v	file:
+__pyx_k_9	CPWOPT.c	/^static char __pyx_k_9[] = "start bfgs";$/;"	v	file:
+__pyx_k_slice_1	CPWOPT.c	/^static PyObject *__pyx_k_slice_1;$/;"	v	file:
+__pyx_k_slice_1	CPWOPTcritical.c	/^static PyObject *__pyx_k_slice_1;$/;"	v	file:
+__pyx_k_slice_2	CPWOPT.c	/^static PyObject *__pyx_k_slice_2;$/;"	v	file:
+__pyx_k_slice_2	CPWOPTcritical.c	/^static PyObject *__pyx_k_slice_2;$/;"	v	file:
+__pyx_k_slice_3	CPWOPT.c	/^static PyObject *__pyx_k_slice_3;$/;"	v	file:
+__pyx_k_slice_4	CPWOPT.c	/^static PyObject *__pyx_k_slice_4;$/;"	v	file:
+__pyx_k_slice_5	CPWOPT.c	/^static PyObject *__pyx_k_slice_5;$/;"	v	file:
+__pyx_k_tuple_12	CPWOPT.c	/^static PyObject *__pyx_k_tuple_12;$/;"	v	file:
+__pyx_k_tuple_12	CPWOPTcritical.c	/^static PyObject *__pyx_k_tuple_12;$/;"	v	file:
+__pyx_k_tuple_13	CPWOPTcritical.c	/^static PyObject *__pyx_k_tuple_13;$/;"	v	file:
+__pyx_k_tuple_15	CPWOPTcritical.c	/^static PyObject *__pyx_k_tuple_15;$/;"	v	file:
+__pyx_k_tuple_5	CPWOPTcritical.c	/^static PyObject *__pyx_k_tuple_5;$/;"	v	file:
+__pyx_k_tuple_7	CPWOPTcritical.c	/^static PyObject *__pyx_k_tuple_7;$/;"	v	file:
+__pyx_k_tuple_9	CPWOPTcritical.c	/^static PyObject *__pyx_k_tuple_9;$/;"	v	file:
+__pyx_k__A	CPWOPT.c	/^static char __pyx_k__A[] = "A";$/;"	v	file:
+__pyx_k__alg	CPWOPT.c	/^static char __pyx_k__alg[] = "alg";$/;"	v	file:
+__pyx_k__algorithm	CPWOPT.c	/^static char __pyx_k__algorithm[] = "algorithm";$/;"	v	file:
+__pyx_k__alpha	CPWOPT.c	/^static char __pyx_k__alpha[] = "alpha";$/;"	v	file:
+__pyx_k__append	CPWOPT.c	/^static char __pyx_k__append[] = "append";$/;"	v	file:
+__pyx_k__array	CPWOPT.c	/^static char __pyx_k__array[] = "array";$/;"	v	file:
+__pyx_k__array	CPWOPTcritical.c	/^static char __pyx_k__array[] = "array";$/;"	v	file:
+__pyx_k__As	CPWOPT.c	/^static char __pyx_k__As[] = "As";$/;"	v	file:
+__pyx_k__As	CPWOPTcritical.c	/^static char __pyx_k__As[] = "As";$/;"	v	file:
+__pyx_k__Asv	CPWOPT.c	/^static char __pyx_k__Asv[] = "Asv";$/;"	v	file:
+__pyx_k__B	CPWOPT.c	/^static char __pyx_k__B[] = "B";$/;"	v	file:
+__pyx_k__B	CPWOPTcritical.c	/^static char __pyx_k__B[] = "B";$/;"	v	file:
+__pyx_k__base	CPWOPTcritical.c	/^static char __pyx_k__base[] = "base";$/;"	v	file:
+__pyx_k__benchmark	CPWOPT.c	/^static char __pyx_k__benchmark[] = "benchmark";$/;"	v	file:
+__pyx_k__Bonnie	CPWOPT.c	/^static char __pyx_k__Bonnie[] = "Bonnie";$/;"	v	file:
+__pyx_k__buf	CPWOPTcritical.c	/^static char __pyx_k__buf[] = "buf";$/;"	v	file:
+__pyx_k__byteorder	CPWOPTcritical.c	/^static char __pyx_k__byteorder[] = "byteorder";$/;"	v	file:
+__pyx_k__CompletionGradient	CPWOPT.c	/^static char __pyx_k__CompletionGradient[] = "CompletionGradient";$/;"	v	file:
+__pyx_k__const	CPWOPT.c	/^static char __pyx_k__const[] = "const";$/;"	v	file:
+__pyx_k__CPWOPT	CPWOPT.c	/^static char __pyx_k__CPWOPT[] = "CPWOPT";$/;"	v	file:
+__pyx_k__CPWOPTcritical	CPWOPTcritical.c	/^static char __pyx_k__CPWOPTcritical[] = "CPWOPTcritical";$/;"	v	file:
+__pyx_k__csr_matrix	CPWOPTcritical.c	/^static char __pyx_k__csr_matrix[] = "csr_matrix";$/;"	v	file:
+__pyx_k__d	CPWOPTcritical.c	/^static char __pyx_k__d[] = "d";$/;"	v	file:
+__pyx_k__data	CPWOPT.c	/^static char __pyx_k__data[] = "data";$/;"	v	file:
+__pyx_k__descr	CPWOPTcritical.c	/^static char __pyx_k__descr[] = "descr";$/;"	v	file:
+__pyx_k__dot	CPWOPT.c	/^static char __pyx_k__dot[] = "dot";$/;"	v	file:
+__pyx_k__dot	CPWOPTcritical.c	/^static char __pyx_k__dot[] = "dot";$/;"	v	file:
+__pyx_k__dtype	CPWOPTcritical.c	/^static char __pyx_k__dtype[] = "dtype";$/;"	v	file:
+__pyx_k__enumerate	CPWOPT.c	/^static char __pyx_k__enumerate[] = "enumerate";$/;"	v	file:
+__pyx_k__f	CPWOPTcritical.c	/^static char __pyx_k__f[] = "f";$/;"	v	file:
+__pyx_k__fields	CPWOPTcritical.c	/^static char __pyx_k__fields[] = "fields";$/;"	v	file:
+__pyx_k__float	CPWOPTcritical.c	/^static char __pyx_k__float[] = "float";$/;"	v	file:
+__pyx_k__fmin_bfgs	CPWOPT.c	/^static char __pyx_k__fmin_bfgs[] = "fmin_bfgs";$/;"	v	file:
+__pyx_k__format	CPWOPTcritical.c	/^static char __pyx_k__format[] = "format";$/;"	v	file:
+__pyx_k__g	CPWOPTcritical.c	/^static char __pyx_k__g[] = "g";$/;"	v	file:
+__pyx_k__Gradient	CPWOPT.c	/^static char __pyx_k__Gradient[] = "Gradient";$/;"	v	file:
+__pyx_k__Gradient	CPWOPTcritical.c	/^static char __pyx_k__Gradient[] = "Gradient";$/;"	v	file:
+__pyx_k__H	CPWOPTcritical.c	/^static char __pyx_k__H[] = "H";$/;"	v	file:
+__pyx_k__i	CPWOPT.c	/^static char __pyx_k__i[] = "i";$/;"	v	file:
+__pyx_k__I	CPWOPTcritical.c	/^static char __pyx_k__I[] = "I";$/;"	v	file:
+__pyx_k__ind	CPWOPT.c	/^static char __pyx_k__ind[] = "ind";$/;"	v	file:
+__pyx_k__insert	CPWOPT.c	/^static char __pyx_k__insert[] = "insert";$/;"	v	file:
+__pyx_k__it	CPWOPT.c	/^static char __pyx_k__it[] = "it";$/;"	v	file:
+__pyx_k__itemsize	CPWOPTcritical.c	/^static char __pyx_k__itemsize[] = "itemsize";$/;"	v	file:
+__pyx_k__itertools	CPWOPT.c	/^static char __pyx_k__itertools[] = "itertools";$/;"	v	file:
+__pyx_k__izip	CPWOPT.c	/^static char __pyx_k__izip[] = "izip";$/;"	v	file:
+__pyx_k__j	CPWOPT.c	/^static char __pyx_k__j[] = "j";$/;"	v	file:
+__pyx_k__k	CPWOPT.c	/^static char __pyx_k__k[] = "k";$/;"	v	file:
+__pyx_k__kron	CPWOPT.c	/^static char __pyx_k__kron[] = "kron";$/;"	v	file:
+__pyx_k__kron	CPWOPTcritical.c	/^static char __pyx_k__kron[] = "kron";$/;"	v	file:
+__pyx_k__KRproduct	CPWOPT.c	/^static char __pyx_k__KRproduct[] = "KRproduct";$/;"	v	file:
+__pyx_k__L	CPWOPT.c	/^static char __pyx_k__L[] = "L";$/;"	v	file:
+__pyx_k__L	CPWOPTcritical.c	/^static char __pyx_k__L[] = "L";$/;"	v	file:
+__pyx_k__lil_matrix	CPWOPT.c	/^static char __pyx_k__lil_matrix[] = "lil_matrix";$/;"	v	file:
+__pyx_k__logger	CPWOPT.c	/^static char __pyx_k__logger[] = "logger";$/;"	v	file:
+__pyx_k__Ls	CPWOPT.c	/^static char __pyx_k__Ls[] = "Ls";$/;"	v	file:
+__pyx_k__m	CPWOPT.c	/^static char __pyx_k__m[] = "m";$/;"	v	file:
+__pyx_k__mode	CPWOPT.c	/^static char __pyx_k__mode[] = "mode";$/;"	v	file:
+__pyx_k__mode	CPWOPTcritical.c	/^static char __pyx_k__mode[] = "mode";$/;"	v	file:
+__pyx_k__n	CPWOPT.c	/^static char __pyx_k__n[] = "n";$/;"	v	file:
+__pyx_k__names	CPWOPTcritical.c	/^static char __pyx_k__names[] = "names";$/;"	v	file:
+__pyx_k__ndim	CPWOPTcritical.c	/^static char __pyx_k__ndim[] = "ndim";$/;"	v	file:
+__pyx_k__norm	CPWOPT.c	/^static char __pyx_k__norm[] = "norm";$/;"	v	file:
+__pyx_k__np	CPWOPTcritical.c	/^static char __pyx_k__np[] = "np";$/;"	v	file:
+__pyx_k__numpy	CPWOPT.c	/^static char __pyx_k__numpy[] = "numpy";$/;"	v	file:
+__pyx_k__numpy	CPWOPTcritical.c	/^static char __pyx_k__numpy[] = "numpy";$/;"	v	file:
+__pyx_k__O	CPWOPTcritical.c	/^static char __pyx_k__O[] = "O";$/;"	v	file:
+__pyx_k__obj	CPWOPTcritical.c	/^static char __pyx_k__obj[] = "obj";$/;"	v	file:
+__pyx_k__Obs	CPWOPT.c	/^static char __pyx_k__Obs[] = "Obs";$/;"	v	file:
+__pyx_k__Obs	CPWOPTcritical.c	/^static char __pyx_k__Obs[] = "Obs";$/;"	v	file:
+__pyx_k__ObservedList	CPWOPT.c	/^static char __pyx_k__ObservedList[] = "ObservedList";$/;"	v	file:
+__pyx_k__ObservedList	CPWOPTcritical.c	/^static char __pyx_k__ObservedList[] = "ObservedList";$/;"	v	file:
+__pyx_k__obsize	CPWOPT.c	/^static char __pyx_k__obsize[] = "obsize";$/;"	v	file:
+__pyx_k__ObsList	CPWOPT.c	/^static char __pyx_k__ObsList[] = "ObsList";$/;"	v	file:
+__pyx_k__ObsList	CPWOPTcritical.c	/^static char __pyx_k__ObsList[] = "ObsList";$/;"	v	file:
+__pyx_k__oldcodes	CPWOPT.c	/^static char __pyx_k__oldcodes[] = "oldcodes";$/;"	v	file:
+__pyx_k__opt	CPWOPT.c	/^static char __pyx_k__opt[] = "opt";$/;"	v	file:
+__pyx_k__path	CPWOPT.c	/^static char __pyx_k__path[] = "path";$/;"	v	file:
+__pyx_k__per	CPWOPT.c	/^static char __pyx_k__per[] = "per";$/;"	v	file:
+__pyx_k__Q	CPWOPTcritical.c	/^static char __pyx_k__Q[] = "Q";$/;"	v	file:
+__pyx_k__R	CPWOPT.c	/^static char __pyx_k__R[] = "R";$/;"	v	file:
+__pyx_k__R	CPWOPTcritical.c	/^static char __pyx_k__R[] = "R";$/;"	v	file:
+__pyx_k__randint	CPWOPT.c	/^static char __pyx_k__randint[] = "randint";$/;"	v	file:
+__pyx_k__random	CPWOPT.c	/^static char __pyx_k__random[] = "random";$/;"	v	file:
+__pyx_k__range	CPWOPT.c	/^static char __pyx_k__range[] = "range";$/;"	v	file:
+__pyx_k__range	CPWOPTcritical.c	/^static char __pyx_k__range[] = "range";$/;"	v	file:
+__pyx_k__rate	CPWOPT.c	/^static char __pyx_k__rate[] = "rate";$/;"	v	file:
+__pyx_k__readonly	CPWOPTcritical.c	/^static char __pyx_k__readonly[] = "readonly";$/;"	v	file:
+__pyx_k__reshape	CPWOPT.c	/^static char __pyx_k__reshape[] = "reshape";$/;"	v	file:
+__pyx_k__RuntimeError	CPWOPTcritical.c	/^static char __pyx_k__RuntimeError[] = "RuntimeError";$/;"	v	file:
+__pyx_k__shape	CPWOPT.c	/^static char __pyx_k__shape[] = "shape";$/;"	v	file:
+__pyx_k__shape	CPWOPTcritical.c	/^static char __pyx_k__shape[] = "shape";$/;"	v	file:
+__pyx_k__size	CPWOPTcritical.c	/^static char __pyx_k__size[] = "size";$/;"	v	file:
+__pyx_k__sparse	CPWOPT.c	/^static char __pyx_k__sparse[] = "sparse";$/;"	v	file:
+__pyx_k__sparse	CPWOPTcritical.c	/^static char __pyx_k__sparse[] = "sparse";$/;"	v	file:
+__pyx_k__squeeze	CPWOPT.c	/^static char __pyx_k__squeeze[] = "squeeze";$/;"	v	file:
+__pyx_k__squeeze	CPWOPTcritical.c	/^static char __pyx_k__squeeze[] = "squeeze";$/;"	v	file:
+__pyx_k__squeezeAs	CPWOPT.c	/^static char __pyx_k__squeezeAs[] = "squeezeAs";$/;"	v	file:
+__pyx_k__strides	CPWOPTcritical.c	/^static char __pyx_k__strides[] = "strides";$/;"	v	file:
+__pyx_k__su	CPWOPT.c	/^static char __pyx_k__su[] = "su";$/;"	v	file:
+__pyx_k__suboffsets	CPWOPTcritical.c	/^static char __pyx_k__suboffsets[] = "suboffsets";$/;"	v	file:
+__pyx_k__sum	CPWOPT.c	/^static char __pyx_k__sum[] = "sum";$/;"	v	file:
+__pyx_k__sv	CPWOPT.c	/^static char __pyx_k__sv[] = "sv";$/;"	v	file:
+__pyx_k__SVD	CPWOPT.c	/^static char __pyx_k__SVD[] = "SVD";$/;"	v	file:
+__pyx_k__sw	CPWOPT.c	/^static char __pyx_k__sw[] = "sw";$/;"	v	file:
+__pyx_k__sys	CPWOPT.c	/^static char __pyx_k__sys[] = "sys";$/;"	v	file:
+__pyx_k__T	CPWOPTcritical.c	/^static char __pyx_k__T[] = "T";$/;"	v	file:
+__pyx_k__tocsr	CPWOPT.c	/^static char __pyx_k__tocsr[] = "tocsr";$/;"	v	file:
+__pyx_k__transpose	CPWOPT.c	/^static char __pyx_k__transpose[] = "transpose";$/;"	v	file:
+__pyx_k__type_num	CPWOPTcritical.c	/^static char __pyx_k__type_num[] = "type_num";$/;"	v	file:
+__pyx_k__U	CPWOPTcritical.c	/^static char __pyx_k__U[] = "U";$/;"	v	file:
+__pyx_k__unfold	CPWOPT.c	/^static char __pyx_k__unfold[] = "unfold";$/;"	v	file:
+__pyx_k__unfold	CPWOPTcritical.c	/^static char __pyx_k__unfold[] = "unfold";$/;"	v	file:
+__pyx_k__unfolded	CPWOPT.c	/^static char __pyx_k__unfolded[] = "unfolded";$/;"	v	file:
+__pyx_k__unpackAs	CPWOPT.c	/^static char __pyx_k__unpackAs[] = "unpackAs";$/;"	v	file:
+__pyx_k__V	CPWOPTcritical.c	/^static char __pyx_k__V[] = "V";$/;"	v	file:
+__pyx_k__ValueError	CPWOPTcritical.c	/^static char __pyx_k__ValueError[] = "ValueError";$/;"	v	file:
+__pyx_k__W	CPWOPT.c	/^static char __pyx_k__W[] = "W";$/;"	v	file:
+__pyx_k__W	CPWOPTcritical.c	/^static char __pyx_k__W[] = "W";$/;"	v	file:
+__pyx_k__Wlst	CPWOPT.c	/^static char __pyx_k__Wlst[] = "Wlst";$/;"	v	file:
+__pyx_k__X	CPWOPT.c	/^static char __pyx_k__X[] = "X";$/;"	v	file:
+__pyx_k__X	CPWOPTcritical.c	/^static char __pyx_k__X[] = "X";$/;"	v	file:
+__pyx_k__Xdense	CPWOPT.c	/^static char __pyx_k__Xdense[] = "Xdense";$/;"	v	file:
+__pyx_k__XoriginalTensor	CPWOPT.c	/^static char __pyx_k__XoriginalTensor[] = "XoriginalTensor";$/;"	v	file:
+__pyx_k__xrange	CPWOPT.c	/^static char __pyx_k__xrange[] = "xrange";$/;"	v	file:
+__pyx_k__xrange	CPWOPTcritical.c	/^static char __pyx_k__xrange[] = "xrange";$/;"	v	file:
+__pyx_k__Zd	CPWOPTcritical.c	/^static char __pyx_k__Zd[] = "Zd";$/;"	v	file:
+__pyx_k__zeros	CPWOPT.c	/^static char __pyx_k__zeros[] = "zeros";$/;"	v	file:
+__pyx_k__zeros	CPWOPTcritical.c	/^static char __pyx_k__zeros[] = "zeros";$/;"	v	file:
+__pyx_k__Zf	CPWOPTcritical.c	/^static char __pyx_k__Zf[] = "Zf";$/;"	v	file:
+__pyx_k__Zg	CPWOPTcritical.c	/^static char __pyx_k__Zg[] = "Zg";$/;"	v	file:
+__pyx_k____main__	CPWOPT.c	/^static char __pyx_k____main__[] = "__main__";$/;"	v	file:
+__pyx_k____main__	CPWOPTcritical.c	/^static char __pyx_k____main__[] = "__main__";$/;"	v	file:
+__pyx_k____name__	CPWOPT.c	/^static char __pyx_k____name__[] = "__name__";$/;"	v	file:
+__pyx_k____test__	CPWOPT.c	/^static char __pyx_k____test__[] = "__test__";$/;"	v	file:
+__pyx_k____test__	CPWOPTcritical.c	/^static char __pyx_k____test__[] = "__test__";$/;"	v	file:
+__pyx_lambda_funcdef6CPWOPT_18CompletionGradient_lambda1	CPWOPT.c	/^static PyObject *__pyx_lambda_funcdef6CPWOPT_18CompletionGradient_lambda1(PyObject *__pyx_self, PyObject *__pyx_v_Asv) {$/;"	f	file:
+__pyx_lambda_methdef6CPWOPT_18CompletionGradient_lambda1	CPWOPT.c	/^static PyMethodDef __pyx_lambda_methdef6CPWOPT_18CompletionGradient_lambda1 = {__Pyx_NAMESTR("__pyx_lambda_funcdef6CPWOPT_18CompletionGradient_lambda1"), (PyCFunction)__pyx_lambda_funcdef6CPWOPT_18CompletionGradient_lambda1, METH_O, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_lineno	CPWOPT.c	/^static int __pyx_lineno;$/;"	v	file:
+__pyx_lineno	CPWOPTcritical.c	/^static int __pyx_lineno;$/;"	v	file:
+__pyx_m	CPWOPT.c	/^static PyObject *__pyx_m;$/;"	v	file:
+__pyx_m	CPWOPTcritical.c	/^static PyObject *__pyx_m;$/;"	v	file:
+__pyx_mdef_14CPWOPTcritical_1unfold	CPWOPTcritical.c	/^static PyMethodDef __pyx_mdef_14CPWOPTcritical_1unfold = {__Pyx_NAMESTR("unfold"), (PyCFunction)__pyx_pf_14CPWOPTcritical_1unfold, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_14CPWOPTcritical_2Gradient	CPWOPTcritical.c	/^static PyMethodDef __pyx_mdef_14CPWOPTcritical_2Gradient = {__Pyx_NAMESTR("Gradient"), (PyCFunction)__pyx_pf_14CPWOPTcritical_2Gradient, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_14CPWOPTcritical_3CompressSparseTensorToVector	CPWOPTcritical.c	/^static PyMethodDef __pyx_mdef_14CPWOPTcritical_3CompressSparseTensorToVector = {__Pyx_NAMESTR("CompressSparseTensorToVector"), (PyCFunction)__pyx_pf_14CPWOPTcritical_3CompressSparseTensorToVector, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_14CPWOPTcritical_HadamardProdOfSparseTensor	CPWOPTcritical.c	/^static PyMethodDef __pyx_mdef_14CPWOPTcritical_HadamardProdOfSparseTensor = {__Pyx_NAMESTR("HadamardProdOfSparseTensor"), (PyCFunction)__pyx_pf_14CPWOPTcritical_HadamardProdOfSparseTensor, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_18CompletionGradient_lossfunc	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_18CompletionGradient_lossfunc = {__Pyx_NAMESTR("lossfunc"), (PyCFunction)__pyx_pf_6CPWOPT_18CompletionGradient_lossfunc, METH_O, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_1KRproduct	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_1KRproduct = {__Pyx_NAMESTR("KRproduct"), (PyCFunction)__pyx_pf_6CPWOPT_1KRproduct, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(__pyx_doc_6CPWOPT_1KRproduct)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_2squeezeAs	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_2squeezeAs = {__Pyx_NAMESTR("squeezeAs"), (PyCFunction)__pyx_pf_6CPWOPT_2squeezeAs, METH_O, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_3unpackAs	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_3unpackAs = {__Pyx_NAMESTR("unpackAs"), (PyCFunction)__pyx_pf_6CPWOPT_3unpackAs, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_4unfold	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_4unfold = {__Pyx_NAMESTR("unfold"), (PyCFunction)__pyx_pf_6CPWOPT_4unfold, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_5Gradient	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_5Gradient = {__Pyx_NAMESTR("Gradient"), (PyCFunction)__pyx_pf_6CPWOPT_5Gradient, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_6CompressSparseTensorToVector	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_6CompressSparseTensorToVector = {__Pyx_NAMESTR("CompressSparseTensorToVector"), (PyCFunction)__pyx_pf_6CPWOPT_6CompressSparseTensorToVector, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_7CompletionGradient	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_7CompletionGradient = {__Pyx_NAMESTR("CompletionGradient"), (PyCFunction)__pyx_pf_6CPWOPT_7CompletionGradient, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_8createObservedCoordList	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_8createObservedCoordList = {__Pyx_NAMESTR("createObservedCoordList"), (PyCFunction)__pyx_pf_6CPWOPT_8createObservedCoordList, METH_O, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_mdef_6CPWOPT_HadamardProdOfSparseTensor	CPWOPT.c	/^static PyMethodDef __pyx_mdef_6CPWOPT_HadamardProdOfSparseTensor = {__Pyx_NAMESTR("HadamardProdOfSparseTensor"), (PyCFunction)__pyx_pf_6CPWOPT_HadamardProdOfSparseTensor, METH_VARARGS|METH_KEYWORDS, __Pyx_DOCSTR(0)};$/;"	v	file:
+__pyx_methods	CPWOPT.c	/^static PyMethodDef __pyx_methods[] = {$/;"	v	file:
+__pyx_methods	CPWOPTcritical.c	/^static PyMethodDef __pyx_methods[] = {$/;"	v	file:
+__pyx_methods_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyMethodDef __pyx_methods_6CPWOPT___pyx_scope_struct__CompletionGradient[] = {$/;"	v	file:
+__Pyx_minusones	CPWOPTcritical.c	/^Py_ssize_t __Pyx_minusones[] = {-1, -1, -1};$/;"	v
+__pyx_moduledef	CPWOPT.c	/^static struct PyModuleDef __pyx_moduledef = {$/;"	v	typeref:struct:PyModuleDef	file:
+__pyx_moduledef	CPWOPTcritical.c	/^static struct PyModuleDef __pyx_moduledef = {$/;"	v	typeref:struct:PyModuleDef	file:
+__pyx_module_is_main_CPWOPT	CPWOPT.c	/^static int __pyx_module_is_main_CPWOPT = 0;$/;"	v	file:
+__pyx_module_is_main_CPWOPTcritical	CPWOPTcritical.c	/^static int __pyx_module_is_main_CPWOPTcritical = 0;$/;"	v	file:
+__Pyx_MODULE_NAME	CPWOPT.c	/^#define __Pyx_MODULE_NAME /;"	d	file:
+__Pyx_MODULE_NAME	CPWOPTcritical.c	/^#define __Pyx_MODULE_NAME /;"	d	file:
+__Pyx_NAMESTR	CPWOPT.c	/^  #define __Pyx_NAMESTR(/;"	d	file:
+__Pyx_NAMESTR	CPWOPTcritical.c	/^  #define __Pyx_NAMESTR(/;"	d	file:
+__pyx_n_s_10	CPWOPT.c	/^static PyObject *__pyx_n_s_10;$/;"	v	file:
+__pyx_n_s_11	CPWOPT.c	/^static PyObject *__pyx_n_s_11;$/;"	v	file:
+__pyx_n_s_13	CPWOPT.c	/^static PyObject *__pyx_n_s_13;$/;"	v	file:
+__pyx_n_s_14	CPWOPT.c	/^static PyObject *__pyx_n_s_14;$/;"	v	file:
+__pyx_n_s_15	CPWOPT.c	/^static PyObject *__pyx_n_s_15;$/;"	v	file:
+__pyx_n_s_16	CPWOPT.c	/^static PyObject *__pyx_n_s_16;$/;"	v	file:
+__pyx_n_s_16	CPWOPTcritical.c	/^static PyObject *__pyx_n_s_16;$/;"	v	file:
+__pyx_n_s_17	CPWOPTcritical.c	/^static PyObject *__pyx_n_s_17;$/;"	v	file:
+__pyx_n_s_18	CPWOPTcritical.c	/^static PyObject *__pyx_n_s_18;$/;"	v	file:
+__pyx_n_s_3	CPWOPTcritical.c	/^static PyObject *__pyx_n_s_3;$/;"	v	file:
+__pyx_n_s_6	CPWOPT.c	/^static PyObject *__pyx_n_s_6;$/;"	v	file:
+__pyx_n_s_7	CPWOPT.c	/^static PyObject *__pyx_n_s_7;$/;"	v	file:
+__pyx_n_s__A	CPWOPT.c	/^static PyObject *__pyx_n_s__A;$/;"	v	file:
+__pyx_n_s__alg	CPWOPT.c	/^static PyObject *__pyx_n_s__alg;$/;"	v	file:
+__pyx_n_s__algorithm	CPWOPT.c	/^static PyObject *__pyx_n_s__algorithm;$/;"	v	file:
+__pyx_n_s__alpha	CPWOPT.c	/^static PyObject *__pyx_n_s__alpha;$/;"	v	file:
+__pyx_n_s__append	CPWOPT.c	/^static PyObject *__pyx_n_s__append;$/;"	v	file:
+__pyx_n_s__array	CPWOPT.c	/^static PyObject *__pyx_n_s__array;$/;"	v	file:
+__pyx_n_s__array	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__array;$/;"	v	file:
+__pyx_n_s__As	CPWOPT.c	/^static PyObject *__pyx_n_s__As;$/;"	v	file:
+__pyx_n_s__As	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__As;$/;"	v	file:
+__pyx_n_s__Asv	CPWOPT.c	/^static PyObject *__pyx_n_s__Asv;$/;"	v	file:
+__pyx_n_s__B	CPWOPT.c	/^static PyObject *__pyx_n_s__B;$/;"	v	file:
+__pyx_n_s__base	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__base;$/;"	v	file:
+__pyx_n_s__benchmark	CPWOPT.c	/^static PyObject *__pyx_n_s__benchmark;$/;"	v	file:
+__pyx_n_s__Bonnie	CPWOPT.c	/^static PyObject *__pyx_n_s__Bonnie;$/;"	v	file:
+__pyx_n_s__buf	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__buf;$/;"	v	file:
+__pyx_n_s__byteorder	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__byteorder;$/;"	v	file:
+__pyx_n_s__CompletionGradient	CPWOPT.c	/^static PyObject *__pyx_n_s__CompletionGradient;$/;"	v	file:
+__pyx_n_s__const	CPWOPT.c	/^static PyObject *__pyx_n_s__const;$/;"	v	file:
+__pyx_n_s__CPWOPT	CPWOPT.c	/^static PyObject *__pyx_n_s__CPWOPT;$/;"	v	file:
+__pyx_n_s__CPWOPTcritical	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__CPWOPTcritical;$/;"	v	file:
+__pyx_n_s__csr_matrix	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__csr_matrix;$/;"	v	file:
+__pyx_n_s__data	CPWOPT.c	/^static PyObject *__pyx_n_s__data;$/;"	v	file:
+__pyx_n_s__descr	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__descr;$/;"	v	file:
+__pyx_n_s__dot	CPWOPT.c	/^static PyObject *__pyx_n_s__dot;$/;"	v	file:
+__pyx_n_s__dot	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__dot;$/;"	v	file:
+__pyx_n_s__dtype	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__dtype;$/;"	v	file:
+__pyx_n_s__enumerate	CPWOPT.c	/^static PyObject *__pyx_n_s__enumerate;$/;"	v	file:
+__pyx_n_s__fields	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__fields;$/;"	v	file:
+__pyx_n_s__float	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__float;$/;"	v	file:
+__pyx_n_s__fmin_bfgs	CPWOPT.c	/^static PyObject *__pyx_n_s__fmin_bfgs;$/;"	v	file:
+__pyx_n_s__format	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__format;$/;"	v	file:
+__pyx_n_s__Gradient	CPWOPT.c	/^static PyObject *__pyx_n_s__Gradient;$/;"	v	file:
+__pyx_n_s__Gradient	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__Gradient;$/;"	v	file:
+__pyx_n_s__i	CPWOPT.c	/^static PyObject *__pyx_n_s__i;$/;"	v	file:
+__pyx_n_s__ind	CPWOPT.c	/^static PyObject *__pyx_n_s__ind;$/;"	v	file:
+__pyx_n_s__insert	CPWOPT.c	/^static PyObject *__pyx_n_s__insert;$/;"	v	file:
+__pyx_n_s__it	CPWOPT.c	/^static PyObject *__pyx_n_s__it;$/;"	v	file:
+__pyx_n_s__itemsize	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__itemsize;$/;"	v	file:
+__pyx_n_s__itertools	CPWOPT.c	/^static PyObject *__pyx_n_s__itertools;$/;"	v	file:
+__pyx_n_s__izip	CPWOPT.c	/^static PyObject *__pyx_n_s__izip;$/;"	v	file:
+__pyx_n_s__j	CPWOPT.c	/^static PyObject *__pyx_n_s__j;$/;"	v	file:
+__pyx_n_s__k	CPWOPT.c	/^static PyObject *__pyx_n_s__k;$/;"	v	file:
+__pyx_n_s__kron	CPWOPT.c	/^static PyObject *__pyx_n_s__kron;$/;"	v	file:
+__pyx_n_s__kron	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__kron;$/;"	v	file:
+__pyx_n_s__KRproduct	CPWOPT.c	/^static PyObject *__pyx_n_s__KRproduct;$/;"	v	file:
+__pyx_n_s__L	CPWOPT.c	/^static PyObject *__pyx_n_s__L;$/;"	v	file:
+__pyx_n_s__L	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__L;$/;"	v	file:
+__pyx_n_s__lil_matrix	CPWOPT.c	/^static PyObject *__pyx_n_s__lil_matrix;$/;"	v	file:
+__pyx_n_s__logger	CPWOPT.c	/^static PyObject *__pyx_n_s__logger;$/;"	v	file:
+__pyx_n_s__Ls	CPWOPT.c	/^static PyObject *__pyx_n_s__Ls;$/;"	v	file:
+__pyx_n_s__m	CPWOPT.c	/^static PyObject *__pyx_n_s__m;$/;"	v	file:
+__pyx_n_s__mode	CPWOPT.c	/^static PyObject *__pyx_n_s__mode;$/;"	v	file:
+__pyx_n_s__mode	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__mode;$/;"	v	file:
+__pyx_n_s__n	CPWOPT.c	/^static PyObject *__pyx_n_s__n;$/;"	v	file:
+__pyx_n_s__names	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__names;$/;"	v	file:
+__pyx_n_s__ndim	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__ndim;$/;"	v	file:
+__pyx_n_s__norm	CPWOPT.c	/^static PyObject *__pyx_n_s__norm;$/;"	v	file:
+__pyx_n_s__np	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__np;$/;"	v	file:
+__pyx_n_s__numpy	CPWOPT.c	/^static PyObject *__pyx_n_s__numpy;$/;"	v	file:
+__pyx_n_s__numpy	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__numpy;$/;"	v	file:
+__pyx_n_s__obj	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__obj;$/;"	v	file:
+__pyx_n_s__Obs	CPWOPT.c	/^static PyObject *__pyx_n_s__Obs;$/;"	v	file:
+__pyx_n_s__Obs	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__Obs;$/;"	v	file:
+__pyx_n_s__ObservedList	CPWOPT.c	/^static PyObject *__pyx_n_s__ObservedList;$/;"	v	file:
+__pyx_n_s__ObservedList	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__ObservedList;$/;"	v	file:
+__pyx_n_s__obsize	CPWOPT.c	/^static PyObject *__pyx_n_s__obsize;$/;"	v	file:
+__pyx_n_s__ObsList	CPWOPT.c	/^static PyObject *__pyx_n_s__ObsList;$/;"	v	file:
+__pyx_n_s__ObsList	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__ObsList;$/;"	v	file:
+__pyx_n_s__oldcodes	CPWOPT.c	/^static PyObject *__pyx_n_s__oldcodes;$/;"	v	file:
+__pyx_n_s__opt	CPWOPT.c	/^static PyObject *__pyx_n_s__opt;$/;"	v	file:
+__pyx_n_s__path	CPWOPT.c	/^static PyObject *__pyx_n_s__path;$/;"	v	file:
+__pyx_n_s__per	CPWOPT.c	/^static PyObject *__pyx_n_s__per;$/;"	v	file:
+__pyx_n_s__R	CPWOPT.c	/^static PyObject *__pyx_n_s__R;$/;"	v	file:
+__pyx_n_s__R	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__R;$/;"	v	file:
+__pyx_n_s__randint	CPWOPT.c	/^static PyObject *__pyx_n_s__randint;$/;"	v	file:
+__pyx_n_s__random	CPWOPT.c	/^static PyObject *__pyx_n_s__random;$/;"	v	file:
+__pyx_n_s__range	CPWOPT.c	/^static PyObject *__pyx_n_s__range;$/;"	v	file:
+__pyx_n_s__range	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__range;$/;"	v	file:
+__pyx_n_s__rate	CPWOPT.c	/^static PyObject *__pyx_n_s__rate;$/;"	v	file:
+__pyx_n_s__readonly	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__readonly;$/;"	v	file:
+__pyx_n_s__reshape	CPWOPT.c	/^static PyObject *__pyx_n_s__reshape;$/;"	v	file:
+__pyx_n_s__RuntimeError	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__RuntimeError;$/;"	v	file:
+__pyx_n_s__shape	CPWOPT.c	/^static PyObject *__pyx_n_s__shape;$/;"	v	file:
+__pyx_n_s__shape	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__shape;$/;"	v	file:
+__pyx_n_s__size	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__size;$/;"	v	file:
+__pyx_n_s__sparse	CPWOPT.c	/^static PyObject *__pyx_n_s__sparse;$/;"	v	file:
+__pyx_n_s__sparse	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__sparse;$/;"	v	file:
+__pyx_n_s__squeeze	CPWOPT.c	/^static PyObject *__pyx_n_s__squeeze;$/;"	v	file:
+__pyx_n_s__squeeze	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__squeeze;$/;"	v	file:
+__pyx_n_s__squeezeAs	CPWOPT.c	/^static PyObject *__pyx_n_s__squeezeAs;$/;"	v	file:
+__pyx_n_s__strides	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__strides;$/;"	v	file:
+__pyx_n_s__su	CPWOPT.c	/^static PyObject *__pyx_n_s__su;$/;"	v	file:
+__pyx_n_s__suboffsets	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__suboffsets;$/;"	v	file:
+__pyx_n_s__sum	CPWOPT.c	/^static PyObject *__pyx_n_s__sum;$/;"	v	file:
+__pyx_n_s__sv	CPWOPT.c	/^static PyObject *__pyx_n_s__sv;$/;"	v	file:
+__pyx_n_s__SVD	CPWOPT.c	/^static PyObject *__pyx_n_s__SVD;$/;"	v	file:
+__pyx_n_s__sw	CPWOPT.c	/^static PyObject *__pyx_n_s__sw;$/;"	v	file:
+__pyx_n_s__sys	CPWOPT.c	/^static PyObject *__pyx_n_s__sys;$/;"	v	file:
+__pyx_n_s__T	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__T;$/;"	v	file:
+__pyx_n_s__tocsr	CPWOPT.c	/^static PyObject *__pyx_n_s__tocsr;$/;"	v	file:
+__pyx_n_s__transpose	CPWOPT.c	/^static PyObject *__pyx_n_s__transpose;$/;"	v	file:
+__pyx_n_s__type_num	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__type_num;$/;"	v	file:
+__pyx_n_s__U	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__U;$/;"	v	file:
+__pyx_n_s__unfold	CPWOPT.c	/^static PyObject *__pyx_n_s__unfold;$/;"	v	file:
+__pyx_n_s__unfold	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__unfold;$/;"	v	file:
+__pyx_n_s__unfolded	CPWOPT.c	/^static PyObject *__pyx_n_s__unfolded;$/;"	v	file:
+__pyx_n_s__unpackAs	CPWOPT.c	/^static PyObject *__pyx_n_s__unpackAs;$/;"	v	file:
+__pyx_n_s__V	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__V;$/;"	v	file:
+__pyx_n_s__ValueError	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__ValueError;$/;"	v	file:
+__pyx_n_s__W	CPWOPT.c	/^static PyObject *__pyx_n_s__W;$/;"	v	file:
+__pyx_n_s__W	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__W;$/;"	v	file:
+__pyx_n_s__Wlst	CPWOPT.c	/^static PyObject *__pyx_n_s__Wlst;$/;"	v	file:
+__pyx_n_s__X	CPWOPT.c	/^static PyObject *__pyx_n_s__X;$/;"	v	file:
+__pyx_n_s__X	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__X;$/;"	v	file:
+__pyx_n_s__Xdense	CPWOPT.c	/^static PyObject *__pyx_n_s__Xdense;$/;"	v	file:
+__pyx_n_s__XoriginalTensor	CPWOPT.c	/^static PyObject *__pyx_n_s__XoriginalTensor;$/;"	v	file:
+__pyx_n_s__xrange	CPWOPT.c	/^static PyObject *__pyx_n_s__xrange;$/;"	v	file:
+__pyx_n_s__xrange	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__xrange;$/;"	v	file:
+__pyx_n_s__zeros	CPWOPT.c	/^static PyObject *__pyx_n_s__zeros;$/;"	v	file:
+__pyx_n_s__zeros	CPWOPTcritical.c	/^static PyObject *__pyx_n_s__zeros;$/;"	v	file:
+__pyx_n_s____main__	CPWOPT.c	/^static PyObject *__pyx_n_s____main__;$/;"	v	file:
+__pyx_n_s____main__	CPWOPTcritical.c	/^static PyObject *__pyx_n_s____main__;$/;"	v	file:
+__pyx_n_s____name__	CPWOPT.c	/^static PyObject *__pyx_n_s____name__;$/;"	v	file:
+__pyx_n_s____test__	CPWOPT.c	/^static PyObject *__pyx_n_s____test__;$/;"	v	file:
+__pyx_n_s____test__	CPWOPTcritical.c	/^static PyObject *__pyx_n_s____test__;$/;"	v	file:
+__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^struct __pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient {$/;"	s	file:
+__Pyx_ParseOptionalKeywords	CPWOPT.c	/^static int __Pyx_ParseOptionalKeywords($/;"	f	file:
+__Pyx_ParseOptionalKeywords	CPWOPTcritical.c	/^static int __Pyx_ParseOptionalKeywords($/;"	f	file:
+__pyx_pf_14CPWOPTcritical_1unfold	CPWOPTcritical.c	/^static PyObject *__pyx_pf_14CPWOPTcritical_1unfold(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_14CPWOPTcritical_2Gradient	CPWOPTcritical.c	/^static PyObject *__pyx_pf_14CPWOPTcritical_2Gradient(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_14CPWOPTcritical_3CompressSparseTensorToVector	CPWOPTcritical.c	/^static PyObject *__pyx_pf_14CPWOPTcritical_3CompressSparseTensorToVector(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_14CPWOPTcritical_HadamardProdOfSparseTensor	CPWOPTcritical.c	/^static PyObject *__pyx_pf_14CPWOPTcritical_HadamardProdOfSparseTensor(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_5numpy_7ndarray_1__releasebuffer__	CPWOPTcritical.c	/^static CYTHON_UNUSED void __pyx_pf_5numpy_7ndarray_1__releasebuffer__(PyObject *__pyx_v_self, Py_buffer *__pyx_v_info) {$/;"	f	file:
+__pyx_pf_5numpy_7ndarray___getbuffer__	CPWOPTcritical.c	/^static CYTHON_UNUSED int __pyx_pf_5numpy_7ndarray___getbuffer__(PyObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags) {$/;"	f	file:
+__pyx_pf_6CPWOPT_18CompletionGradient_lossfunc	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_18CompletionGradient_lossfunc(PyObject *__pyx_self, PyObject *__pyx_v_As) {$/;"	f	file:
+__pyx_pf_6CPWOPT_1KRproduct	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_1KRproduct(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_6CPWOPT_2squeezeAs	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_2squeezeAs(PyObject *__pyx_self, PyObject *__pyx_v_Div) {$/;"	f	file:
+__pyx_pf_6CPWOPT_3unpackAs	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_3unpackAs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_6CPWOPT_4unfold	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_4unfold(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_6CPWOPT_5Gradient	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_5Gradient(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_6CPWOPT_6CompressSparseTensorToVector	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_6CompressSparseTensorToVector(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_6CPWOPT_7CompletionGradient	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_7CompletionGradient(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pf_6CPWOPT_8createObservedCoordList	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_8createObservedCoordList(PyObject *__pyx_self, PyObject *__pyx_v_ObsTensor) {$/;"	f	file:
+__pyx_pf_6CPWOPT_HadamardProdOfSparseTensor	CPWOPT.c	/^static PyObject *__pyx_pf_6CPWOPT_HadamardProdOfSparseTensor(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__Pyx_Print	CPWOPT.c	/^static int __Pyx_Print(PyObject* f, PyObject *arg_tuple, int newline) {$/;"	f	file:
+__Pyx_Print	CPWOPT.c	/^static int __Pyx_Print(PyObject* stream, PyObject *arg_tuple, int newline) {$/;"	f	file:
+__pyx_print	CPWOPT.c	/^static PyObject* __pyx_print = 0;$/;"	v	file:
+__Pyx_PrintOne	CPWOPT.c	/^static int __Pyx_PrintOne(PyObject* f, PyObject *o) {$/;"	f	file:
+__Pyx_PrintOne	CPWOPT.c	/^static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {$/;"	f	file:
+__pyx_print_kwargs	CPWOPT.c	/^static PyObject* __pyx_print_kwargs = 0;$/;"	v	file:
+__pyx_ptype_5numpy_broadcast	CPWOPTcritical.c	/^static PyTypeObject *__pyx_ptype_5numpy_broadcast = 0;$/;"	v	file:
+__pyx_ptype_5numpy_dtype	CPWOPTcritical.c	/^static PyTypeObject *__pyx_ptype_5numpy_dtype = 0;$/;"	v	file:
+__pyx_ptype_5numpy_flatiter	CPWOPTcritical.c	/^static PyTypeObject *__pyx_ptype_5numpy_flatiter = 0;$/;"	v	file:
+__pyx_ptype_5numpy_ndarray	CPWOPTcritical.c	/^static PyTypeObject *__pyx_ptype_5numpy_ndarray = 0;$/;"	v	file:
+__pyx_ptype_5numpy_ufunc	CPWOPTcritical.c	/^static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;$/;"	v	file:
+__pyx_ptype_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyTypeObject *__pyx_ptype_6CPWOPT___pyx_scope_struct__CompletionGradient = 0;$/;"	v	file:
+__Pyx_PyBool_FromLong	CPWOPT.c	/^#define __Pyx_PyBool_FromLong(/;"	d	file:
+__Pyx_PyBool_FromLong	CPWOPTcritical.c	/^#define __Pyx_PyBool_FromLong(/;"	d	file:
+__Pyx_PyBytes_AsUString	CPWOPT.c	/^#define __Pyx_PyBytes_AsUString(/;"	d	file:
+__Pyx_PyBytes_AsUString	CPWOPTcritical.c	/^#define __Pyx_PyBytes_AsUString(/;"	d	file:
+__Pyx_PyBytes_FromUString	CPWOPT.c	/^#define __Pyx_PyBytes_FromUString(/;"	d	file:
+__Pyx_PyBytes_FromUString	CPWOPTcritical.c	/^#define __Pyx_PyBytes_FromUString(/;"	d	file:
+__pyx_PyFloat_AsDouble	CPWOPT.c	/^#define __pyx_PyFloat_AsDouble(/;"	d	file:
+__pyx_PyFloat_AsDouble	CPWOPTcritical.c	/^#define __pyx_PyFloat_AsDouble(/;"	d	file:
+__Pyx_PyIndex_AsSsize_t	CPWOPT.c	/^static CYTHON_INLINE Py_ssize_t __Pyx_PyIndex_AsSsize_t(PyObject* b) {$/;"	f	file:
+__Pyx_PyIndex_AsSsize_t	CPWOPTcritical.c	/^static CYTHON_INLINE Py_ssize_t __Pyx_PyIndex_AsSsize_t(PyObject* b) {$/;"	f	file:
+__Pyx_PyInt_AsChar	CPWOPT.c	/^static CYTHON_INLINE char __Pyx_PyInt_AsChar(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsChar	CPWOPTcritical.c	/^static CYTHON_INLINE char __Pyx_PyInt_AsChar(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsInt	CPWOPT.c	/^static CYTHON_INLINE int __Pyx_PyInt_AsInt(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsInt	CPWOPTcritical.c	/^static CYTHON_INLINE int __Pyx_PyInt_AsInt(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsLong	CPWOPT.c	/^static CYTHON_INLINE long __Pyx_PyInt_AsLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsLong	CPWOPTcritical.c	/^static CYTHON_INLINE long __Pyx_PyInt_AsLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsLongDouble	CPWOPT.c	/^static CYTHON_INLINE int __Pyx_PyInt_AsLongDouble(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsLongDouble	CPWOPTcritical.c	/^static CYTHON_INLINE int __Pyx_PyInt_AsLongDouble(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsLongLong	CPWOPT.c	/^static CYTHON_INLINE PY_LONG_LONG __Pyx_PyInt_AsLongLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsLongLong	CPWOPTcritical.c	/^static CYTHON_INLINE PY_LONG_LONG __Pyx_PyInt_AsLongLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsShort	CPWOPT.c	/^static CYTHON_INLINE short __Pyx_PyInt_AsShort(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsShort	CPWOPTcritical.c	/^static CYTHON_INLINE short __Pyx_PyInt_AsShort(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedChar	CPWOPT.c	/^static CYTHON_INLINE signed char __Pyx_PyInt_AsSignedChar(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedChar	CPWOPTcritical.c	/^static CYTHON_INLINE signed char __Pyx_PyInt_AsSignedChar(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedInt	CPWOPT.c	/^static CYTHON_INLINE signed int __Pyx_PyInt_AsSignedInt(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedInt	CPWOPTcritical.c	/^static CYTHON_INLINE signed int __Pyx_PyInt_AsSignedInt(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedLong	CPWOPT.c	/^static CYTHON_INLINE signed long __Pyx_PyInt_AsSignedLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedLong	CPWOPTcritical.c	/^static CYTHON_INLINE signed long __Pyx_PyInt_AsSignedLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedLongLong	CPWOPT.c	/^static CYTHON_INLINE signed PY_LONG_LONG __Pyx_PyInt_AsSignedLongLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedLongLong	CPWOPTcritical.c	/^static CYTHON_INLINE signed PY_LONG_LONG __Pyx_PyInt_AsSignedLongLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedShort	CPWOPT.c	/^static CYTHON_INLINE signed short __Pyx_PyInt_AsSignedShort(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSignedShort	CPWOPTcritical.c	/^static CYTHON_INLINE signed short __Pyx_PyInt_AsSignedShort(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSize_t	CPWOPT.c	/^static CYTHON_INLINE size_t __Pyx_PyInt_AsSize_t(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsSize_t	CPWOPTcritical.c	/^static CYTHON_INLINE size_t __Pyx_PyInt_AsSize_t(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedChar	CPWOPT.c	/^static CYTHON_INLINE unsigned char __Pyx_PyInt_AsUnsignedChar(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedChar	CPWOPTcritical.c	/^static CYTHON_INLINE unsigned char __Pyx_PyInt_AsUnsignedChar(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedInt	CPWOPT.c	/^static CYTHON_INLINE unsigned int __Pyx_PyInt_AsUnsignedInt(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedInt	CPWOPTcritical.c	/^static CYTHON_INLINE unsigned int __Pyx_PyInt_AsUnsignedInt(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedLong	CPWOPT.c	/^static CYTHON_INLINE unsigned long __Pyx_PyInt_AsUnsignedLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedLong	CPWOPTcritical.c	/^static CYTHON_INLINE unsigned long __Pyx_PyInt_AsUnsignedLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedLongLong	CPWOPT.c	/^static CYTHON_INLINE unsigned PY_LONG_LONG __Pyx_PyInt_AsUnsignedLongLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedLongLong	CPWOPTcritical.c	/^static CYTHON_INLINE unsigned PY_LONG_LONG __Pyx_PyInt_AsUnsignedLongLong(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedShort	CPWOPT.c	/^static CYTHON_INLINE unsigned short __Pyx_PyInt_AsUnsignedShort(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_AsUnsignedShort	CPWOPTcritical.c	/^static CYTHON_INLINE unsigned short __Pyx_PyInt_AsUnsignedShort(PyObject* x) {$/;"	f	file:
+__Pyx_PyInt_FromSize_t	CPWOPT.c	/^static CYTHON_INLINE PyObject * __Pyx_PyInt_FromSize_t(size_t ival) {$/;"	f	file:
+__Pyx_PyInt_FromSize_t	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject * __Pyx_PyInt_FromSize_t(size_t ival) {$/;"	f	file:
+__Pyx_PyNumber_Divide	CPWOPT.c	/^  #define __Pyx_PyNumber_Divide(/;"	d	file:
+__Pyx_PyNumber_Divide	CPWOPTcritical.c	/^  #define __Pyx_PyNumber_Divide(/;"	d	file:
+__Pyx_PyNumber_InPlaceDivide	CPWOPT.c	/^  #define __Pyx_PyNumber_InPlaceDivide(/;"	d	file:
+__Pyx_PyNumber_InPlaceDivide	CPWOPTcritical.c	/^  #define __Pyx_PyNumber_InPlaceDivide(/;"	d	file:
+__Pyx_PyNumber_Int	CPWOPT.c	/^static CYTHON_INLINE PyObject* __Pyx_PyNumber_Int(PyObject* x) {$/;"	f	file:
+__Pyx_PyNumber_Int	CPWOPTcritical.c	/^static CYTHON_INLINE PyObject* __Pyx_PyNumber_Int(PyObject* x) {$/;"	f	file:
+__Pyx_PyObject_IsTrue	CPWOPT.c	/^static CYTHON_INLINE int __Pyx_PyObject_IsTrue(PyObject* x) {$/;"	f	file:
+__Pyx_PyObject_IsTrue	CPWOPTcritical.c	/^static CYTHON_INLINE int __Pyx_PyObject_IsTrue(PyObject* x) {$/;"	f	file:
+__Pyx_PySequence_DelSlice	CPWOPT.c	/^  #define __Pyx_PySequence_DelSlice(/;"	d	file:
+__Pyx_PySequence_DelSlice	CPWOPTcritical.c	/^  #define __Pyx_PySequence_DelSlice(/;"	d	file:
+__Pyx_PySequence_GetSlice	CPWOPT.c	/^  #define __Pyx_PySequence_GetSlice(/;"	d	file:
+__Pyx_PySequence_GetSlice	CPWOPTcritical.c	/^  #define __Pyx_PySequence_GetSlice(/;"	d	file:
+__Pyx_PySequence_SetSlice	CPWOPT.c	/^  #define __Pyx_PySequence_SetSlice(/;"	d	file:
+__Pyx_PySequence_SetSlice	CPWOPTcritical.c	/^  #define __Pyx_PySequence_SetSlice(/;"	d	file:
+__Pyx_Raise	CPWOPTcritical.c	/^static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb) {$/;"	f	file:
+__Pyx_RaiseArgtupleInvalid	CPWOPT.c	/^static void __Pyx_RaiseArgtupleInvalid($/;"	f	file:
+__Pyx_RaiseArgtupleInvalid	CPWOPTcritical.c	/^static void __Pyx_RaiseArgtupleInvalid($/;"	f	file:
+__Pyx_RaiseBufferFallbackError	CPWOPTcritical.c	/^static void __Pyx_RaiseBufferFallbackError(void) {$/;"	f	file:
+__Pyx_RaiseDoubleKeywordsError	CPWOPT.c	/^static void __Pyx_RaiseDoubleKeywordsError($/;"	f	file:
+__Pyx_RaiseDoubleKeywordsError	CPWOPTcritical.c	/^static void __Pyx_RaiseDoubleKeywordsError($/;"	f	file:
+__Pyx_RaiseNeedMoreValuesError	CPWOPT.c	/^static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index) {$/;"	f	file:
+__Pyx_RaiseNeedMoreValuesError	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index) {$/;"	f	file:
+__Pyx_RaiseNoneNotIterableError	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_RaiseNoneNotIterableError(void) {$/;"	f	file:
+__Pyx_RaiseTooManyValuesError	CPWOPT.c	/^static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {$/;"	f	file:
+__Pyx_RaiseTooManyValuesError	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {$/;"	f	file:
+__Pyx_RefNanny	CPWOPT.c	/^  static __Pyx_RefNannyAPIStruct *__Pyx_RefNanny = NULL;$/;"	v	file:
+__Pyx_RefNanny	CPWOPTcritical.c	/^  static __Pyx_RefNannyAPIStruct *__Pyx_RefNanny = NULL;$/;"	v	file:
+__Pyx_RefNannyAPIStruct	CPWOPT.c	/^  } __Pyx_RefNannyAPIStruct;$/;"	t	typeref:struct:__anon3	file:
+__Pyx_RefNannyAPIStruct	CPWOPTcritical.c	/^  } __Pyx_RefNannyAPIStruct;$/;"	t	typeref:struct:__anon9	file:
+__Pyx_RefNannyFinishContext	CPWOPT.c	/^  #define __Pyx_RefNannyFinishContext(/;"	d	file:
+__Pyx_RefNannyFinishContext	CPWOPTcritical.c	/^  #define __Pyx_RefNannyFinishContext(/;"	d	file:
+__Pyx_RefNannyImportAPI	CPWOPT.c	/^  static __Pyx_RefNannyAPIStruct * __Pyx_RefNannyImportAPI(const char *modname) {$/;"	f	file:
+__Pyx_RefNannyImportAPI	CPWOPTcritical.c	/^  static __Pyx_RefNannyAPIStruct * __Pyx_RefNannyImportAPI(const char *modname) {$/;"	f	file:
+__Pyx_RefNannySetupContext	CPWOPT.c	/^  #define __Pyx_RefNannySetupContext(/;"	d	file:
+__Pyx_RefNannySetupContext	CPWOPTcritical.c	/^  #define __Pyx_RefNannySetupContext(/;"	d	file:
+__Pyx_ReleaseBuffer	CPWOPTcritical.c	/^#define __Pyx_ReleaseBuffer /;"	d	file:
+__Pyx_ReleaseBuffer	CPWOPTcritical.c	/^static void __Pyx_ReleaseBuffer(Py_buffer *view) {$/;"	f	file:
+__Pyx_SafeReleaseBuffer	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_SafeReleaseBuffer(Py_buffer* info) {$/;"	f	file:
+__Pyx_SetAttrString	CPWOPT.c	/^  #define __Pyx_SetAttrString(/;"	d	file:
+__Pyx_SetAttrString	CPWOPTcritical.c	/^  #define __Pyx_SetAttrString(/;"	d	file:
+__Pyx_SET_CIMAG	CPWOPTcritical.c	/^    #define __Pyx_SET_CIMAG(/;"	d	file:
+__Pyx_SET_CREAL	CPWOPTcritical.c	/^    #define __Pyx_SET_CREAL(/;"	d	file:
+__Pyx_StrEq	CPWOPT.c	/^static CYTHON_INLINE int __Pyx_StrEq(const char *s1, const char *s2) {$/;"	f	file:
+__Pyx_StringTabEntry	CPWOPT.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	t	typeref:struct:__anon2	file:
+__Pyx_StringTabEntry	CPWOPTcritical.c	/^typedef struct {PyObject **p; char *s; const long n; const char* encoding; const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry; \/*proto*\/$/;"	t	typeref:struct:__anon6	file:
+__pyx_string_tab	CPWOPT.c	/^static __Pyx_StringTabEntry __pyx_string_tab[] = {$/;"	v	file:
+__pyx_string_tab	CPWOPTcritical.c	/^static __Pyx_StringTabEntry __pyx_string_tab[] = {$/;"	v	file:
+__Pyx_StructField	CPWOPTcritical.c	/^} __Pyx_StructField;$/;"	t	typeref:struct:__Pyx_StructField_	file:
+__Pyx_StructField_	CPWOPTcritical.c	/^typedef struct __Pyx_StructField_ {$/;"	s	file:
+__Pyx_st_double	CPWOPTcritical.c	/^typedef struct { char c; double x; } __Pyx_st_double;$/;"	t	typeref:struct:__anon17	file:
+__Pyx_st_float	CPWOPTcritical.c	/^typedef struct { char c; float x; } __Pyx_st_float;$/;"	t	typeref:struct:__anon16	file:
+__Pyx_st_int	CPWOPTcritical.c	/^typedef struct { char c; int x; } __Pyx_st_int;$/;"	t	typeref:struct:__anon14	file:
+__Pyx_st_long	CPWOPTcritical.c	/^typedef struct { char c; long x; } __Pyx_st_long;$/;"	t	typeref:struct:__anon15	file:
+__Pyx_st_longdouble	CPWOPTcritical.c	/^typedef struct { char c; long double x; } __Pyx_st_longdouble;$/;"	t	typeref:struct:__anon18	file:
+__Pyx_st_short	CPWOPTcritical.c	/^typedef struct { char c; short x; } __Pyx_st_short;$/;"	t	typeref:struct:__anon13	file:
+__Pyx_st_void_p	CPWOPTcritical.c	/^typedef struct { char c; void *x; } __Pyx_st_void_p;$/;"	t	typeref:struct:__anon19	file:
+__Pyx_s_long_long	CPWOPTcritical.c	/^typedef struct { char c; PY_LONG_LONG x; } __Pyx_s_long_long;$/;"	t	typeref:struct:__anon20	file:
+__pyx_tp_as_buffer___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyBufferProcs __pyx_tp_as_buffer___pyx_scope_struct__CompletionGradient = {$/;"	v	file:
+__pyx_tp_as_mapping___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyMappingMethods __pyx_tp_as_mapping___pyx_scope_struct__CompletionGradient = {$/;"	v	file:
+__pyx_tp_as_number___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyNumberMethods __pyx_tp_as_number___pyx_scope_struct__CompletionGradient = {$/;"	v	file:
+__pyx_tp_as_sequence___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PySequenceMethods __pyx_tp_as_sequence___pyx_scope_struct__CompletionGradient = {$/;"	v	file:
+__pyx_tp_clear_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static int __pyx_tp_clear_6CPWOPT___pyx_scope_struct__CompletionGradient(PyObject *o) {$/;"	f	file:
+__pyx_tp_dealloc_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static void __pyx_tp_dealloc_6CPWOPT___pyx_scope_struct__CompletionGradient(PyObject *o) {$/;"	f	file:
+__pyx_tp_new_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyObject *__pyx_tp_new_6CPWOPT___pyx_scope_struct__CompletionGradient(PyTypeObject *t, PyObject *a, PyObject *k) {$/;"	f	file:
+__pyx_tp_traverse_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static int __pyx_tp_traverse_6CPWOPT___pyx_scope_struct__CompletionGradient(PyObject *o, visitproc v, void *a) {$/;"	f	file:
+__Pyx_TypeCheck	CPWOPT.c	/^#define __Pyx_TypeCheck(/;"	d	file:
+__Pyx_TypeCheck	CPWOPTcritical.c	/^#define __Pyx_TypeCheck(/;"	d	file:
+__Pyx_TypeInfo	CPWOPTcritical.c	/^} __Pyx_TypeInfo;$/;"	t	typeref:struct:__anon10	file:
+__Pyx_TypeInfo_nn___pyx_t_5numpy_float_t	CPWOPTcritical.c	/^static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_float_t = { "float_t", NULL, sizeof(__pyx_t_5numpy_float_t), 'R' };$/;"	v	file:
+__Pyx_TypeInfo_nn___pyx_t_5numpy_int_t	CPWOPTcritical.c	/^static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int_t = { "int_t", NULL, sizeof(__pyx_t_5numpy_int_t), 'I' };$/;"	v	file:
+__Pyx_TypeTest	CPWOPTcritical.c	/^static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {$/;"	f	file:
+__pyx_type_6CPWOPT___pyx_scope_struct__CompletionGradient	CPWOPT.c	/^static PyTypeObject __pyx_type_6CPWOPT___pyx_scope_struct__CompletionGradient = {$/;"	v	file:
+__pyx_t_5numpy_cdouble_t	CPWOPTcritical.c	/^typedef npy_cdouble __pyx_t_5numpy_cdouble_t;$/;"	t	file:
+__pyx_t_5numpy_cfloat_t	CPWOPTcritical.c	/^typedef npy_cfloat __pyx_t_5numpy_cfloat_t;$/;"	t	file:
+__pyx_t_5numpy_clongdouble_t	CPWOPTcritical.c	/^typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;$/;"	t	file:
+__pyx_t_5numpy_complex_t	CPWOPTcritical.c	/^typedef npy_cdouble __pyx_t_5numpy_complex_t;$/;"	t	file:
+__pyx_t_5numpy_double_t	CPWOPTcritical.c	/^typedef npy_double __pyx_t_5numpy_double_t;$/;"	t	file:
+__pyx_t_5numpy_float32_t	CPWOPTcritical.c	/^typedef npy_float32 __pyx_t_5numpy_float32_t;$/;"	t	file:
+__pyx_t_5numpy_float64_t	CPWOPTcritical.c	/^typedef npy_float64 __pyx_t_5numpy_float64_t;$/;"	t	file:
+__pyx_t_5numpy_float_t	CPWOPTcritical.c	/^typedef npy_double __pyx_t_5numpy_float_t;$/;"	t	file:
+__pyx_t_5numpy_int16_t	CPWOPTcritical.c	/^typedef npy_int16 __pyx_t_5numpy_int16_t;$/;"	t	file:
+__pyx_t_5numpy_int32_t	CPWOPTcritical.c	/^typedef npy_int32 __pyx_t_5numpy_int32_t;$/;"	t	file:
+__pyx_t_5numpy_int64_t	CPWOPTcritical.c	/^typedef npy_int64 __pyx_t_5numpy_int64_t;$/;"	t	file:
+__pyx_t_5numpy_int8_t	CPWOPTcritical.c	/^typedef npy_int8 __pyx_t_5numpy_int8_t;$/;"	t	file:
+__pyx_t_5numpy_intp_t	CPWOPTcritical.c	/^typedef npy_intp __pyx_t_5numpy_intp_t;$/;"	t	file:
+__pyx_t_5numpy_int_t	CPWOPTcritical.c	/^typedef npy_long __pyx_t_5numpy_int_t;$/;"	t	file:
+__pyx_t_5numpy_longdouble_t	CPWOPTcritical.c	/^typedef npy_longdouble __pyx_t_5numpy_longdouble_t;$/;"	t	file:
+__pyx_t_5numpy_long_t	CPWOPTcritical.c	/^typedef npy_longlong __pyx_t_5numpy_long_t;$/;"	t	file:
+__pyx_t_5numpy_uint16_t	CPWOPTcritical.c	/^typedef npy_uint16 __pyx_t_5numpy_uint16_t;$/;"	t	file:
+__pyx_t_5numpy_uint32_t	CPWOPTcritical.c	/^typedef npy_uint32 __pyx_t_5numpy_uint32_t;$/;"	t	file:
+__pyx_t_5numpy_uint64_t	CPWOPTcritical.c	/^typedef npy_uint64 __pyx_t_5numpy_uint64_t;$/;"	t	file:
+__pyx_t_5numpy_uint8_t	CPWOPTcritical.c	/^typedef npy_uint8 __pyx_t_5numpy_uint8_t;$/;"	t	file:
+__pyx_t_5numpy_uintp_t	CPWOPTcritical.c	/^typedef npy_uintp __pyx_t_5numpy_uintp_t;$/;"	t	file:
+__pyx_t_5numpy_uint_t	CPWOPTcritical.c	/^typedef npy_ulong __pyx_t_5numpy_uint_t;$/;"	t	file:
+__pyx_t_5numpy_ulong_t	CPWOPTcritical.c	/^typedef npy_ulonglong __pyx_t_5numpy_ulong_t;$/;"	t	file:
+__pyx_t_double_complex	CPWOPTcritical.c	/^    typedef ::std::complex< double > __pyx_t_double_complex;$/;"	t	class:std	file:
+__pyx_t_double_complex	CPWOPTcritical.c	/^    typedef double _Complex __pyx_t_double_complex;$/;"	t	file:
+__pyx_t_double_complex	CPWOPTcritical.c	/^    typedef struct { double real, imag; } __pyx_t_double_complex;$/;"	t	typeref:struct:__anon8	file:
+__pyx_t_double_complex_from_parts	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_double_complex __pyx_t_double_complex_from_parts(double x, double y) {$/;"	f	file:
+__pyx_t_float_complex	CPWOPTcritical.c	/^    typedef ::std::complex< float > __pyx_t_float_complex;$/;"	t	class:std	file:
+__pyx_t_float_complex	CPWOPTcritical.c	/^    typedef float _Complex __pyx_t_float_complex;$/;"	t	file:
+__pyx_t_float_complex	CPWOPTcritical.c	/^    typedef struct { float real, imag; } __pyx_t_float_complex;$/;"	t	typeref:struct:__anon7	file:
+__pyx_t_float_complex_from_parts	CPWOPTcritical.c	/^    static CYTHON_INLINE __pyx_t_float_complex __pyx_t_float_complex_from_parts(float x, float y) {$/;"	f	file:
+__Pyx_UnpackItem	CPWOPT.c	/^static PyObject *__Pyx_UnpackItem(PyObject *iter, Py_ssize_t index) {$/;"	f	file:
+__Pyx_UnpackTupleError	CPWOPTcritical.c	/^static void __Pyx_UnpackTupleError(PyObject *t, Py_ssize_t index) {$/;"	f	file:
+__pyx_v_l	CPWOPT.c	/^  PyObject *__pyx_v_l;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_Ls	CPWOPT.c	/^  PyObject *__pyx_v_Ls;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_m	CPWOPT.c	/^  PyObject *__pyx_v_m;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_n	CPWOPT.c	/^  PyObject *__pyx_v_n;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_ObservedList	CPWOPT.c	/^  PyObject *__pyx_v_ObservedList;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_R	CPWOPT.c	/^  PyObject *__pyx_v_R;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_shape	CPWOPT.c	/^  PyObject *__pyx_v_shape;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__pyx_v_X	CPWOPT.c	/^  PyObject *__pyx_v_X;$/;"	m	struct:__pyx_obj_6CPWOPT___pyx_scope_struct__CompletionGradient	file:
+__Pyx_XDECREF	CPWOPT.c	/^  #define __Pyx_XDECREF(/;"	d	file:
+__Pyx_XDECREF	CPWOPTcritical.c	/^  #define __Pyx_XDECREF(/;"	d	file:
+__Pyx_XGIVEREF	CPWOPT.c	/^#define __Pyx_XGIVEREF(/;"	d	file:
+__Pyx_XGIVEREF	CPWOPTcritical.c	/^#define __Pyx_XGIVEREF(/;"	d	file:
+__Pyx_XGOTREF	CPWOPT.c	/^#define __Pyx_XGOTREF(/;"	d	file:
+__Pyx_XGOTREF	CPWOPTcritical.c	/^#define __Pyx_XGOTREF(/;"	d	file:
+__Pyx_ZeroBuffer	CPWOPTcritical.c	/^static CYTHON_INLINE void __Pyx_ZeroBuffer(Py_buffer* buf) {$/;"	f	file:
+__Pyx_zeros	CPWOPTcritical.c	/^Py_ssize_t __Pyx_zeros[] = {0, 0, 0};$/;"	v
+__repr__	oldcodes/mlabwrap.py	/^    def __repr__(self):$/;"	m	class:MlabObjectProxy	file:
+__setattr__	oldcodes/mlabwrap.py	/^    def __setattr__(self, attr, value):$/;"	m	class:MlabObjectProxy	file:
+__setitem__	oldcodes/mlabwrap.py	/^    def __setitem__(self, index, value):$/;"	m	class:CurlyIndexer	file:
+__setitem__	oldcodes/mlabwrap.py	/^    def __setitem__(self, index, value, parens='()'):$/;"	m	class:MlabObjectProxy	file:
+__setstate__	oldcodes/mlabwrap.py	/^    def __setstate__(self, state):$/;"	m	class:MlabObjectProxy	file:
+__stdcall	CPWOPT.c	/^    #define __stdcall$/;"	d	file:
+__stdcall	CPWOPTcritical.c	/^    #define __stdcall$/;"	d	file:
+__version__	oldcodes/forkmap.py	/^__version__ = "$Rev: 1139 $"$/;"	v
+__version__	oldcodes/mlabwrap.py	/^__version__ = '1.1'$/;"	v
+__version__	oldcodes/paralellmap.py	/^__version__ = "$Rev: 1139 $"$/;"	v
