@@ -504,8 +504,6 @@ def SaveImage(X,filename,axis):
 if __name__ == '__main__':
     dat = Renkanhyo()
     X = dat["X"]
-    print X
-    print sum(X)
 
 #if __name__ == '__main__':
     ##dat = Flow_Injection()

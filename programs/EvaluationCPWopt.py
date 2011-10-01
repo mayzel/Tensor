@@ -59,22 +59,22 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
     if not useRelation:
         L = [None for i in range(X.ndim)]
 
-    if unobservedRates == None:
-        unobservedRates = array([0.5,0.75,0.9])
-        #unobservedRates = array([0.75,0.9,0.95])
-        #unobservedRates = unobservedRates[::-1]
-    if alpha == None:
-        #alpha =[pow(10,x) for x in [-4,-3,-2,-1,0,1]] #for L
-        alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L
-        alpha =[pow(10,x) for x in [-7,-6,-5,-4,-3,-2,-1]] #for L
+    #if unobservedRates == None:
+    #    unobservedRates = array([0.5,0.75,0.9])
+    #    #unobservedRates = array([0.75,0.9,0.95])
+    #    #unobservedRates = unobservedRates[::-1]
+    #if alpha == None:
+    #    #alpha =[pow(10,x) for x in [-4,-3,-2,-1,0,1]] #for L
+    #    alpha =[pow(10,x) for x in [-5,-4,-3,-2,-1]] #for L
+    #    alpha =[pow(10,x) for x in [-7,-6,-5,-4,-3,-2,-1]] #for L
 
-    if ranks == None:
-        #ranks = [2,3,5]
-        ranks = [5,7,9]
-        ranks = [40]
-        ranks = [5,10,15]
-        ranks=[35]
-        #ranks = [7]
+    #if ranks == None:
+    #    #ranks = [2,3,5]
+    #    ranks = [5,7,9]
+    #    ranks = [40]
+    #    ranks = [5,10,15]
+    #    ranks=[35]
+    #    #ranks = [7]
 
     shape = X.shape
 
@@ -85,6 +85,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
 
     maskAxis = 1
     elems = prod(X.shape) 
+    print elems, "kdkdkdkd"
     if mask == "Random":
         targetelems = elems
         def createObservedTensor(data):
@@ -174,6 +175,8 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
         completionMethod = CompletionMethods.CP(X,L,decomposition)
     elif method == "CPWOPT":
         completionMethod = CompletionMethods.CPWOPT(X,L)
+        if not useRelation:
+            alpha = [0]
 
     #convert list of indeces to binary tensor
     completionMethod.createObservedTensor = createObservedTensor
@@ -214,6 +217,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
 
         import CrossValidation
         
+        print unobservedRate, "kkkkkkkk"
         parameters = [(a,rank) for a in alpha for rank in ranks] 
         errors = CrossValidation.Evaluate(
                 trainingData,

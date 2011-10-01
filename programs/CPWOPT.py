@@ -113,7 +113,6 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
     #Observed must be given as list of coordinate tuples
     #TrueX is 3 dimensional array
 
-    Ls[:] = [L*alpha for L in Ls]
 
     N = 3
     Xns = [critical.unfold(X,n,shape,ObservedList) for n in xrange(N)]
@@ -129,7 +128,6 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
         As[k] /= Rev 
         #As[k] += random.randn(shape[k],R)*0.01
 
-    print "HOSVD finished"
 
 
     n,m,l=shape
@@ -141,24 +139,28 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
         return loss
 
     #Xinit = flattenAs(As)
-    print "start bfgs"
+    #print "start bfgs"
 
 
     J = alg.createUnitTensor(3,R)
     #Mask = getMaskTensor(ObservedList,shape)
 
     U,V,W = As
+
+    Ls[:] = [L*alpha if not L==None else 0 for L in Ls]
+
     Lu,Lv,Lw=Ls
-    beta = 0.0001
+    beta = 1e-8
     Lu += alpha * Lu + beta * eye(n) 
     Lv += alpha * Lv + beta * eye(m) 
     Lw += alpha * Lw + beta * eye(l) 
-    print U.shape, V.shape, W.shape
+    #print U.shape, V.shape, W.shape
 
     Xest = XoriginalTensor #memory consuming
 
-    threshold = 0.01*const.ConvergenceThreshold_NewCompletion
-    maxiter=100
+
+    threshold = 0.5*const.ConvergenceThreshold_NewCompletion
+    maxiter=500
     bfgs_maxiter=3
     errorold = inf
     errorTest = inf
@@ -192,7 +194,7 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
             V /= qubicnormrate
             W /= qubicnormrate
 
-        if steps % 5 == 1:
+        if steps % 20 == 1:
             Xest = alg.expand(J,[U,V,W])
             errorTest = norm(Xest - XoriginalTensor)
             #print U
@@ -200,12 +202,14 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
         errorObserved = lossfunc(U,V,W)
 
 
-        if steps % 5 == 1:
+        if steps % 20 == 1:
             print "iter:",steps," err:",errorTest ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xest)
 
         faultThreshold = 1e4
-        if steps > maxiter or errorObserved > faultThreshold or errorObserved != errorObserved:
+        if errorObserved > faultThreshold or errorObserved != errorObserved:
             #やりなおし
+            print "-----Try Again-----"
+            print steps," steps, observation error=",errorObserved
             return CompletionGradient(X,shape,ObservedList,R,Ls,alpha,XoriginalTensor)
 
         if abs(errorObserved - errorold) < threshold:

@@ -1,7 +1,8 @@
 #coding: utf-8
 information={}
 
-
+def resetInfo():
+    information = {}
 def strInfo(info):
     result = {}
     for k,v in info.items():

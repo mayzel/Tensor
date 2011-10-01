@@ -104,7 +104,7 @@ def Evaluate(
     datastream = evaluatingDataSeparator(arange(len(trainingData)))
     #datastream = Toolbox.ToArray(datastream)
     try:
-        assert(False)
+        #assert(False)
         print "Multi-Threading"
         def forkeval(data):
             return evaluateData(data,hyperParameters)

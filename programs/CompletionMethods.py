@@ -84,7 +84,6 @@ class CPWOPT(Completion):
     def estimator(self,param,trainingData):
 
         #trainingData must be given as list of coordinate tuples
-
         X = self.X
         L = self.L
         shape = X.shape
