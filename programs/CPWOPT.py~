@@ -104,10 +104,21 @@ def LBFGS_matrix(f,xinit,fprime,maxiter):
     return x
 
 
+def separateLaplacian(self, L,size):
+    """
+    グラフラプラシアンを類似度行列と対角成分に分解
+    """
+    if L == None:
+        return ones(size),eye(size)
+
+    D = diag(L)+1
+    K = diag(D) - L
+    
+    return D,K
 """
 CP-WOPTによってテンソルを補完する
 """
-def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
+def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None,isProd=False):
     #X is Dense Vector with only observed elements
 
     #Observed must be given as list of coordinate tuples
@@ -151,36 +162,57 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
 
     Lu,Lv,Lw=Ls
     beta = 1e-8
-    Lu += alpha * Lu + beta * eye(n) 
-    Lv += alpha * Lv + beta * eye(m) 
-    Lw += alpha * Lw + beta * eye(l) 
+    isProd = False
+
+    if not isProd:
+        LuUse = alpha * Lu + beta * eye(n) 
+        LvUse = alpha * Lv + beta * eye(m) 
+        LwUse = alpha * Lw + beta * eye(l) 
     #print U.shape, V.shape, W.shape
 
     Xest = XoriginalTensor #memory consuming
 
 
     threshold = 0.5*const.ConvergenceThreshold_NewCompletion
-    maxiter=500
+    maxiter=700
     bfgs_maxiter=3
     errorold = inf
     errorTest = inf
     expandedX = 0
+
+    Dw,Kw = separateLaplacian(Lw,l)
+    Dv,Kv = separateLaplacian(Lv,m)
+    Du,Ku = separateLaplacian(Lu,n)
+
     import itertools
     for steps in itertools.count():
+        if isProd:
+            DSu = alpha * trace(dot(W.T*Dw,W)) * trace(dot(V.T*Dv,V))
+            KSu = alpha * trace(dot(W.T,dot(Kw,W))) * trace(dot(V.T,dot(Kv,V)))
+            LuUse = DSu * Du - KSu * Ku + eye(n)
+
         #print "optimization of U"
         #print [U.shape,V.shape,W.shape]
-        grad = lambda U:critical.Gradient(X,ObservedList,(U,V,W),Lu,shape,R,0)
+        grad = lambda U:critical.Gradient(X,ObservedList,(U,V,W),LuUse,shape,R,0)
         loss = lambda U:lossfunc(U,V,W)
         U = LBFGS_matrix(loss,U,grad,maxiter=bfgs_maxiter)
         #print [U.shape,V.shape,W.shape]
 
+        if isProd:
+            DSv = alpha * trace(dot(U.T*Du,U)) * trace(dot(W.T*Dw,W))
+            KSv = alpha * trace(dot(U.T,dot(Ku,U))) * trace(dot(W.T,dot(Kw,W)))
+            LvUse = DSv * Dv - KSv * Kv + eye(m)
         #print "optimization of V"
-        grad = lambda V:critical.Gradient(X,ObservedList,(U,V,W),Lv,shape,R,1)
+        grad = lambda V:critical.Gradient(X,ObservedList,(U,V,W),LvUse,shape,R,1)
         loss = lambda V:lossfunc(U,V,W)
         V = LBFGS_matrix(loss,V,grad,maxiter=bfgs_maxiter)
 
+        if isProd:
+            DSw = alpha * trace(dot(U.T*Du,U)) * trace(dot(V.T*Dv,V))
+            KSw = alpha * trace(dot(U.T,dot(Ku,U))) * trace(dot(V.T,dot(Kv,V)))
+            LwUse = DSw * Dw - KSw * Kw + eye(l)
         #print "optimization of W"
-        grad = lambda W:critical.Gradient(X,ObservedList,(U,V,W),Lw,shape,R,2)
+        grad = lambda W:critical.Gradient(X,ObservedList,(U,V,W),LwUse,shape,R,2)
         loss = lambda W:lossfunc(U,V,W)
         W = LBFGS_matrix(loss,W,grad,maxiter=bfgs_maxiter)
 
@@ -212,7 +244,7 @@ def CompletionGradient(X,shape,ObservedList,R,Ls,alpha=0,XoriginalTensor=None):
             print steps," steps, observation error=",errorObserved
             return CompletionGradient(X,shape,ObservedList,R,Ls,alpha,XoriginalTensor)
 
-        if abs(errorObserved - errorold) < threshold:
+        if abs(errorObserved - errorold) < threshold or steps >= maxiter:
             expandedX = alg.expand(J,[U,V,W])
             print "estimation finished in ",(steps+1),"steps."
             break

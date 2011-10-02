@@ -81,7 +81,8 @@ class Tucker(Completion):
 
 
 class CPWOPT(Completion):
-    def estimator(self,param,trainingData):
+
+    def estimate(self,param,trainingData,isProd):
 
         #trainingData must be given as list of coordinate tuples
         X = self.X
@@ -119,5 +120,10 @@ class CPWOPT(Completion):
 
         result = CPWOPT.CompletionGradient(Xobs,shape, ObservedList,rank_estimate,L,alpha,X)
         return result
+    def estimator(self,param,trainingData):
+        return self.estimate(self,param, trainingData,isProd=False)
 
+class CPWOPTProd(CPWOPT):
+    def estimator(self,param,trainingData):
+        return CPWOPT.estimate(self,param, trainingData,isProd=True)
 

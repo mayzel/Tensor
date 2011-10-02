@@ -21,9 +21,9 @@ import benchmark
 import gc
 import functools
 
-from info import *
+#from info import *
 
-def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):
+def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,information,unobservedRates = None,alpha=None,ranks=None):
     """
     @param data 穴埋めするデータ
     @parma mask 未観測要素を作る方法を指定する。{"Random","Fiber","Slice"}のいずれかを取る。
@@ -37,12 +37,12 @@ def EvaluateCompletion(data,mask,method,useRelation,execTimes,logger,unobservedR
 
     """
     #try:
-    EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates,alpha,ranks)
+    return EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,information,unobservedRates,alpha,ranks)
     #except Exception,e:
         #print e
 
 
-def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobservedRates = None,alpha=None,ranks=None):
+def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,information,unobservedRates = None,alpha=None,ranks=None):
     """
     数値実験本体
     """
@@ -177,6 +177,10 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
         completionMethod = CompletionMethods.CPWOPT(X,L)
         if not useRelation:
             alpha = [0]
+    elif method == "CPWOPTProd":
+        completionMethod = CompletionMethods.CPWOPTProd(X,L)
+        if not useRelation:
+            alpha = [0]
 
     #convert list of indeces to binary tensor
     completionMethod.createObservedTensor = createObservedTensor
@@ -239,3 +243,5 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,unobser
 
 
         log.WriteLine()
+
+    return information
