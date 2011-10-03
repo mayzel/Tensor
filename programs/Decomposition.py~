@@ -132,7 +132,6 @@ class TuckerProd(Decomposition):
         Kronecker積バージョン/Tucker分解1ステップ
         """
         N = X.ndim
-        print "hogefugahofe"
         if As == None:
             As = Decomposition.initializeAs(self,X,Rs)
         for time in xrange(1):
@@ -211,6 +210,9 @@ class CPProd(Decomposition):
         if As==None:
             As = [getLeadingSingularVects(Xns[n],R) for n in xrange(N)]
 
+        print "hogefuga"
+        print map(lambda l:l.shape,Ls)
+        raw_input()
 
         for time in xrange(1):
             for n in xrange(N):

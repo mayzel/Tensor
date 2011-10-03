@@ -37,10 +37,12 @@ def flushInfo(information,name):
 
 def evaluateMethod(data,Mask,method,withRelation,exectimes,logger,unobserved,alpha,ranks):
     information = {}
-    information["dataname"] = dataname
-    information["datasize"] = data["X"].shape
 
     information = EvaluationCPWopt.EvaluateCompletion(data,Mask,method,withRelation,exectimes,logger,information,unobserved,alpha,ranks)
+
+    information["dataname"] = dataname
+    information["datasize"] = data["X"].shape
+    information["withRelation"] = withRelation
     print information
     if withRelation:
         flushInfo(information, dataname + "_" + method+"_with_")
@@ -51,6 +53,18 @@ def evaluateMethod(data,Mask,method,withRelation,exectimes,logger,unobserved,alp
 def evaluate(Mask,unobserved):
     prefix = Mask + "_" + dataname
 
+    #method = "CPProd"
+    #logger = Logger(prefix+"_"+method)
+    #evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
+    method = "CP"
+    logger = Logger(prefix+"_"+method)
+    evaluateMethod(data,Mask,method,False,exectimes,logger,unobserved,alpha,ranks)
+    evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
+
+    method = "CPProd"
+    logger = Logger(prefix+"_"+method)
+    evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
+
     method = "CPWOPTProd"
     logger = Logger(prefix+"_"+method)
     evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
@@ -60,13 +74,6 @@ def evaluate(Mask,unobserved):
     evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
     evaluateMethod(data,Mask,method,False,exectimes,logger,unobserved,alpha,ranks)
 
-    #method = "CP"
-    #logger = Logger(prefix+"_"+method)
-    #evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
-
-    #method = "CPProd"
-    #logger = Logger(prefix+"_"+method)
-    #evaluateMethod(data,Mask,method,True,exectimes,logger,unobserved,alpha,ranks)
 
 
 if __name__ == "__main__":
@@ -82,7 +89,8 @@ if __name__ == "__main__":
     dataname = "Flow"
     ranks=[4]
     alpha =[pow(10,x) for x in [-4,-3,-2,-1]] #for L
-    #data = benchmark.Artificial()
+    #data = benchmark.ArtificialTucker()
+    #data = benchmark.ArtificialCP()
     #dataname = "Artificial_1001"
     #ranks=[2]
     #alpha =[pow(10,x) for x in [-4,-3,-2,-1]] #for L

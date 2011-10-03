@@ -58,6 +58,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,informa
 
     if not useRelation:
         L = [None for i in range(X.ndim)]
+        alpha = [1]
 
     #if unobservedRates == None:
     #    unobservedRates = array([0.5,0.75,0.9])
@@ -80,6 +81,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,informa
 
     #alphaはLにしか関係ない
     if all(map(lambda i:i==None,L)):
+        print "hogehogehogehogehogehoge"
         alpha = [1]
 
 
@@ -88,6 +90,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,informa
     print elems, "kdkdkdkd"
     if mask == "Random":
         targetelems = elems
+        print "MASKING: RANDOM"
         def createObservedTensor(data):
             data = array(data)
             X = zeros(elems)
@@ -98,6 +101,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,informa
             return X.reshape(shape)
     elif mask == "Fiber":
         targetelems = elems / X.shape[maskAxis]
+        print "MASKING: FIBER"
         def createObservedTensor(data):
             data = array(data)
             S = zeros(targetelems)
@@ -122,6 +126,7 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,informa
             return X.reshape(shape)
     elif mask == "Slice":
         targetelems = X.shape[maskAxis]
+        print "MASKING: SLICE"
         def createObservedTensor(data):
             data = array(data)
             S = zeros(targetelems)
@@ -235,11 +240,13 @@ def EvaluateCompletionMain(data,mask,method,useRelation,execTimes,logger,informa
         for error in errors:
             e = error["error"]
             param = error["param"]
-            log.WriteLine("unobserved, "+ str(unobservedRate)+", param,"+str(param)+", error, "+str(e))
+            log.WriteLine("unobserved, "+ str(unobservedRate)+", bestparam,"+str(param)+", error, "+str(e))
 
             if not param in information["result"][unobservedRate]:
                 information["result"][unobservedRate][param]=[]
             information["result"][unobservedRate][param].append(e)
+            print "score logged:", e
+            
 
 
         log.WriteLine()

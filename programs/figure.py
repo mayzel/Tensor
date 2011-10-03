@@ -31,19 +31,21 @@ def plot(information):
         setting = info["setting"]
         method = setting["method"]
         withRel = setting["using relation data"]
+        #if not method in ["CP","CPProd"] :
+        #    continue
 
         labelstr = method+":"+("with" if withRel else "without")
 
         y,y_err,x=[],[],[]
-        print result[0.99]
+        #print result[0.99]
         for maskrate in sorted(result.keys()):
             errorsdict = result[maskrate]
 
             errors=[]
             for param,errorsitem in errorsdict.iteritems():
-                print errorsitem
+                #print errorsitem
                 errors.extend(errorsitem)
-            print errors
+            #print errors
             m = mean(errors)
             s = std(errors)
             y.append(m)
@@ -81,6 +83,7 @@ def withRelation(info):
 if __name__ == '__main__':
     import os
     os.chdir("jsonlog/Flow_Injection")
+    #os.chdir("jsonlog/")
     files = os.listdir(".")
 
     files = [f for f in files if ".dat" in f]
@@ -93,7 +96,13 @@ if __name__ == '__main__':
        if information==None:
            continue
 
-       if withRelation(information) or True:
+       if "obsolete" in f:
+           continue
+       if withRelation(information):
+           print "----------"
+           print information
+
+       if not withRelation(information) or True:
            #print f, getMethod(information)
            infotoplot.append(information)
 

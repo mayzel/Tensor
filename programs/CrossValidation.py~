@@ -92,7 +92,7 @@ def Evaluate(
         estimation = estimator(bestParameter,trainIx)
 
         score = lossFunction(estimation,alldata)
-        print "Evaluation:",score
+        print "EVALUATION:",score
         return {"error":score,"param":bestParameter}
         #scores.append(score)
     

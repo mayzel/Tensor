@@ -165,7 +165,9 @@ def Flow_Injection():
     f.close()
     def getTensor(mat):
         data = mat["X"]
-        data = data.reshape(12,89,100)
+        #data = data.reshape(12,89,100)
+        #data = data.reshape(100,12,89)
+        data = data.reshape(100,89,12)
         data = data / norm(data)
         data = data.copy()
         return data / norm(data)
@@ -183,7 +185,10 @@ def Flow_Injection():
         L2 = createChainLaplacian(100)
         L1 = createChainLaplacian(89)
         
-        return [L0,L1,L2]
+        #return [L0,L1,L2]
+        #return [L2,L0,L1]
+        return [L2,L1,L0]
+        #return [L2,L0,L1]
 
     return dataLoader(mat,getTensor,getLaplacian)
 
@@ -250,6 +255,36 @@ def Artificial():
         X = X / norm(X)
 
         #X = arange(1000).reshape(10,10,10)
+        return X
+
+    def getLaplacian(mat):
+        Ls = [createChainLaplacian(size[i]) for i in xrange(dim)]
+        return Ls
+
+    return dataLoader(mat,getTensor,getLaplacian)
+def ArtificialCP():
+    size = [30,30,30]
+    dim = len(size)
+    rank = 2
+    def getTensor(mat):
+        def mkfactor(size,rank):
+            th = random.randn()
+            off = random.randn()
+            d2 = arange(size) * arange(size)
+            d1 = arange(size)
+            print th,off
+            A = array([d1*th + off for i in xrange(rank)]).T
+            return A
+
+        As = [mkfactor(size[i],rank) for i in xrange(dim)]
+        import algorithm as alg
+        def p(obj):
+            print obj
+
+        I = alg.createUnitTensor(dim,rank)
+        X = alg.expand(I,As)
+
+        X = X / norm(X)
         return X
 
     def getLaplacian(mat):

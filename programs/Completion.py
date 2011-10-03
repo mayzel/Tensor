@@ -75,7 +75,6 @@ class Completion:
         maxiter = 600
         threshold = const.ConvergenceThreshold_NewCompletion
         vint = vectorize(int)
-        print "rapid algorithm"
         for steps in it.count():
 
             #import matplotlib.pyplot as plt
@@ -105,7 +104,7 @@ class Completion:
             #import benchmark
 
 
-            print "iter:",steps," err:",error ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xnew)
+            #print "iter:",steps," err:",error ," oberr:",errorObserved, " diff:", errorObserved-errorold, "norm;", norm(Xnew)
 
             faultThreshold = 1e4
             if error > faultThreshold:
